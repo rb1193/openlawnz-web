@@ -1,6 +1,7 @@
 # openlawnz-web
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-![](https://badgen.net/dependabot/openlawnz/openlawnz-web/117378835=?icon=dependabot)
+![Dependabot](https://badgen.net/dependabot/openlawnz/openlawnz-web/117378835=?icon=dependabot)
+![Build Status](https://codebuild.ap-southeast-2.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiSDBxYXNjT3duTjNKdkM3bWFOb0xnSFR5R1dTaTJQeFY3bTBXUWNrUDRLa2NEbEV4QmFScDNqV0ZxSDlDMGJLRURxM3UxWG95TlI3QjVRU2wwMjhzR1lJPSIsIml2UGFyYW1ldGVyU3BlYyI6InN0RUgvRHA5azRMTitYVjAiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=branch)
 
 ## Running
 
