@@ -38,7 +38,6 @@ const App = props => {
 				<Helmet>
 					<title>OpenLaw NZ</title>
 					<meta name="openlaw" content="open-source legal data platform, free to use" />
-					<meta property="og:url" content="https://www.openlaw.nz/news/1" />
 					<meta property="og:type" content="article" />
 					<meta property="og:title" content="OpenLaw NZ" />
 					<meta
