@@ -1,7 +1,7 @@
+import { hot } from "react-hot-loader/root"; // This has to be loaded before react
 import React from "react";
 import { withRouter, BrowserRouter as Router, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { hot } from "react-hot-loader";
 import MainNav from "./components/MainNav.jsx";
 import Footer from "./components/Footer.jsx";
 import Home from "./pages/Home.jsx";
@@ -57,4 +57,4 @@ const App = props => {
 	);
 };
 
-export default hot(module)(App);
+export default hot(App);

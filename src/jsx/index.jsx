@@ -3,7 +3,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App.jsx";
 import { Auth0Provider } from "../js/react-auth0-spa";
-import config from "../auth_config.json";
 
 // A function that routes the user to the right place
 // after login
@@ -19,8 +18,8 @@ const onRedirectCallback = appState => {
 
 ReactDOM.render(
   <Auth0Provider
-    domain={config.domain}
-    client_id={config.clientId}
+    domain={process.env.AUTH0_DOMAIN}
+    client_id={process.env.AUTH0_CLIENT_ID}
     redirect_uri={window.location.origin}
     onRedirectCallback={onRedirectCallback}>
     <App />

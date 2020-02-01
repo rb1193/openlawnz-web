@@ -1,5 +1,5 @@
 import React from "react";
-import Search from "../components/Search.jsx";
+import SearchContainer from "../components/SearchContainer.jsx";
 import InfoCard from "../components/InfoCard.jsx";
 
 import External from "-!svg-react-loader?name=External!../../img/external.svg";
@@ -9,7 +9,7 @@ class Developers extends React.Component {
 		return (
 			<React.Fragment>
 				<div className="highlighted-content">
-					<Search history={this.props.history} />
+					<SearchContainer history={this.props.history} />
 					<InfoCard classModifier="info-card--large info-card--title info-card--column">
 						<h1>Developers</h1>
 						<span>Use our API to integrate case law intelligence into your own applications.</span>

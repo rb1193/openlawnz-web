@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import InfoCard from "../components/InfoCard.jsx";
-import Search from "../components/Search.jsx";
+import SearchContainer from "../components/SearchContainer.jsx";
 import ReadMore from "../components/ReadMore.jsx";
 import { Link } from "react-router-dom";
 import GenericAvatar from "../../img/about-us/avatar.png";
@@ -23,13 +23,15 @@ import Daryl from "../../img/about-us/daryl-diesto.png";
 import Emma from "../../img/about-us/emma-burke.png";
 import Infra from "../../img/about-us/openlaw-infrastructure.png";
 import Nicolas from "../../img/about-us/Nicolas-zhou.png";
+import Jins from "../../img/about-us/Jins_Mary_Job.png";
+import Dana from "../../img/about-us/dana-iti.png";
 
 class About extends Component {
 	render() {
 		return (
 			<React.Fragment>
 				<div className="highlighted-content">
-					<Search history={this.props.history} />
+					<SearchContainer history={this.props.history} />
 					<InfoCard classModifier="info-card--large info-card--title info-card--column-nosub">
 						<h1>About Us</h1>
 					</InfoCard>
@@ -204,6 +206,30 @@ class About extends Component {
 									<ReadMore
 										text="
 									Nicolas is an outstanding developer who has more than 5 years of experience in web development space. He is a highly self-motivated person who strives for the best result and uses his experience and creativity to help us reach the goals, to meet and exceed expectations.
+									"
+									/>
+								</div>
+								<div className="card-item-small">
+									<div>
+										<img src={Jins} alt="Jins Mary Job" />
+										<strong>Jins Mary Job</strong>
+									</div>
+									<ReadMore
+										text="
+										Jins is a software engineer who is passionate about applying technology to solve complex problems and challenges. She loves coding and learning new technologies. She has a Masters in computer applications and extensive experience in Microsoft technologies
+										"
+									/>
+								</div>
+							</div>
+							<div className="cards-list">
+								<div className="card-item-small">
+									<div>
+										<img src={Dana} alt="Dana Iti" />
+										<strong>Dana Iti</strong>
+									</div>
+									<ReadMore
+										text="
+                    Dana is a Front End Developer. She is motivated by projects that help improve the lives of others. She previously worked on the Legislation as Code for the NZ Government and is thrilled to be able to contribute to OpenLaw NZ.
 									"
 									/>
 								</div>

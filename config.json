@@ -1,8 +1,0 @@
-{
-	"development": {
-		"API_URL": "https://api.openlaw.nz"
-	},
-	"production": {
-		"API_URL": "https://api.openlaw.nz"
-	}
-}
