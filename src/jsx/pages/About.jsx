@@ -23,6 +23,7 @@ import Daryl from "../../img/about-us/daryl-diesto.png";
 import Emma from "../../img/about-us/emma-burke.png";
 import Infra from "../../img/about-us/openlaw-infrastructure.png";
 import Nicolas from "../../img/about-us/Nicolas-zhou.png";
+import Jins from "../../img/about-us/Jins_Mary_Job.png";
 import Dana from "../../img/about-us/dana-iti.png";
 
 class About extends Component {
@@ -208,6 +209,19 @@ class About extends Component {
 									"
 									/>
 								</div>
+								<div className="card-item-small">
+									<div>
+										<img src={Jins} alt="Jins Mary Job" />
+										<strong>Jins Mary Job</strong>
+									</div>
+									<ReadMore
+										text="
+										Jins is a software engineer who is passionate about applying technology to solve complex problems and challenges. She loves coding and learning new technologies. She has a Masters in computer applications and extensive experience in Microsoft technologies
+										"
+									/>
+								</div>
+							</div>
+							<div className="cards-list">
 								<div className="card-item-small">
 									<div>
 										<img src={Dana} alt="Dana Iti" />
