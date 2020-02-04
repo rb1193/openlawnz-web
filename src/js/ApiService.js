@@ -4,7 +4,7 @@ class ApiService {
 	 * @returns {ApiService}
 	 */
 	constructor() {
-		this.apiUrl = API_URL + "/graphql";
+		this.apiUrl = process.env.API_URL + "/graphql";
 		this.caseFields = `{
 			caseName,
 			id,
@@ -42,7 +42,7 @@ class ApiService {
 	async getGraphQlData(resource, params, fields) {
 		const query = `
 			query singleCase {
-				${resource} ${this.paramsToString(params)} 
+				${resource} ${this.paramsToString(params)}
 				${fields}
 			}`;
 		const res = await fetch(`${this.apiUrl}`, {

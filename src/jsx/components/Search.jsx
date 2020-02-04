@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import DOMPurify from "dompurify";
+import queryString from "query-string";
 import SearchIcon from "-!svg-react-loader?name=Logo!../../img/search-icon.svg";
 import Exclamation from "-!svg-react-loader?name=Logo!../../img/exclamation.svg";
 
@@ -7,31 +9,38 @@ export default class Search extends Component {
 		super();
 		this.state = {
 			currentSearchQuery: "",
-			searchMsg: "",
-			showSearchMsg: false
+			searchMsg: ""
 		};
 		this.searchMsgRef = React.createRef();
 	}
 
+	componentDidMount() {
+		if (!this.props.populateComponent) return;
+		const locationSearch = queryString.parse(location.search);
+		if (locationSearch.q) this.setState({ currentSearchQuery: locationSearch.q });
+	}
+
 	handleSubmit(e) {
 		e.preventDefault();
-		if (this.state.currentSearchQuery === "") {
+		const { currentSearchQuery } = this.state;
+		if (currentSearchQuery === "") {
 			this.setState({
-				searchMsg: "Please enter a search term",
-				showSearchMsg: true
+				searchMsg: "Please enter a search term"
 			});
+		} else if (this.props.onSubmit) {
+			this.props.onSubmit(`q=${currentSearchQuery}`, `search=${currentSearchQuery}`, "query", currentSearchQuery);
 		} else {
-			this.props.history.replace(`/search?q=${this.state.currentSearchQuery}`);
+			this.props.history.replace(`/search?q=${currentSearchQuery}`);
 		}
 	}
 
 	handleChange(e) {
-		this.setState({ currentSearchQuery: e.target.value });
+		this.setState({ currentSearchQuery: DOMPurify.sanitize(e.target.value) });
 	}
 
 	render() {
 		return (
-			<section className="search-container">
+			<div className="search-container">
 				<div className="search">
 					<form className="search-input" onSubmit={this.handleSubmit.bind(this)}>
 						<div className="input-wrapper">
@@ -54,13 +63,18 @@ export default class Search extends Component {
 							Search
 						</button>
 					</form>
+					{this.props.toggleTypeOfSearch && (
+						<a href="#" className="toggle-search" onClick={this.props.toggleTypeOfSearch}>
+							Advanced Search
+						</a>
+					)}
 				</div>
-				{this.state.showSearchMsg ? (
+				{this.state.searchMsg ? (
 					<div className="search-msg">
 						<Exclamation /> <p>{this.state.searchMsg}</p>
 					</div>
 				) : null}
-			</section>
+			</div>
 		);
 	}
 }

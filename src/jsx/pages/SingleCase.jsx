@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Search from "../components/Search.jsx";
+import SearchContainer from "../components/SearchContainer.jsx";
 import InfoCard from "../components/InfoCard.jsx";
 import SingleCaseView from "../components/SingleCaseView.jsx";
 
@@ -48,7 +48,7 @@ class SingleCase extends Component {
 		return (
 			<React.Fragment>
 				<div className="highlighted-content">
-					<Search history={this.props.history} />
+					<SearchContainer history={this.props.history} />
 					<InfoCard>
 						<h2
 							ref={this.titleRef}

@@ -1,7 +1,7 @@
+import { hot } from "react-hot-loader/root"; // This has to be loaded before react
 import React from "react";
 import { withRouter, BrowserRouter as Router, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { hot } from "react-hot-loader";
 import MainNav from "./components/MainNav.jsx";
 import Footer from "./components/Footer.jsx";
 import Home from "./pages/Home.jsx";
@@ -13,6 +13,9 @@ import Plugins from "./pages/Plugins.jsx";
 import Developers from "./pages/Developers.jsx";
 import About from "./pages/About.jsx";
 import NewsContext from "./NewsContext.jsx";
+
+import SocialMediaImage from "../img/Social-Media-Profile-Image.jpg";
+
 import "normalize.css";
 import "../scss/App.scss";
 
@@ -28,6 +31,13 @@ const App = props => {
 				<Helmet>
 					<title>OpenLaw NZ</title>
 					<meta name="openlaw" content="open-source legal data platform, free to use" />
+					<meta property="og:type" content="article" />
+					<meta property="og:title" content="OpenLaw NZ" />
+					<meta
+						property="og:description"
+						content="OpenLaw NZ’s role will be to provide the technology and infrastructure, leveraging its existing open-source platform and expertise. Approximately 7,500 Court decisions about ACC cases will be used as the pilot dataset."
+					/>
+					<meta property="og:image" content={SocialMediaImage} />
 				</Helmet>
 				<MainNavWithRouter />
 				<main>
@@ -48,4 +58,4 @@ const App = props => {
 	);
 };
 
-export default hot(module)(App);
+export default hot(App);
