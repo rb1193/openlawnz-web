@@ -19,7 +19,6 @@ import "../scss/App.scss";
 const MainNavWithRouter = withRouter(props => <MainNav {...props} />);
 
 const App = props => {
-	// const { loading } = useAuth0();
 	const [news, setNews] = React.useState(null);
 	const updateNewsData = news => setNews(news);
 
