@@ -13,24 +13,15 @@ import Plugins from "./pages/Plugins.jsx";
 import Developers from "./pages/Developers.jsx";
 import About from "./pages/About.jsx";
 import NewsContext from "./NewsContext.jsx";
-
-// login
-import { useAuth0 } from "../js/react-auth0-spa";
-
 import "normalize.css";
 import "../scss/App.scss";
 
 const MainNavWithRouter = withRouter(props => <MainNav {...props} />);
 
 const App = props => {
-	const { loading } = useAuth0();
+	// const { loading } = useAuth0();
 	const [news, setNews] = React.useState(null);
 	const updateNewsData = news => setNews(news);
-
-	if (loading) {
-		// In relevant with an issuie of Get rid of loading text, below <div> should be commented or removed
-		// return <div>Loading...</div>;
-	}
 
 	return (
 		<Router>
