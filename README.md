@@ -17,14 +17,9 @@ Visit http://localhost:9000/
 
 Please refer to the following Wiki pages:
 
-Overview:
-https://github.com/openlawnz/openlawnz-web/wiki/OpenLawNZ-Website-Overview
-
-Contributing agreement and code of conduct:
-https://github.com/openlawnz/openlawnz-web/blob/master/CONTRIBUTING.md
-
-Workflow:
-https://github.com/openlawnz/openlawnz-web/wiki/Workflow
+* [Overview](https://github.com/openlawnz/openlawnz-web/wiki/OpenLawNZ-Website-Overview)
+* [Contributing agreement and code of conduct](https://github.com/openlawnz/openlawnz-web/blob/master/CONTRIBUTING.md)
+* [Workflow](https://github.com/openlawnz/openlawnz-web/wiki/Workflow)
 
 ## NOTICE
 

@@ -13,10 +13,8 @@ import Plugins from "./pages/Plugins.jsx";
 import Developers from "./pages/Developers.jsx";
 import About from "./pages/About.jsx";
 import NewsContext from "./NewsContext.jsx";
-import SocialMediaImage from "../img/Social-Media-Profile-Image.jpg";
 
-// login
-import { useAuth0 } from "../js/react-auth0-spa";
+import SocialMediaImage from "../img/Social-Media-Profile-Image.jpg";
 
 import "normalize.css";
 import "../scss/App.scss";
@@ -24,13 +22,8 @@ import "../scss/App.scss";
 const MainNavWithRouter = withRouter(props => <MainNav {...props} />);
 
 const App = props => {
-	const { loading } = useAuth0();
 	const [news, setNews] = React.useState(null);
 	const updateNewsData = news => setNews(news);
-
-	if (loading) {
-		return <div>Loading...</div>;
-	}
 
 	return (
 		<Router>
