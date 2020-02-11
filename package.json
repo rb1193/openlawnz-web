@@ -9,7 +9,7 @@
 		"test": "webpack -p --output-path dist"
 	},
 	"dependencies": {
-		"@auth0/auth0-spa-js": "^1.6.2",
+		"@auth0/auth0-spa-js": "^1.6.4",
 		"date-fns": "^2.2.1",
 		"dompurify": "^2.0.8",
 		"dotenv-webpack": "^1.7.0",
