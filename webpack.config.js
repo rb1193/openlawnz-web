@@ -50,7 +50,9 @@ module.exports = (env, argv) => ({
 		]
 	},
 	plugins: [
-		new Dotenv(),
+		new Dotenv({
+			systemvars: true
+		}),
 		new HtmlWebpackPlugin({
 			template: src + "/templates/index.html"
 		}),

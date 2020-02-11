@@ -3,6 +3,7 @@
 ![](https://badgen.net/dependabot/openlawnz/openlawnz-web/117378835=?icon=dependabot)
 
 ## Running
+Create a `.env` file in the root of the project with the content copied of `.env.example`. The values for each key can be found pinned in the slack channel #website.
 
 	npm install
 	npm run dev
