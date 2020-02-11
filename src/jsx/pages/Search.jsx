@@ -100,6 +100,12 @@ class SearchPage extends Component {
 		const offset = selected * this.state.perPage;
 		const query = this.state.advancedQuery || this.state.query;
 
+		window.scrollTo({
+			//	scroll to top when a button in pagination is clicked
+			top: 0,
+			behavior: "smooth"
+		});
+
 		this.setState({ offset: offset, currentPage: selected, paginationInProgress: true }, () => {
 			this.doSearch(query, this.state.offset);
 		});
