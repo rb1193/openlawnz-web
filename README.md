@@ -4,14 +4,14 @@
 
 ## Running
 
-	npm install
-	npm run dev
+	yarn install
+	gatsby develop
 
 ## Building
 
-	npm run build
+	gatsby build
 
-Visit http://localhost:9000/
+Visit http://localhost:8000/
 
 ## Contributors
 
