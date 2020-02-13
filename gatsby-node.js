@@ -19,6 +19,7 @@ exports.createPages = ({ actions: { createPage } }) => {
         content_html: n.content_html,
         image: n.image_url,
         image_alt: n.image_alt,
+        summary: n.summary,
       },
     })
   })
