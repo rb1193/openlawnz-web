@@ -3,9 +3,11 @@ import React from "react"
 import Layout from "../components/layout"
 import InfoCard from "../components/InfoCard"
 import SearchContainer from "../components/SearchContainer"
+import SEO from "../components/seo"
 
-const News = ({ pageContext, history }) => (
+const SingleNews = ({ pageContext, history }) => (
   <Layout>
+    <SEO title={`${pageContext.title}`} description={pageContext.summary} />
     <div className="highlighted-content">
       <SearchContainer history={history} />
       <InfoCard classModifier="info-card--large info-card--title info-card--column">
@@ -19,7 +21,7 @@ const News = ({ pageContext, history }) => (
           {pageContext.image && (
             <>
               <div className="image-container">
-                <img src={pageContext.image} />
+                <img src={pageContext.image} alt={pageContext.image_alt} />
               </div>
               <hr className="divider" />
             </>
@@ -35,4 +37,4 @@ const News = ({ pageContext, history }) => (
   </Layout>
 )
 
-export default News
+export default SingleNews

@@ -1,5 +1,14 @@
 exports.createPages = ({ actions: { createPage } }) => {
   const news = require("./data/news.json")
+
+  createPage({
+    path: `/news`,
+    component: require.resolve("./src/templates/news.js"),
+    context: {
+      news: news.items,
+    },
+  })
+
   news.items.forEach(n => {
     createPage({
       path: `/news/${n.slug}`,
@@ -9,6 +18,7 @@ exports.createPages = ({ actions: { createPage } }) => {
         formattedDate: n.formattedDate,
         content_html: n.content_html,
         image: n.image_url,
+        image_alt: n.image_alt,
       },
     })
   })
