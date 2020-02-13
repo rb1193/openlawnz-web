@@ -3,7 +3,7 @@ exports.createPages = ({ actions: { createPage } }) => {
   news.items.forEach(n => {
     createPage({
       path: `/news/${n.slug}`,
-      component: require.resolve("./src/templates/news-graphql.js"),
+      component: require.resolve("./src/templates/single-news.js"),
       context: {
         title: n.title,
         formattedDate: n.formattedDate,
