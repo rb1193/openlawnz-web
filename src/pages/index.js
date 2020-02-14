@@ -7,12 +7,13 @@ import InfoCardUnit from "../components/InfoCardUnit.jsx"
 import ContactUs from "../components/ContactUs.jsx"
 import NewsSpotlight from "../components/NewsSpotlight"
 
-const HomePage = ({ history }) => (
+const HomePage = (props, { history }) => (
   <Layout>
     <div className="highlighted-content">
       <h1 className="header-title">
         OpenLaw NZ is a new, free legal research platform for New Zealand.
       </h1>
+
       <SearchContainer history={history} />
       <InfoCard>
         <InfoCardUnit one="30,141" two="CASES" />
@@ -24,10 +25,24 @@ const HomePage = ({ history }) => (
     </div>
     <div className="home-wrapper">
       <Mission />
-      <NewsSpotlight />
+      <NewsSpotlight data={props.data.dataJson.items} />
       <ContactUs />
     </div>
   </Layout>
 )
+
+export const newsQuery = graphql`
+  {
+    dataJson {
+      items {
+        title
+        summary
+        slug
+        image_url
+        image_alt
+      }
+    }
+  }
+`
 
 export default HomePage
