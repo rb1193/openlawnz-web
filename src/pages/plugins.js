@@ -1,12 +1,14 @@
 import React from "react"
+import SEO from "../components/seo"
+
 import Layout from "../components/layout"
 import SearchContainer from "../components/SearchContainer.jsx"
 import InfoCard from "../components/InfoCard.jsx"
-
 import Chrome from "../images/svgs/chrome.svg"
 
 const PluginPage = ({ history }) => (
   <Layout>
+    <SEO title="Plugins" />
     <div className="highlighted-content">
       <SearchContainer history={history} />
       <InfoCard classModifier="info-card--large info-card--title info-card--column">

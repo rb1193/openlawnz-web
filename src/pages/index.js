@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import SearchContainer from "../components/SearchContainer.jsx"
 import Mission from "../components/Mission.jsx"
 import InfoCard from "../components/InfoCard.jsx"
@@ -9,6 +10,7 @@ import NewsSpotlight from "../components/NewsSpotlight"
 
 const HomePage = (props, { history }) => (
   <Layout>
+    <SEO title="Welcome" />
     <div className="highlighted-content">
       <h1 className="header-title">
         OpenLaw NZ is a new, free legal research platform for New Zealand.

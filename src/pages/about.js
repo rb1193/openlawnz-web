@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import InfoCard from "../components/InfoCard.jsx"
 import SearchContainer from "../components/SearchContainer.jsx"
 import ReadMore from "../components/ReadMore.jsx"
+import SEO from "../components/seo"
 import { Link } from "gatsby"
 import GenericAvatar from "../images/about-us/avatar.png"
 import Andy from "../images/about-us/andrew-easterbrook.png"
@@ -29,6 +30,7 @@ import Dana from "../images/about-us/dana-iti.png"
 
 const AboutPage = ({ history }) => (
   <Layout>
+    <SEO title="About" />
     <div className="highlighted-content">
       <SearchContainer history={history} />
       <InfoCard classModifier="info-card--large info-card--title info-card--column-nosub">

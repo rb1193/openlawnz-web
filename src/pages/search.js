@@ -1,7 +1,8 @@
 import React, { Component } from "react"
 import Layout from "../components/layout"
 import memoize from "fast-memoize"
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
+import SEO from "../components/seo"
 
 import dateFormat from "date-fns/format"
 import parseISO from "date-fns/parseISO"
@@ -116,7 +117,7 @@ class SearchPage extends Component {
   }
 
   handleSubmit(searchString, query, type, queryValue) {
-    window.location.href = `/search?${searchString}`
+    navigate(`/search?${searchString}`);
     this.setState(prevState => {
       const newState = {
         ...prevState,
@@ -170,6 +171,7 @@ class SearchPage extends Component {
     }
     return (
       <Layout>
+        <SEO title="Search results" />
         <div className="highlighted-content">
           <SearchContainer
             populateComponent

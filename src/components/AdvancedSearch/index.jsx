@@ -9,6 +9,7 @@ import JudgmentDate from "./JudgmentDate.jsx";
 import Legislation from "./Legislation.jsx";
 import CaseName from "./CaseName.jsx";
 import Court from "./Court.jsx";
+import { navigate } from "gatsby";
 
 const relationOfTypes = {
 	search: { Component: DefaultInput, description: "Any Field" },
@@ -190,7 +191,7 @@ const AdvancedSearch = ({ onSubmit, toggleTypeOfSearch, populateComponent, histo
 
 		return onSubmit
 			? onSubmit(paramsAsString, paramsAsString, "advancedQuery")
-			: history.push(`/search?${getParamsAsString()}`);
+			: navigate(`/search?${getParamsAsString()}`);
 	};
 
 	const triggerDispatch = (type, payload) => {

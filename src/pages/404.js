@@ -1,13 +1,21 @@
 import React from "react"
-
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import SearchContainer from "../components/SearchContainer.jsx"
+import InfoCard from "../components/InfoCard.jsx"
 
-const NotFoundPage = () => (
+const NotFoundPage = ({ history }) => (
   <Layout>
-    <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <div className="highlighted-content">
+      <SearchContainer history={history} />
+      <InfoCard classModifier="info-card--large info-card--title info-card--column">
+        <h1>404 Page not found</h1>
+      </InfoCard>
+    </div>
+    
+      <div className="container main">
+       
+      </div>
+    
   </Layout>
 )
 
