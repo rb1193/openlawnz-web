@@ -24,3 +24,12 @@ exports.createPages = ({ actions: { createPage } }) => {
     })
   })
 }
+
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage } = actions
+  if (page.path.match(/^\/case/)) {
+    page.matchPath = "/case/*"
+
+    createPage(page)
+  }
+}
