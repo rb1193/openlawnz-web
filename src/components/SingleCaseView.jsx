@@ -94,15 +94,12 @@ const SingleCaseView = props => {
   return (
     <div className="single-case-wrapper">
       <div className="single-case-header">
-        <div
-          role="link"
-          tabIndex={0}
-          className="details-open-close-button"
+        <button
+          className="a11y-button--unstyled details-open-close-button"
           onClick={toggleShowDetails}
-          onKeyDown={toggleShowDetails}
         >
           info {showDetails ? <Close /> : <Open />}
-        </div>
+        </button>
 
         <div className="download-button">
           {pdf.pdfDbKey && (

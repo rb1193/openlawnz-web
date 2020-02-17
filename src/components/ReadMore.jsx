@@ -19,15 +19,10 @@ const ReadMore = props => {
       </span>
       <span className="readmore" id="readmore" style={triggerStyle}>
         ...
-        {/* <span
-          role="link"
-          className="readmore-text"
+        <button
+          className="a11y-button--unstyled readmore-text"
           onClick={showContent}
-          onKeyDown={showContent}
         >
-          Read More
-        </span> */}
-        <button className="readmore-text" onClick={showContent}>
           Read More
         </button>
       </span>

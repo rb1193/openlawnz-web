@@ -156,16 +156,6 @@
         display: inline-block;
       }
 
-      .readmore-text {
-        background: none;
-        color: inherit;
-        border: none;
-        padding: 0;
-        font: inherit;
-        cursor: pointer;
-        outline: inherit;
-      }
-
       .readmore-text:hover {
         color: #999999;
       }
@@ -200,4 +190,14 @@
       }
     }
   }
+}
+
+.a11y-button--unstyled {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
