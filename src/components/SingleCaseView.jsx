@@ -51,7 +51,8 @@ const SingleCaseView = props => {
     casesCitedsByCaseCited,
     legislationToCases,
   } = props.singleCase || {}
-  let adobeDCView
+
+  let pdfDependency = pdf && pdf.pdfDbKey
 
   const toggleShowDetails = () => {
     setShowDetails(!showDetails)
@@ -59,6 +60,7 @@ const SingleCaseView = props => {
 
   useEffect(() => {
     if (!isScriptLoaded || !pdf.pdfDbKey) return
+    let adobeDCView
 
     adobeDCView = getViewer()
     adobeDCView.previewFile(
@@ -76,7 +78,14 @@ const SingleCaseView = props => {
       window.AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
       ({ type }) => type === "APP_RENDERING_START" && setLoadingIframe(false) // Set loading false when adobe loading start
     )
-  }, [isScriptLoaded, pdf && pdf.pdfDbKey])
+  }, [
+    isScriptLoaded,
+    pdfDependency,
+    adobeUIConfig,
+    caseName,
+    getViewer,
+    pdf.pdfDbKey,
+  ])
 
   useEffect(() => {
     setLoadingIframe(true)
@@ -85,9 +94,16 @@ const SingleCaseView = props => {
   return (
     <div className="single-case-wrapper">
       <div className="single-case-header">
-        <div className="details-open-close-button" onClick={toggleShowDetails}>
+        <div
+          role="link"
+          tabIndex={0}
+          className="details-open-close-button"
+          onClick={toggleShowDetails}
+          onKeyDown={toggleShowDetails}
+        >
           info {showDetails ? <Close /> : <Open />}
         </div>
+
         <div className="download-button">
           {pdf.pdfDbKey && (
             <a
