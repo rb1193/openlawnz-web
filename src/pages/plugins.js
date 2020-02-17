@@ -60,6 +60,12 @@ const PluginPage = ({ history }) => (
                 src="https://s3-ap-southeast-2.amazonaws.com/assets.openlaw.nz/chromescreenshot1.png"
                 alt="Screenshot of the New Zealand website highlighting the Chrome Extension"
               />
+              <track
+                src="../captions/chrome.vtt"
+                kind="captions"
+                srclang="en"
+                label="english_captions"
+              ></track>
             </video>
           </p>
           <p>
