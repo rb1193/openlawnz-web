@@ -86,7 +86,7 @@ const AboutPage = ({ history }) => (
               className="modal-window"
             >
               <div>
-                <a href="#" title="Close" className="modal-close">
+                <a href="#close" title="Close" className="modal-close">
                   Close
                 </a>
                 <img src={Infra} alt="Infrastructure" />
