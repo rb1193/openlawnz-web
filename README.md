@@ -7,11 +7,18 @@
 	yarn install
 	gatsby develop
 
+Visit http://localhost:8000/
+
+## Running the CMS
+
+	npx netlify-cms-proxy-server
+	gatsby develop
+
+Visit http://localhost:8000/admin/
+
 ## Building
 
 	gatsby build
-
-Visit http://localhost:8000/
 
 ## Contributors
 

@@ -63,7 +63,7 @@ const PluginPage = ({ history }) => (
               <track
                 src="../captions/chrome.vtt"
                 kind="captions"
-                srclang="en"
+                srcLang="en"
                 label="english_captions"
               ></track>
             </video>

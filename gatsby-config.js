@@ -16,7 +16,7 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/data/`,
+        path: `${__dirname}/content/`,
       },
     },
     `gatsby-transformer-json`,
@@ -43,6 +43,7 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-netlify-cms`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
