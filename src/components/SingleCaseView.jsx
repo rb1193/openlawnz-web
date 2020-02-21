@@ -31,7 +31,7 @@ const useAdobePreview = () => {
     if (!isScriptLoaded) return
 
     return new window.AdobeDC.View({
-      clientId: process.env.ADOBE_VIEW_KEY,
+      clientId: process.env.GATSBY_ADOBE_VIEW_KEY,
       divId: "adobe-dc-view",
     })
   }

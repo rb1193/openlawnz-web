@@ -16,7 +16,7 @@ import Previous from "../images/svgs/previous-page.svg"
 const queryString = require("query-string")
 const memoizedFetch = memoize((query, offset, end) =>
   fetch(
-    `${process.env.SEARCH_API_URL}/cases?${query}&start=${offset}&end=${end}`
+    `${process.env.GATSBY_SEARCH_API_URL}/cases?${query}&start=${offset}&end=${end}`
   )
 )
 

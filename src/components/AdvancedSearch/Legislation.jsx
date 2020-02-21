@@ -7,12 +7,12 @@ const Legislation = ({ value, id, onChange, className, isPopulated }) => {
 	const [act, setAct] = useState(value.act || "");
 	const [section, setSection] = useState(value.section || "");
 	const { results: actResults, setSkipFetch: setIsActSelected } = useDebouncedFetch({
-		source: `${process.env.SEARCH_API_URL}/legislation/acts?search=`,
+		source: `${process.env.GATSBY_SEARCH_API_URL}/legislation/acts?search=`,
 		term: act,
 		extraParams: "&start=0&end=5"
 	});
 	const { results: sectionResults, setSkipFetch: setIsSectionSelected } = useDebouncedFetch({
-		source: () => `${process.env.SEARCH_API_URL}/legislation/acts/${act}/sections?search=`,
+		source: () => `${process.env.GATSBY_SEARCH_API_URL}/legislation/acts/${act}/sections?search=`,
 		term: section,
 		extraParams: "&start=0&end=5"
 	});
