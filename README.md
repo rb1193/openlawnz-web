@@ -1,17 +1,25 @@
 # openlawnz-web
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-![](https://badgen.net/dependabot/openlawnz/openlawnz-web/117378835=?icon=dependabot)
+![Dependabot](https://badgen.net/dependabot/openlawnz/openlawnz-web/117378835=?icon=dependabot)
 
 ## Running
+Create a `.env` file in the root of the project with the content copied of `env-sample`. The values for each key can be found pinned in the slack channel #website.
 
-	npm install
-	npm run dev
+	yarn install
+	gatsby develop
+
+Visit http://localhost:8000/
+
+## Running the CMS
+
+	npx netlify-cms-proxy-server
+	gatsby develop
+
+Visit http://localhost:8000/admin/
 
 ## Building
 
-	npm run build
-
-Visit http://localhost:9000/
+	gatsby build
 
 ## Contributors
 
