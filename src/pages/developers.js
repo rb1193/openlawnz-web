@@ -5,11 +5,11 @@ import SearchContainer from "../components/SearchContainer.jsx"
 import InfoCard from "../components/InfoCard.jsx"
 import External from "../images/svgs/external.svg"
 
-const DevelopersPage = ({ history }) => (
+const DevelopersPage = () => (
   <Layout>
     <SEO title="Developers" />
     <div className="highlighted-content">
-      <SearchContainer history={history} />
+      <SearchContainer />
       <InfoCard classModifier="info-card--large info-card--title info-card--column">
         <h1>Developers</h1>
         <span>

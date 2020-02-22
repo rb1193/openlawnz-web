@@ -94,6 +94,7 @@
 
   .cards-list {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
 
     .card-item {
@@ -118,12 +119,11 @@
     .card-item-small {
       margin-bottom: 15px;
       padding: 15px 15px;
-      background: #f6f6f6;
       display: flex;
       align-items: center;
+      justify-content: center;
 
       div {
-        flex-basis: 110px;
         text-align: center;
         margin-right: 20px;
         flex-shrink: 0;
@@ -186,7 +186,7 @@
       }
 
       .card-item-small {
-        flex-basis: 49%;
+        flex-basis: 25%;
       }
     }
   }

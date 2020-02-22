@@ -3,14 +3,7 @@ import memoize from "fast-memoize"
 
 const memoizedFetch = memoize(fullUrl => fetch(fullUrl))
 
-const useDebouncedFetch = ({
-  term,
-  source = "/",
-  extraParams = "",
-  useMemoize = true,
-  delay = 500,
-  avoidOnMount,
-}) => {
+const useDebouncedFetch = ({ term, source = "/", extraParams = "", useMemoize = true, delay = 500, avoidOnMount }) => {
   const [termDebounced, setTermDebounced] = useState(term)
   const [results, setResults] = useState([])
   const [skipFetch, setSkipFetch] = useState(avoidOnMount)
@@ -26,8 +19,7 @@ const useDebouncedFetch = ({
 
   useEffect(() => {
     if (skipFetch || termDebounced === "") return
-    const url =
-      {}.toString.call(source) === "[object Function]" ? source() : source
+    const url = {}.toString.call(source) === "[object Function]" ? source() : source
 
     fetchFn(`${url}${termDebounced}${extraParams}`)
       .then(result =>

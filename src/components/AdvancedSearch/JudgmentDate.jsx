@@ -7,12 +7,8 @@ import parse from "date-fns/parse"
 
 const JudgmentDate = ({ value, id, onChange, className }) => {
   const dateFormat = "y-M-dd"
-  const startingDateFrom = value.from
-    ? parse(value.from, dateFormat, new Date())
-    : startOfMonth(new Date())
-  const startingDateTo = value.to
-    ? parse(value.to, dateFormat, new Date())
-    : endOfMonth(new Date())
+  const startingDateFrom = value.from ? parse(value.from, dateFormat, new Date()) : startOfMonth(new Date())
+  const startingDateTo = value.to ? parse(value.to, dateFormat, new Date()) : endOfMonth(new Date())
   const [dateFrom, setDateFrom] = useState(startingDateFrom)
   const [dateTo, setDateTo] = useState(startingDateTo)
 
@@ -26,17 +22,12 @@ const JudgmentDate = ({ value, id, onChange, className }) => {
   }
 
   useEffect(() => {
-    onChange({
-      id,
-      value: format(startingDateFrom, dateFormat),
-      valueInObject: "from",
-    })
-    onChange({
-      id,
-      value: format(startingDateTo, dateFormat),
-      valueInObject: "to",
-    })
-  }, [id, onChange, startingDateFrom, startingDateTo])
+    onChange({ id, value: format(startingDateFrom, dateFormat), valueInObject: "from" })
+	onChange({ id, value: format(startingDateTo, dateFormat), valueInObject: "to" })
+	// onChange is from props
+    // https://github.com/facebook/react/issues/15865
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <div className={className}>

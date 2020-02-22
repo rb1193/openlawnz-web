@@ -2,9 +2,11 @@ import React from "react"
 
 const Court = ({ value, id, onChange, className }) => (
   <div className={className}>
+    {/*Changing to onBlur breaks the component*/}
+    {/*eslint-disable-next-line jsx-a11y/no-onchange*/}
     <select
       id={`simple-${id}`}
-      onBlur={ev => onChange({ id, value: ev.target.value })}
+      onChange={ev => onChange({ id, value: ev.target.value })}
       value={value}
       required
       className="extended-select"

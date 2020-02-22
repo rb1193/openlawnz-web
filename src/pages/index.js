@@ -9,7 +9,7 @@ import InfoCardUnit from "../components/InfoCardUnit.jsx"
 import ContactUs from "../components/ContactUs.jsx"
 import NewsSpotlight from "../components/NewsSpotlight"
 
-const HomePage = ({ data }, { history }) => {
+const HomePage = ({ data }) => {
   const newsSpotlightData = data.allNewsJson.edges
     .map(n => n.node)
     .map(n => ({ ...n, slug: n.fields.slug }))
@@ -25,7 +25,7 @@ const HomePage = ({ data }, { history }) => {
           OpenLaw NZ is a new, free legal research platform for New Zealand.
         </h1>
 
-        <SearchContainer history={history} />
+        <SearchContainer />
         <InfoCard>
           <InfoCardUnit one="30,141" two="CASES" />
           <div className="border"></div>
