@@ -24,26 +24,10 @@ const relationOfTypes = {
 }
 
 const relationOfSubTypes = {
-  judgment_date_from: {
-    ...relationOfTypes.judgment_date,
-    parentType: "judgment_date",
-    prop: "from",
-  },
-  judgment_date_to: {
-    ...relationOfTypes.judgment_date,
-    parentType: "judgment_date",
-    prop: "to",
-  },
-  legislation_act: {
-    ...relationOfTypes.legislation,
-    parentType: "legislation",
-    prop: "act",
-  },
-  legislation_section: {
-    ...relationOfTypes.legislation,
-    parentType: "legislation",
-    prop: "section",
-  },
+  judgment_date_from: { ...relationOfTypes.judgment_date, parentType: "judgment_date", prop: "from" },
+  judgment_date_to: { ...relationOfTypes.judgment_date, parentType: "judgment_date", prop: "to" },
+  legislation_act: { ...relationOfTypes.legislation, parentType: "legislation", prop: "act" },
+  legislation_section: { ...relationOfTypes.legislation, parentType: "legislation", prop: "section" },
 }
 
 const validateValueOnPopulate = {
@@ -52,12 +36,7 @@ const validateValueOnPopulate = {
 
 const INITIAL_INPUT_TYPE = "search"
 
-const defaultSearchFieldFormat = {
-  ...relationOfTypes[INITIAL_INPUT_TYPE],
-  type: INITIAL_INPUT_TYPE,
-  id: 0,
-  value: "",
-}
+const defaultSearchFieldFormat = { ...relationOfTypes[INITIAL_INPUT_TYPE], type: INITIAL_INPUT_TYPE, id: 0, value: "" }
 
 const searchReducer = (state, action) => {
   switch (action.type) {
@@ -89,9 +68,7 @@ const searchReducer = (state, action) => {
       })
     case "ADD_EMPTY_FIELD":
       return produce(state, draft => {
-        const firstAvailableType = draft.typesOfFields.find(
-          t => t.visible === true
-        )
+        const firstAvailableType = draft.typesOfFields.find(t => t.visible === true)
         draft.searchFields.push({
           ...relationOfTypes[firstAvailableType.value],
           value: "",
@@ -136,11 +113,7 @@ const searchReducer = (state, action) => {
   }
 }
 
-const AdvancedSearch = ({
-  onSubmit,
-  toggleTypeOfSearch,
-  populateComponent
-}) => {
+const AdvancedSearch = ({ onSubmit, toggleTypeOfSearch, populateComponent }) => {
   const containerRef = useRef(null)
   const [state, dispatch] = useReducer(searchReducer, {
     searchFields: [defaultSearchFieldFormat],
@@ -156,10 +129,7 @@ const AdvancedSearch = ({
     const prevState = []
 
     // Hide the first or default input type that is always available on the component
-    triggerDispatch("UPDATE_TYPE_VISIBILITY", {
-      type: defaultSearchFieldFormat.type,
-      visible: false,
-    })
+    triggerDispatch("UPDATE_TYPE_VISIBILITY", { type: defaultSearchFieldFormat.type, visible: false })
 
     if (!populateComponent) return
     Object.keys(urlParams).forEach((key, idx) => {
@@ -169,11 +139,7 @@ const AdvancedSearch = ({
       const subType = relationOfSubTypes[key]
       if (type) {
         // Validate format if necessary before saving it
-        if (
-          validateValueOnPopulate[type] &&
-          !validateValueOnPopulate[type](value)
-        )
-          return
+        if (validateValueOnPopulate[type] && !validateValueOnPopulate[type](value)) return
         field = { ...field, ...type, value, type: key, id: idx }
         prevState.push(field)
         return
@@ -182,11 +148,7 @@ const AdvancedSearch = ({
       if (!subType) return
 
       // Validate format if necessary before saving it
-      if (
-        validateValueOnPopulate[subType.parentType] &&
-        !validateValueOnPopulate[subType.parentType](value)
-      )
-        return
+      if (validateValueOnPopulate[subType.parentType] && !validateValueOnPopulate[subType.parentType](value)) return
       field = prevState.find(({ type }) => type === subType.parentType) || {
         ...field,
         ...relationOfTypes[subType.parentType],
@@ -200,13 +162,13 @@ const AdvancedSearch = ({
 
     if (prevState.length) {
       triggerDispatch("EMPTY_FIELDS")
-      triggerDispatch("UPDATE_TYPE_VISIBILITY", {
-        type: defaultSearchFieldFormat.type,
-        visible: true,
-      }) // Reset visibility of default type of field
+      triggerDispatch("UPDATE_TYPE_VISIBILITY", { type: defaultSearchFieldFormat.type, visible: true }) // Reset visibility of default type of field
       prevState.forEach(field => triggerDispatch("ADD_FIELD", { field }))
     }
-  }, [populateComponent])
+    // populateComponent is from props
+    // https://github.com/facebook/react/issues/15865
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const getParamsAsString = () => {
     return state.searchFields.reduce((acc, sf, sfIdx) => {
@@ -214,8 +176,7 @@ const AdvancedSearch = ({
         const keys = Object.keys(sf.value)
         keys.forEach((key, keyIdx) => {
           acc += `${sf.type}_${key}=${sf.value[key]}`
-          if (keyIdx < keys.length - 1 || sfIdx < state.searchFields.length - 1)
-            acc += "&"
+          if (keyIdx < keys.length - 1 || sfIdx < state.searchFields.length - 1) acc += "&"
         })
       } else {
         acc += `${sf.type}=${sf.value}`
@@ -245,59 +206,47 @@ const AdvancedSearch = ({
         <h2 className="title">Advanced Search</h2>
         <span className="subtitle">Please select:</span>
 
-        {state.searchFields.map(
-          ({ type, id, value, isPopulated, Component }, index) => (
-            <div className="search-field" key={id}>
-              <select
-                className="search-field-select"
-                value={type}
-                required
-                onBlur={ev =>
-                  triggerDispatch("UPDATE_FIELD_COMPONENT_AND_SELECT", {
-                    id,
-                    value: ev.target.value,
-                  })
-                }
-              >
-                {state.typesOfFields.map(
-                  t =>
-                    (t.value === type || t.visible) && (
-                      <option
-                        key={`searchField${id}-${t.value}`}
-                        value={t.value}
-                      >
-                        {t.description}
-                      </option>
-                    )
-                )}
-              </select>
+        {state.searchFields.map(({ type, id, value, isPopulated, Component }, index) => (
+          <div className="search-field" key={id}>
+            {/*Changing to onBlur breaks the component*/}
+            {/*eslint-disable-next-line jsx-a11y/no-onchange*/}
+            <select
+              className="search-field-select"
+              value={type}
+              required
+              onChange={ev => triggerDispatch("UPDATE_FIELD_COMPONENT_AND_SELECT", { id, value: ev.target.value })}
+            >
+              {state.typesOfFields.map(
+                t =>
+                  (t.value === type || t.visible) && (
+                    <option key={`searchField${id}-${t.value}`} value={t.value}>
+                      {t.description}
+                    </option>
+                  )
+              )}
+            </select>
 
-              <Component
-                className="search-field-input"
-                id={id}
-                value={value}
-                isPopulated={isPopulated}
-                onChange={payload =>
-                  triggerDispatch("UPDATE_FIELD_VALUE", payload)
-                }
-              />
+            <Component
+              className="search-field-input"
+              id={id}
+              value={value}
+              isPopulated={isPopulated}
+              onChange={payload => triggerDispatch("UPDATE_FIELD_VALUE", payload)}
+            />
 
-              <div className="search-field-button">
-                {index > 0 && (
-                  <button
-                    type="button"
-                    className="action-button simple large-font"
-                    onClick={() =>
-                      triggerDispatch("REMOVE_FIELD", { id, type })
-                    }
-                  >
-                    x
-                  </button>
-                )}
-              </div>
+            <div className="search-field-button">
+              {index > 0 && (
+                <button
+                  type="button"
+                  className="action-button simple large-font"
+                  onClick={() => triggerDispatch("REMOVE_FIELD", { id, type })}
+                >
+                  x
+                </button>
+              )}
             </div>
-          )
-        )}
+          </div>
+        ))}
 
         <div className="search-field">
           <button
@@ -311,11 +260,7 @@ const AdvancedSearch = ({
         </div>
 
         <div className="action-container">
-          <button
-            type="button"
-            className="action-button simple"
-            onClick={toggleTypeOfSearch}
-          >
+          <button type="button" className="action-button simple" onClick={toggleTypeOfSearch}>
             Cancel
           </button>
 
