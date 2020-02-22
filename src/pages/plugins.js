@@ -6,11 +6,11 @@ import SearchContainer from "../components/SearchContainer.jsx"
 import InfoCard from "../components/InfoCard.jsx"
 import Chrome from "../images/svgs/chrome.svg"
 
-const PluginPage = ({ history }) => (
+const PluginPage = () => (
   <Layout>
     <SEO title="Plugins" />
     <div className="highlighted-content">
-      <SearchContainer history={history} />
+      <SearchContainer />
       <InfoCard classModifier="info-card--large info-card--title info-card--column">
         <h1>Plugins</h1>
         <span>These plugins are built using the OpenLaw NZ API.</span>

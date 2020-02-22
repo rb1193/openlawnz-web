@@ -4,6 +4,8 @@ import queryString from "query-string"
 import SearchIcon from "../images/svgs/search-icon.svg"
 import Exclamation from "../images/svgs/exclamation.svg"
 
+import { navigate } from "gatsby"
+
 export default class Search extends Component {
   constructor() {
     super()
@@ -17,8 +19,7 @@ export default class Search extends Component {
   componentDidMount() {
     if (!this.props.populateComponent) return
     const locationSearch = queryString.parse(window.location.search)
-    if (locationSearch.q)
-      this.setState({ currentSearchQuery: locationSearch.q })
+    if (locationSearch.q) this.setState({ currentSearchQuery: locationSearch.q })
   }
 
   handleSubmit(e) {
@@ -29,14 +30,9 @@ export default class Search extends Component {
         searchMsg: "Please enter a search term",
       })
     } else if (this.props.onSubmit) {
-      this.props.onSubmit(
-        `q=${currentSearchQuery}`,
-        `search=${currentSearchQuery}`,
-        "query",
-        currentSearchQuery
-      )
+      this.props.onSubmit(`q=${currentSearchQuery}`, `search=${currentSearchQuery}`, "query", currentSearchQuery)
     } else {
-      window.location.href = `/search?q=${currentSearchQuery}`
+      navigate(`/search?q=${currentSearchQuery}`)
     }
   }
 
@@ -48,10 +44,7 @@ export default class Search extends Component {
     return (
       <div className="search-container">
         <div className="search">
-          <form
-            className="search-input"
-            onSubmit={this.handleSubmit.bind(this)}
-          >
+          <form className="search-input" onSubmit={this.handleSubmit.bind(this)}>
             <div className="input-wrapper">
               <label className="search-label" htmlFor="searchTerm">
                 Search legal cases
@@ -73,11 +66,7 @@ export default class Search extends Component {
             </button>
           </form>
           {this.props.toggleTypeOfSearch && (
-            <a
-              href="#advanced-search"
-              className="toggle-search"
-              onClick={this.props.toggleTypeOfSearch}
-            >
+            <a href="#advanced-search" className="toggle-search" onClick={this.props.toggleTypeOfSearch}>
               Advanced Search
             </a>
           )}
