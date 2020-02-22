@@ -6,11 +6,11 @@ import InfoCard from "../components/InfoCard"
 import SearchContainer from "../components/SearchContainer"
 import SEO from "../components/seo"
 
-const SingleNews = ({ pageContext, history }) => (
+const SingleNews = ({ pageContext }) => (
   <Layout>
     <SEO title={`${pageContext.title}`} description={pageContext.summary} />
     <div className="highlighted-content">
-      <SearchContainer history={history} />
+      <SearchContainer />
       <InfoCard classModifier="info-card--large info-card--title info-card--column">
         <h1>{pageContext.title}</h1>
         <span>{format(new Date(pageContext.date), "y-M-dd")}</span>

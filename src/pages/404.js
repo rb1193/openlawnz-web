@@ -3,10 +3,10 @@ import Layout from "../components/layout"
 import SearchContainer from "../components/SearchContainer.jsx"
 import InfoCard from "../components/InfoCard.jsx"
 
-const NotFoundPage = ({ history }) => (
+const NotFoundPage = () => (
   <Layout>
     <div className="highlighted-content">
-      <SearchContainer history={history} />
+      <SearchContainer />
       <InfoCard classModifier="info-card--large info-card--title info-card--column">
         <h1>404 Page not found</h1>
       </InfoCard>

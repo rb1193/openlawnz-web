@@ -71,7 +71,7 @@ class ApiService {
 
 	async getCase(params = {}) {
 		const data = await this.getGraphQlData("case", params, this.caseFields);
-		return data.case;
+		return data ? data.case : null;
 	}
 
 	/**

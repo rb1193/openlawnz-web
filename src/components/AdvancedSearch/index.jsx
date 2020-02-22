@@ -139,8 +139,7 @@ const searchReducer = (state, action) => {
 const AdvancedSearch = ({
   onSubmit,
   toggleTypeOfSearch,
-  populateComponent,
-  history,
+  populateComponent
 }) => {
   const containerRef = useRef(null)
   const [state, dispatch] = useReducer(searchReducer, {

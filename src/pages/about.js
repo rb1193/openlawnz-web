@@ -28,11 +28,11 @@ import Nicolas from "../images/about-us/Nicolas-zhou.png"
 import Jins from "../images/about-us/Jins_Mary_Job.png"
 import Dana from "../images/about-us/dana-iti.png"
 
-const AboutPage = ({ history }) => (
+const AboutPage = () => (
   <Layout>
     <SEO title="About" />
     <div className="highlighted-content">
-      <SearchContainer history={history} />
+      <SearchContainer />
       <InfoCard classModifier="info-card--large info-card--title info-card--column-nosub">
         <h1>About Us</h1>
       </InfoCard>

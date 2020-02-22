@@ -6,11 +6,11 @@ import SearchContainer from "../components/SearchContainer"
 import InfoCard from "../components/InfoCard"
 import SEO from "../components/seo"
 
-const News = ({ pageContext, history }) => (
+const News = ({ pageContext }) => (
   <Layout>
     <SEO title="News" />
     <div className="highlighted-content">
-      <SearchContainer history={history} />
+      <SearchContainer />
       <InfoCard classModifier="info-card--large info-card--title info-card--column-nosub">
         <h1>News</h1>
         <span>Stay up to date with us.</span>
