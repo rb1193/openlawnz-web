@@ -4,7 +4,7 @@ class ApiService {
 	 * @returns {ApiService}
 	 */
 	constructor() {
-		this.apiUrl = process.env.API_URL + "/graphql";
+		this.apiUrl = process.env.GATSBY_API_URL + "/graphql";
 		this.caseFields = `{
 			caseName,
 			id,
