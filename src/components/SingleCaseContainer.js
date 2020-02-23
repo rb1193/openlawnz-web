@@ -179,16 +179,16 @@ const SingleCase = ({ id }) => {
                       <p>No legislation</p>
                     ) : (
                       <table cellSpacing="0" cellPadding="0">
-                        <thead className="">
-                          <tr className="">
+                        <thead>
+                          <tr>
                             <th className="title">Title</th>
                             <th className="section">Section</th>
                           </tr>
                         </thead>
-                        <tbody className="">
+                        <tbody>
                           {data.legislationToCases.map((obj, i) => (
-                            <tr className="" key={`legislation-reference-${i}`}>
-                              <td className="">
+                            <tr key={`legislation-reference-${i}`}>
+                              <td>
                                 <a
                                   href={`http://legislation.govt.nz/${obj.legislation.link}`}
                                   style={{ width: "100%" }}
@@ -196,20 +196,23 @@ const SingleCase = ({ id }) => {
                                   {obj.legislation.title}
                                 </a>
                               </td>
-                              {
-                                !obj.section.includes(")") && obj.section.slice(0, 2).replace(/()/g, "").length < 3 ? (
-                                  <td className="">
-                                    <a 
-                                      href={`http://www.legislation.govt.nz/act/results.aspx?search=ad_act__${obj.legislation.title.toLowerCase().replace(/\s+/g, "+")}___${obj.section.slice(0 , 2).replace(/()/g, "")}
-                                      }_25_ac%40bn%40rn%40dn%40apub%40aloc%40apri%40apro%40aimp%40bgov%40bloc%40bpri%40bmem%40rpub%40rimp_ac%40ainf%40anif%40aaif%40aase%40arep%40bcur%40rinf%40rnif_a_aw_se&p=1`} 
-                                      target='_blank'
-                                    >
-                                      {obj.section}
-                                    </a>
-                                  </td>
-                                ) : (
-                                  <td className="">{obj.section}</td>
-                              )} {/* end of legislation loop */}
+                              {!obj.section.includes(")") && obj.section.slice(0, 2).replace(/()/g, "").length < 3 ? (
+                                <td>
+                                  {/* start with legislation loop */}
+                                  <a
+                                    href={`http://www.legislation.govt.nz/act/results.aspx?search=ad_act__${obj.legislation.title
+                                      .toLowerCase()
+                                      .replace(/\s+/g, "+")}___${obj.section.slice(0, 2).replace(/()/g, "")}
+                                      }_25_ac%40bn%40rn%40dn%40apub%40aloc%40apri%40apro%40aimp%40bgov%40bloc%40bpri%40bmem%40rpub%40rimp_ac%40ainf%40anif%40aaif%40aase%40arep%40bcur%40rinf%40rnif_a_aw_se&p=1`}
+                                    target="_blank"
+                                  >
+                                    {obj.section}
+                                  </a>
+                                </td>
+                              ) : (
+                                <td>{obj.section}</td>
+                              )}{" "}
+                              {/* end of legislation loop */}
                             </tr>
                           ))}
                         </tbody>
