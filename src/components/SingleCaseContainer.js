@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 
+import SEO from "../components/seo"
 import SearchContainer from "./SearchContainer.jsx"
 import InfoCard from "./InfoCard.jsx"
 
@@ -94,7 +95,7 @@ const SingleCase = ({ id }) => {
       )}
       {!error && (
         <React.Fragment>
-          
+          {data && <SEO title={data.caseName} />}
           <div className="highlighted-content">
             <SearchContainer />
             <InfoCard>
