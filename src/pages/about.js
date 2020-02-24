@@ -24,6 +24,7 @@ import Infra from "../images/about-us/openlaw-infrastructure.png"
 import Nicolas from "../images/about-us/Nicolas-zhou.png"
 import Jins from "../images/about-us/Jins_Mary_Job.png"
 import Dana from "../images/about-us/dana-iti.png"
+import Jayden from "../images/about-us/jayden-kim.png"
 
 const AboutPage = () => (
   <Layout>
@@ -235,6 +236,12 @@ const AboutPage = () => (
               <div>
                 <img src={GenericAvatar} alt="Alex McNichol" />
                 <strong>Alex McNichol</strong>
+              </div>
+            </div>
+            <div className="card-item-small">
+              <div>
+                <img src={Jayden} alt="Gwangwoo Jayden Kim" />
+                <strong>Gwangwoo Kim</strong>
               </div>
             </div>
           </div>
