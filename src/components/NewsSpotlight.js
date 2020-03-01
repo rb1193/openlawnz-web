@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 const NewsSpotlight = props => {
+  const listNews = props.data.length <= 3 ? props.data : props.data.slice(0,3)
   return (
     <section className="news-container">
       <div className="news-items">
@@ -9,7 +10,7 @@ const NewsSpotlight = props => {
           <Link to="/news">News</Link>
         </h1>
         <div className="news-cards-wrapper">
-          {props.data.map(
+          {listNews.map(
             ({ slug, title, image_url: imageUrl, summary, image_alt }, idx) => (
               <div key={idx} className="news-card">
                 {imageUrl && (
