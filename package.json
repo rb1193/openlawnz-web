@@ -12,7 +12,7 @@
     "gatsby-plugin-manifest": "^2.2.39",
     "gatsby-plugin-netlify-cms": "^4.1.40",
     "gatsby-plugin-offline": "^3.0.32",
-    "gatsby-plugin-react-helmet": "^3.1.21",
+    "gatsby-plugin-react-helmet": "^3.1.23",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sass": "^2.1.28",
     "gatsby-plugin-sharp": "^2.4.3",
