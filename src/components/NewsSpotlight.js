@@ -9,7 +9,7 @@ const NewsSpotlight = props => {
           <Link to="/news">News</Link>
         </h1>
         <div className="news-cards-wrapper">
-          {props.data.map(
+          {props.data.slice(0,3).map(
             ({ slug, title, image_url: imageUrl, summary, image_alt }, idx) => (
               <div key={idx} className="news-card">
                 {imageUrl && (
