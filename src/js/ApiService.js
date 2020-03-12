@@ -23,8 +23,10 @@ class ApiService {
 			},
 			legislationToCases {
 				section,
+				legislationId
 				legislation {
-					title
+					title,
+					link
 				}
 			},
 			pdf {
