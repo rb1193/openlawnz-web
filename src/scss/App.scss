@@ -146,7 +146,7 @@ li {
 }
 
 .highlighted-content {
-  background: url(../img/open-law-background.png) no-repeat center center;
+  background: url(../images/open-law-background.png) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -164,7 +164,13 @@ li {
 
 .border {
   border-right: 1px solid #d0d0d0;
-  margin: 2vw 0 2vw 0;
+  
+  @media (max-width: 766px) {
+    align-self: center;
+    margin: 20px 0 15px 0;
+    width: 30%;
+    border-bottom: 1px solid #d0d0d0;
+  }
 }
 
 .icon {
@@ -263,6 +269,7 @@ li {
 }
 
 @media (min-width: 767px) {
+  
   .horizontal-container {
     flex-direction: row;
 
