@@ -1,0 +1,41 @@
+import React from "react"
+import { Link } from "gatsby"
+
+const PluginShowcase = props => {
+  console.log(props)
+  return (
+    <section className="container plugins-list">   
+      {props.data.map(
+        ({ title, image_url: image_url, content_html, image_alt }, idx) => {
+          console.log(image_url)
+          return (
+          <div key={idx} className="item">
+            <div className="content">
+              
+            <h2>{title}</h2>
+
+            <div dangerouslySetInnerHTML={{
+              __html: content_html,
+            }}></div>
+
+             {image_url && (
+                <img src={image_url} alt={image_alt} />
+              )}
+
+            </div>
+          </div>
+          )
+        }
+      )}
+      <div className="item">
+        <div className="content">
+         <h3>
+            If you build something with our platform, get in touch and we'll list it here.
+          </h3>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default PluginShowcase

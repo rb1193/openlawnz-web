@@ -2,6 +2,8 @@ backend:
   name: git-gateway
 local_backend: true
 media_folder: static/assets
+public_folder: /assets
+
 collections:
   - name: news
     label: News
@@ -21,4 +23,20 @@ collections:
             multiple: false
       - { name: image_alt, label: Image Alt }
       - { name: date, label: Date Posted, widget: datetime }
+  - name: plugins
+    label: Plugins
+    label_singular: Plugin
+    folder: content/plugins
+    create: true
+    extension: json
+    fields:
+      - { name: title, label: Title }
+      - { name: content_html, label: Content, widget: markdown }
+      - label: "Image"
+        name: "image_url"
+        widget: "image"
+        media_library:
+          config:
+            multiple: false
+      - { name: image_alt, label: Image Alt }
       
