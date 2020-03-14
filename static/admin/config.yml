@@ -39,8 +39,52 @@ collections:
           config:
             multiple: false
       - { name: image_alt, label: Image Alt }
+
+  - name: about
+    label: About Us
+    label_singular: Content
+    folder: content/about
+    create: false
+    extension: json
+    fields:
+      - { name: title, label: Title }
+      - { name: content_html, label: Content, widget: markdown }
+
+  - name: directors
+    label: Directors
+    label_singular: Director
+    folder: content/directors
+    create: true
+    extension: json
+    fields:
+      - label: "Image"
+        name: "image_url"
+        widget: "image"
+        media_library:
+          config:
+            multiple: false
+      - { name: title, label: Title }
+      - { name: background, label: Background, widget: markdown }
+    
+  - name: contributors
+    label: Contributors
+    label_singular: Contributor
+    folder: content/contributors
+    create: true
+    extension: json
+    fields:
+      
+      - label: "Image"
+        name: "image_url"
+        widget: "image"
+        media_library:
+          config:
+            multiple: false
+      - { name: title, label: Name }
+      
+
   - name: developers
-    label: Developers
+    label: Developers Page
     label_singular: Content
     folder: content/developers
     create: false

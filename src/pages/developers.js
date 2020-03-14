@@ -27,6 +27,7 @@ const DevelopersPage = ({ data }) => {
               __html: developersContent[0].content_html,
             }}>
           </div>
+          
         </div>
       </div>
     </Layout>
