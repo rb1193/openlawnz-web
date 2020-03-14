@@ -39,4 +39,12 @@ collections:
           config:
             multiple: false
       - { name: image_alt, label: Image Alt }
-      
+  - name: developers
+    label: Developers
+    label_singular: Content
+    folder: content/developers
+    create: false
+    extension: json
+    fields:
+      - { name: title, label: Title }
+      - { name: content_html, label: Content, widget: markdown }
