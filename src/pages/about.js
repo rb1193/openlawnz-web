@@ -21,11 +21,20 @@ const AboutPage = ({data}) => {
       <div className="home-wrapper">
         <div className="container main">
           <div className="content">
-            
-          <div dangerouslySetInnerHTML={{
-              __html: aboutJson[0].content_html,
-            }}>
-          </div>
+ 
+          {
+            aboutJson.map(({content_html}, idx) => {
+              return (
+                <div>
+                  <div key={idx} dangerouslySetInnerHTML={{
+                    __html: content_html,
+                  }}>
+                  </div>
+                  <br/><  br/>
+                </div>
+              )
+            })
+          }
 
             <hr className="divider" />
 

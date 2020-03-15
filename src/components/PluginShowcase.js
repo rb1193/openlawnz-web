@@ -5,7 +5,6 @@ const PluginShowcase = props => {
     <section className="container plugins-list">   
       {props.data.map(
         ({ title, image_url, content_html, image_alt }, idx) => {
-          console.log(image_url)
           return (
           <div key={idx} className="item">
             
