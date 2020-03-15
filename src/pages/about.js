@@ -7,7 +7,9 @@ import SEO from "../components/seo"
 const AboutPage = ({data}) => {
   const aboutJson = data.allAboutJson.edges.map(n => n.node)
   const directorsJson = data.allDirectorsJson.edges.map(n => n.node)
-  const contributorsJson = data.allContributorsJson.edges.map(n => n.node)
+  const contributorsJson = data.allContributorsJson.edges.map(n => n.node).sort((a,b) => {
+    return new Date(a.date) - new Date(b.date)
+  })
   
   return (
     <Layout>
@@ -25,8 +27,8 @@ const AboutPage = ({data}) => {
           {
             aboutJson.map(({content_html}, idx) => {
               return (
-                <div>
-                  <div key={idx} dangerouslySetInnerHTML={{
+                <div key={idx}>
+                  <div dangerouslySetInnerHTML={{
                     __html: content_html,
                   }}>
                   </div>
@@ -103,6 +105,7 @@ export const aboutQuery = graphql`
         node {
           image_url
           title
+          date
         }
       }
     }
