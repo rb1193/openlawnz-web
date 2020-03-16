@@ -81,7 +81,6 @@ collections:
           config:
             multiple: false
       - { name: title, label: Name }
-      - { name: date, label: Date Joined, widget: datetime }
       
 
   - name: developers
