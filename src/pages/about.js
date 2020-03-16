@@ -5,8 +5,15 @@ import SearchContainer from "../components/SearchContainer.jsx"
 import SEO from "../components/seo"
 
 const AboutPage = ({data}) => {
-  const aboutJson = data.allAboutJson.edges.map(n => n.node)
-  const directorsJson = data.allDirectorsJson.edges.map(n => n.node)
+  const aboutJson = data.allAboutJson.edges.map(n => n.node).sort(
+    (a , b) => {
+      return a.order - b.order
+    }
+  )
+  const directorsJson = data.allDirectorsJson.edges.map(n => n.node).sort(
+    (a , b) => {
+      return a.order - b.order
+    })
   const contributorsJson = data.allContributorsJson.edges.map(n => n.node)
   
   return (
@@ -21,16 +28,15 @@ const AboutPage = ({data}) => {
       <div className="home-wrapper">
         <div className="container main">
           <div className="content">
- 
           {
             aboutJson.map(({content_html}, idx) => {
               return (
-                <div>
-                  <div key={idx} dangerouslySetInnerHTML={{
+                <div key={idx}>
+                  <div dangerouslySetInnerHTML={{
                     __html: content_html,
                   }}>
                   </div>
-                  <br/><  br/>
+                  <br/><br/>
                 </div>
               )
             })
@@ -86,6 +92,7 @@ export const aboutQuery = graphql`
         node {
           title
           content_html
+          order
         }
       }
     }
@@ -95,6 +102,7 @@ export const aboutQuery = graphql`
           image_url
           title
           background
+          order
         }
       }
     }
