@@ -3,18 +3,11 @@ import Layout from "../components/layout"
 import InfoCard from "../components/InfoCard.jsx"
 import SearchContainer from "../components/SearchContainer.jsx"
 import SEO from "../components/seo"
+import DOMPurify from "dompurify";
 
 const AboutPage = ({data}) => {
-  const aboutJson = data.allAboutJson.edges.map(n => n.node).sort(
-    (a , b) => {
-      return a.order - b.order
-    }
-  )
-  const directorsJson = data.allDirectorsJson.edges.map(n => n.node).sort(
-    (a , b) => {
-      return a.order - b.order
-    })
-  const contributorsJson = data.allContributorsJson.edges.map(n => n.node)
+  const aboutJson = data.allAboutJson.edges.map(n => n.node)[0]
+  const directors = aboutJson.directors
   
   return (
     <Layout>
@@ -29,36 +22,48 @@ const AboutPage = ({data}) => {
         <div className="container main">
           <div className="content">
           {
-            aboutJson.map(({content_html}, idx) => {
+            aboutJson.content.map(({title, content_html}, idx) => {
               return (
-                <div key={idx}>
+                <div style={{marginBottom: '40px'}} key={idx}>
+                <h2>{title}</h2>
                   <div dangerouslySetInnerHTML={{
-                    __html: content_html,
+                    __html: DOMPurify.sanitize(content_html),
                   }}>
                   </div>
-                  <br/><br/>
                 </div>
               )
             })
           }
+          <div aria-hidden="true" id="infrastructure" className="modal-window">
+              <div>
+                <a href="#close" title="Close" className="modal-close">
+                  Close
+                </a>
+                <img src="/assets/openlaw-infrastructure.png" alt="Infrastructure" />
+              </div>
+            </div>
 
             <hr className="divider" />
 
             <h2>Directors</h2>
             <div className="cards-list">
-            {
-              directorsJson.map(({image_url, title, background}, idx) => {
-                return (
-                <div key={idx} className="card-item">
-                  <img src={image_url} alt={title} />
-                  <strong>{title}</strong>
-                  <p>
-                   {background}
-                  </p>
-                </div>
-                )
-              })
-            }
+            
+            <div className="card-item">
+                <img src={directors.image_one_url} alt={directors.dir_one_name}/>
+                <strong>{directors.dir_one_name}</strong>
+                <p>
+                 {directors.dir_one_bio}
+                </p>
+             </div>
+              
+             <div className="card-item">
+                <img src={directors.image_two_url} alt={directors.dir_two_name}/>
+                <strong>{directors.dir_two_name}</strong>
+                <p>
+                 {directors.dir_two_bio}
+                </p>
+             </div>
+
             </div>
 
             <h2>Past and Present Contributors</h2>
@@ -66,7 +71,7 @@ const AboutPage = ({data}) => {
             <div className="cards-list">
 
               {
-                contributorsJson.map(({image_url, title}, idx) => {
+                aboutJson.contributors.map(({image_url, title}, idx) => {
                   return(
                     <div key={idx} className="card-item-small">
                       <div>
@@ -91,26 +96,23 @@ export const aboutQuery = graphql`
       edges {
         node {
           title
-          content_html
-          order
-        }
-      }
-    }
-    allDirectorsJson {
-      edges {
-        node {
-          image_url
-          title
-          background
-          order
-        }
-      }
-    }
-    allContributorsJson {
-      edges {
-        node {
-          image_url
-          title
+          content {
+            title,
+            content_html
+          }
+          directors { 
+            dir_one_name,
+            dir_one_bio,
+            image_one_url,
+
+            dir_two_name,
+            dir_two_bio,
+            image_two_url
+          }
+          contributors {
+            title,
+            image_url
+          }
         }
       }
     }

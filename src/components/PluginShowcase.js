@@ -1,4 +1,5 @@
 import React from "react"
+import DOMPurify from "dompurify";
 
 const PluginShowcase = props => {
   return (
@@ -13,7 +14,7 @@ const PluginShowcase = props => {
             <h2>{title}</h2>
 
             <div dangerouslySetInnerHTML={{
-              __html: content_html,
+              __html: DOMPurify.sanitize(content_html),
             }}></div>
              {image_url && (
                 <img src={image_url} alt={image_alt} />

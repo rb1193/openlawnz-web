@@ -47,43 +47,47 @@ collections:
     create: true
     extension: json
     fields:
-      - { name: title, label: Title }
-      - { name: content_html, label: Content, widget: markdown }
-      - { name: order, label: Order, widget: number }
+      - label: "Title"
+        name: "title"
+      - label: "Content Items"
+        label_singular: "Item"
+        name: "content"
+        widget: "list"
+        fields:
+        - { name: title, label: Title }
+        - { name: content_html, label: Content, widget: markdown }
+      - label: "Directors"
+        name: "directors"
+        widget: "object"
+        fields:
+          - { name: dir_one_name, label: Director 1 Name }
+          - { name: dir_one_bio, label: Bio, widget: markdown }
+          - label: "Image"
+            name: "image_one_url"
+            widget: "image"
+            media_library:
+              config:
+                multiple: false
 
-  - name: directors
-    label: Directors
-    label_singular: Director
-    folder: content/directors
-    create: true
-    extension: json
-    fields:
-      - label: "Image"
-        name: "image_url"
-        widget: "image"
-        media_library:
-          config:
-            multiple: false
-      - { name: title, label: Title }
-      - { name: background, label: Background, widget: markdown }
-      - { name: order, label: Order, widget: number }
-    
-  - name: contributors
-    label: Contributors
-    label_singular: Contributor
-    folder: content/contributors
-    create: true
-    extension: json
-    fields:
-      
-      - label: "Image"
-        name: "image_url"
-        widget: "image"
-        media_library:
-          config:
-            multiple: false
-      - { name: title, label: Name }
-      
+          - { name: dir_two_name, label: Director 2 Name }
+          - { name: dir_two_bio, label: Bio, widget: markdown }
+          - label: "Image"
+            name: "image_two_url"
+            widget: "image"
+            media_library:
+              config:
+                multiple: false
+      - label: "Contributors"
+        name: "contributors"
+        widget: "list"
+        fields:
+          - { name: title, label: Name }
+          - label: "Image"
+            name: "image_url"
+            widget: "image"
+            media_library:
+              config:
+                multiple: false
 
   - name: developers
     label: Developers Page
