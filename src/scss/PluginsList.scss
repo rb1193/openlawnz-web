@@ -1,0 +1,44 @@
+.plugins-list {
+    .item {
+      @include card-style;
+      margin-bottom: 40px;
+  
+      header {
+        padding: 18px 28px;
+  
+        @media (min-width: 767px) {
+          align-items: center;
+          display: flex;
+          justify-content: space-between;
+          padding: 28px 38px;
+        }
+      }
+
+      h2 {
+        @include header-three;
+        color: $openLawDarkGreen;
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+
+      .content {
+        align-items: center;
+        font-size: 16px;
+        padding: 30px 38px 30px 40px;
+      }
+
+      img {
+          margin-top: 100px;
+          width: 80%;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+      }
+
+      h3 {
+        color: $openLawA11yBrown;
+        text-align: center;
+      }
+    }
+  }
