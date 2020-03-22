@@ -2,6 +2,8 @@ backend:
   name: git-gateway
 local_backend: true
 media_folder: static/assets
+public_folder: /assets
+
 collections:
   - name: news
     label: News
@@ -21,4 +23,78 @@ collections:
             multiple: false
       - { name: image_alt, label: Image Alt }
       - { name: date, label: Date Posted, widget: datetime }
-      
+  - name: plugins
+    label: Plugins
+    label_singular: Plugin
+    folder: content/plugins
+    create: true
+    extension: json
+    fields:
+      - { name: title, label: Title }
+      - { name: content_html, label: Content, widget: markdown }
+      - label: "Image"
+        name: "image_url"
+        widget: "image"
+        media_library:
+          config:
+            multiple: false
+      - { name: image_alt, label: Image Alt }
+
+  - name: about
+    label: About Us
+    label_singular: Content
+    folder: content/about
+    create: true
+    extension: json
+    fields:
+      - label: "Title"
+        name: "title"
+      - label: "Content Items"
+        label_singular: "Item"
+        name: "content"
+        widget: "list"
+        fields:
+        - { name: title, label: Title }
+        - { name: content_html, label: Content, widget: markdown }
+      - label: "Directors"
+        name: "directors"
+        widget: "object"
+        fields:
+          - { name: dir_one_name, label: Director 1 Name }
+          - { name: dir_one_bio, label: Bio, widget: markdown }
+          - label: "Image"
+            name: "image_one_url"
+            widget: "image"
+            media_library:
+              config:
+                multiple: false
+
+          - { name: dir_two_name, label: Director 2 Name }
+          - { name: dir_two_bio, label: Bio, widget: markdown }
+          - label: "Image"
+            name: "image_two_url"
+            widget: "image"
+            media_library:
+              config:
+                multiple: false
+      - label: "Contributors"
+        name: "contributors"
+        widget: "list"
+        fields:
+          - { name: title, label: Name }
+          - label: "Image"
+            name: "image_url"
+            widget: "image"
+            media_library:
+              config:
+                multiple: false
+
+  - name: developers
+    label: Developers Page
+    label_singular: Content
+    folder: content/developers
+    create: false
+    extension: json
+    fields:
+      - { name: title, label: Title }
+      - { name: content_html, label: Content, widget: markdown }

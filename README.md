@@ -28,6 +28,7 @@ Please refer to the following Wiki pages:
 * [Overview](https://github.com/openlawnz/openlawnz-web/wiki/OpenLawNZ-Website-Overview)
 * [Contributing agreement and code of conduct](https://github.com/openlawnz/openlawnz-web/blob/master/CONTRIBUTING.md)
 * [Workflow](https://github.com/openlawnz/openlawnz-web/wiki/Workflow)
+* [Data Procurement Policy](https://github.com/openlawnz/openlawnz-parsers/blob/master/PROCUREMENT.md)
 
 ## NOTICE
 
