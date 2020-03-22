@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import InfoCard from "../components/InfoCard.jsx"
 import SearchContainer from "../components/SearchContainer.jsx"
 import SEO from "../components/seo"
-import DOMPurify from "dompurify";
+import Markdown from "../components/markdown"
 
 const AboutPage = ({data}) => {
   const aboutJson = data.allAboutJson.edges.map(n => n.node)[0]
@@ -23,13 +23,11 @@ const AboutPage = ({data}) => {
           <div className="content">
           {
             aboutJson.content.map(({title, content_html}, idx) => {
+
               return (
                 <div style={{marginBottom: '40px'}} key={idx}>
                 <h2>{title}</h2>
-                  <div dangerouslySetInnerHTML={{
-                    __html: DOMPurify.sanitize(content_html),
-                  }}>
-                  </div>
+                  <Markdown data={content_html}/>
                 </div>
               )
             })
