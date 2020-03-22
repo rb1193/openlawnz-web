@@ -1,5 +1,6 @@
 import React from "react"
-import Sanitizer from "./Sanitizer"
+import DOMPurify from "dompurify";
+import Markdown from "./Markdown"
 
 const PluginShowcase = props => {
   return (
@@ -13,7 +14,7 @@ const PluginShowcase = props => {
               
             <h2>{title}</h2>
 
-            <Sanitizer data={content_html}/>
+            <Markdown data={content_html}/>
             
              {image_url && (
                 <img src={image_url} alt={image_alt} />

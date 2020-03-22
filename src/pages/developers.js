@@ -5,7 +5,7 @@ import SearchContainer from "../components/SearchContainer.jsx"
 import InfoCard from "../components/InfoCard.jsx"
 //import External from "../images/svgs/external.svg"
 // Having an issue with this will come back to it later.
-import Sanitizer from "../components/Sanitizer";
+import Markdown from "../components/Markdown";
 
 
 const DevelopersPage = ({ data }) => {
@@ -26,7 +26,7 @@ const DevelopersPage = ({ data }) => {
       <div className="home-wrapper">
         <div className="container main">
           <div className="content">
-             <Sanitizer  data={developersContent[0].content_html}/>
+             <Markdown  data={developersContent[0].content_html}/>
           </div>
          
           
