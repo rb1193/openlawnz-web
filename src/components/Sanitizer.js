@@ -1,7 +1,7 @@
 import React from "react"
 import DOMPurify from "dompurify";
 
-const Markdown = content => {
+const Sanitizer = content => {
   return <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(content.data) }} />;
 }
-export default Markdown
+export default Sanitizer

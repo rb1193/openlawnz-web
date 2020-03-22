@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import InfoCard from "../components/InfoCard"
 import SearchContainer from "../components/SearchContainer"
 import SEO from "../components/seo"
-import Markdown from "../components/Markdown"
+import Sanitizer from "../components/Sanitizer"
 const SingleNews = ({ pageContext }) => (
   <Layout>
     <SEO title={`${pageContext.title}`} description={pageContext.summary} />
@@ -27,7 +27,7 @@ const SingleNews = ({ pageContext }) => (
               <hr className="divider" />
             </>
           )}
-          <Markdown data={pageContext.content_html}/>
+          <Sanitizer data={pageContext.content_html}/>
         </div>
       </div>
     </div>
