@@ -5,8 +5,6 @@ import SearchContainer from "../components/SearchContainer.jsx"
 import InfoCard from "../components/InfoCard.jsx"
 //import External from "../images/svgs/external.svg"
 // Having an issue with this will come back to it later.
-import DOMPurify from "dompurify";
-
 
 const DevelopersPage = ({ data }) => {
   const developersContent = data.allDevelopersJson.edges.map(n => n.node)
@@ -26,7 +24,7 @@ const DevelopersPage = ({ data }) => {
       <div className="home-wrapper">
         <div className="container main">
           <div className="content" dangerouslySetInnerHTML={{
-              __html: DOMPurify.sanitize(developersContent[0].content_html),
+              __html: developersContent[0].content_html,
             }}>
           </div>
           

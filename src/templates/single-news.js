@@ -5,7 +5,6 @@ import Layout from "../components/layout"
 import InfoCard from "../components/InfoCard"
 import SearchContainer from "../components/SearchContainer"
 import SEO from "../components/seo"
-import DOMPurify from "dompurify";
 
 
 const SingleNews = ({ pageContext }) => (
@@ -31,7 +30,7 @@ const SingleNews = ({ pageContext }) => (
           )}
           <div
             dangerouslySetInnerHTML={{
-              __html: DOMPurify.sanitize(pageContext.content_html),
+              __html: pageContext.content_html,
             }}
           />
         </div>
