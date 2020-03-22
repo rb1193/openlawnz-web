@@ -5,7 +5,7 @@ import SearchContainer from "../components/SearchContainer.jsx"
 import InfoCard from "../components/InfoCard.jsx"
 //import External from "../images/svgs/external.svg"
 // Having an issue with this will come back to it later.
-import Markdown from "../components/Markdown";
+import DOMPurify from "dompurify";
 
 
 const DevelopersPage = ({ data }) => {
@@ -25,10 +25,10 @@ const DevelopersPage = ({ data }) => {
       </div>
       <div className="home-wrapper">
         <div className="container main">
-          <div className="content">
-             <Markdown  data={developersContent[0].content_html}/>
+          <div className="content" dangerouslySetInnerHTML={{
+              __html: DOMPurify.sanitize(developersContent[0].content_html),
+            }}>
           </div>
-         
           
         </div>
       </div>
