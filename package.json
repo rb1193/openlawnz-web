@@ -17,7 +17,7 @@
     "gatsby-plugin-sass": "^2.2.0",
     "gatsby-source-filesystem": "^2.2.2",
     "gatsby-plugin-sharp": "^2.5.2",
-    "gatsby-transformer-json": "^2.3.0",
+    "gatsby-transformer-json": "^2.3.1",
     "gatsby-transformer-sharp": "^2.4.1",
     "immer": "^6.0.2",
     "netlify-cms-app": "^2.11.32",
