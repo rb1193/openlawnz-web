@@ -1,5 +1,4 @@
 import React from "react"
-import Sanitizer from "./Sanitizer"
 
 const PluginShowcase = props => {
   return (
@@ -13,8 +12,9 @@ const PluginShowcase = props => {
               
             <h2>{title}</h2>
 
-            <Sanitizer data={content_html}/>
-            
+            <div dangerouslySetInnerHTML={{
+              __html: content_html,
+            }}></div>
              {image_url && (
                 <img src={image_url} alt={image_alt} />
               )}

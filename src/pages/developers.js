@@ -5,8 +5,6 @@ import SearchContainer from "../components/SearchContainer.jsx"
 import InfoCard from "../components/InfoCard.jsx"
 //import External from "../images/svgs/external.svg"
 // Having an issue with this will come back to it later.
-import Sanitizer from "../components/Sanitizer";
-
 
 const DevelopersPage = ({ data }) => {
   const developersContent = data.allDevelopersJson.edges.map(n => n.node)
@@ -25,10 +23,10 @@ const DevelopersPage = ({ data }) => {
       </div>
       <div className="home-wrapper">
         <div className="container main">
-          <div className="content">
-             <Sanitizer  data={developersContent[0].content_html}/>
+          <div className="content" dangerouslySetInnerHTML={{
+              __html: developersContent[0].content_html,
+            }}>
           </div>
-         
           
         </div>
       </div>
