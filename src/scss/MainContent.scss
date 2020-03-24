@@ -101,6 +101,7 @@
       margin-bottom: 20px;
       padding: 30px 25px;
       background: #f6f6f6;
+      
 
       strong {
         margin: 10px 0;
@@ -119,10 +120,9 @@
     .card-item-small {
       margin-bottom: 15px;
       padding: 15px 15px;
-      display: flex;
       align-items: center;
       justify-content: center;
-
+     
       div {
         text-align: center;
         margin-right: 20px;
@@ -174,10 +174,13 @@
       }
     }
 
+    .directors {
+      justify-content: space-between;
+    }
     .cards-list {
       flex-direction: row;
       align-items: flex-start;
-      justify-content: space-between;
+      
 
       .card-item {
         margin-bottom: 15px;

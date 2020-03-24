@@ -6,6 +6,7 @@ import InfoCard from "../components/InfoCard"
 import SearchContainer from "../components/SearchContainer"
 import SEO from "../components/seo"
 
+
 const SingleNews = ({ pageContext }) => (
   <Layout>
     <SEO title={`${pageContext.title}`} description={pageContext.summary} />
