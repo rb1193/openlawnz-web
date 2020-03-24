@@ -174,10 +174,13 @@
       }
     }
 
+    .directors {
+      justify-content: space-between;
+    }
     .cards-list {
       flex-direction: row;
       align-items: flex-start;
-      justify-content: space-between;
+      
 
       .card-item {
         margin-bottom: 15px;

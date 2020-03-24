@@ -45,7 +45,7 @@ const AboutPage = ({data}) => {
             <hr className="divider" />
 
             <h2>Directors</h2>
-            <div className="cards-list">
+            <div className="cards-list directors">
             
             <div className="card-item">
                 <img src={directors.image_one_url} alt={directors.dir_one_name}/>
