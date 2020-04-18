@@ -23,7 +23,7 @@ const MainNav = () => {
           <nav>
             <ul>
               <Link activeClassName="link-active" to="/"><li>Our Mission</li></Link>
-              <Link to="/empower" activeClassName="link-active"><li>Get Empowered</li></Link>
+              <Link to="/get-empowered" activeClassName="link-active"><li>Get Empowered</li></Link>
               <Link to="/about" activeClassName="link-active"><li>Get Involved</li></Link>
               <Link activeClassName="link-active" to="/news"><li>Blog</li></Link>
             </ul>
