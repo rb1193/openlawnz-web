@@ -7,6 +7,7 @@ $openLawTeal: #00a8b3;
 $openLawA11yTeal: #00818a;
 $openLawLightBrown: #cf9768;
 $openLawA11yBrown: #a36633;
+$openlawGold: #b49857;
 $openLawCharcoal: #22283a;
 $openLawArapawa: #225160;
 $openLawGray: #757575;
@@ -146,7 +147,6 @@ li {
 }
 
 .highlighted-content {
-  background: url(../images/open-law-background.png) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -157,10 +157,45 @@ li {
 
 .home-wrapper {
   position: relative;
+  margin-top:0px;
   width: 100%;
   background: $openWhite;
-  padding-top: 60px;
+  display: inline-block;
 }
+
+.side-wrapper {
+  width: calc(100% - 25vw);
+  position: relative;
+  display: inline-block;
+
+}
+
+.microsite-paragraph {
+  margin-bottom: 10px;
+  font-size: 15px;
+  ul {
+    li {
+      list-style-type: square;
+      ul {
+        li {
+          list-style-type: circle;
+        }
+      }
+    }
+  }
+  ol {
+    li {
+      list-style-type: decimal;
+      ol {
+        li {
+          list-style-type: lower-alpha;
+        }
+      }
+    }
+  }
+}
+
+
 
 .border {
   border-right: 1px solid #d0d0d0;
@@ -308,7 +343,7 @@ li {
 
 .header-title {
   @include header-two;
-  color: white;
+  color: $openLawDarkBlue;
   text-align: center;
   margin: 0;
   padding: 5vh 10vw 0;
