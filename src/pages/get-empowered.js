@@ -33,7 +33,7 @@ const EmpowerPage = ({ data }) => {
                 </div>
             </div>
             <TertiaryNav 
-            base="/empower/" 
+            base="/get-empowered/" 
             data={micrositeData.map(({title, fields}) =>  {
                 fields = fields.slug.slice(1);
                 return [title, fields]
