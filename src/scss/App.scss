@@ -7,7 +7,7 @@ $openLawTeal: #00a8b3;
 $openLawA11yTeal: #00818a;
 $openLawLightBrown: #cf9768;
 $openLawA11yBrown: #a36633;
-$openlawGold: #b49857;
+$openLawGold: #b49857;
 $openLawCharcoal: #22283a;
 $openLawArapawa: #225160;
 $openLawGray: #757575;
@@ -15,16 +15,17 @@ $openLawDarkGray: #3d3d3d;
 $openLawMediumGray: #e0e0e0;
 $openLawLightGray: #f5f5f5;
 
+
 @import url('https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800&display=swap');
 
 @mixin header-one {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 40px;
 }
 
 @mixin header-two {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 30px;
 }
 
@@ -46,6 +47,10 @@ $openLawLightGray: #f5f5f5;
 @mixin body {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 15px;
+}
+
+@mixin nav-header {
+  font-family: 'Nunito', sans-serif;
 }
 
 @mixin card-style {
@@ -76,10 +81,6 @@ $openLawLightGray: #f5f5f5;
 
 ::-webkit-scrollbar {
   display: none;
-}
-
-* {
-  font-family: 'Nunito Sans', sans-serif;
 }
 
 button:focus {
@@ -118,8 +119,7 @@ li {
   padding-right: 15px;
   padding-left: 15px;
   margin-bottom: 115px;
-  margin-left: auto;
-  margin-right: auto;
+
   video{
     padding: 10%;
     width: 100%;
@@ -167,9 +167,10 @@ li {
   width: calc(100% - 25vw);
   position: relative;
   display: inline-block;
-
 }
-
+.microsite-section {
+  padding-top: 10px;
+}
 .microsite-paragraph {
   margin-bottom: 10px;
   font-size: 15px;
@@ -194,8 +195,6 @@ li {
     }
   }
 }
-
-
 
 .border {
   border-right: 1px solid #d0d0d0;

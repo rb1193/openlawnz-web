@@ -10,15 +10,13 @@ import SEO from "../components/seo"
 const SingleNews = ({ pageContext }) => (
   <Layout>
     <SEO title={`${pageContext.title}`} description={pageContext.summary} />
-    <div className="highlighted-content">
-      <SearchContainer />
-      <InfoCard classModifier="info-card--large info-card--title info-card--column">
+    <InfoCard classModifier="info-card--large info-card--title info-card--column">
         <h1>{pageContext.title}</h1>
         <span>{format(new Date(pageContext.date), "y-M-dd")}</span>
-      </InfoCard>
-    </div>
+    </InfoCard>
     <div className="home-wrapper">
-      <div className="container main">
+     
+      <div className="container main centre">
         <div className="content">
           {pageContext.image_url && (
             <>

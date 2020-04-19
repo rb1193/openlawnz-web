@@ -172,6 +172,7 @@
 
 @media (min-width: 767px) {
   .main {
+    margin: 0px 4vw 115px 4vw;
     .paragraph-with-figure {
       flex-direction: row;
 
@@ -212,3 +213,7 @@
 }
 
 
+.centre {
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -16,12 +16,12 @@ const Microsite = ({ pageContext }) => (
         {
           pageContext.content.map(({title, paragraphs}, idx) => {
             return (
-              <div key={idx}>
-                 <h3 name={title}>{title}</h3>
+              <div className="microsite-section" name={title} key={idx}>
+                 <h3 >{title}</h3>
                  {
                    paragraphs.map(({title, content_html}, idx) => {
                      return (
-                        <div key={idx} className="microsite-section">
+                        <div key={idx}>
                           <h4>{title}</h4>
                           <div
                             className="microsite-paragraph"

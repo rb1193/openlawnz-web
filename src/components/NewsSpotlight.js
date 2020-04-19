@@ -19,7 +19,12 @@ const NewsSpotlight = props => {
                 )}
                 <div>
                   <h2>{title}</h2>
-                  <p>{summary}</p>
+                  <p dangerouslySetInnerHTML={{
+                    __html: summary,
+                  }}>
+                  </p>
+
+       
 
                   <Link to={"/news/" + slug} className="link">
                     Find out more

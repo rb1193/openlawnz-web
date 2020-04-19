@@ -6,7 +6,7 @@ import MissionFundLogo from "../images/svgs/mission-fund.svg";
 
 export default function Mission() {
 	return (
-		<section className="container">
+		<section className="container centre">
 			<h2 className="section-title is-text-center">Our Mission</h2>
 			<h3 className="section-subtitle is-text-center">
 				OpenLaw NZ is an open-source platform that any country can copy and use for the betterment of their
