@@ -15,10 +15,10 @@ const AboutPage = ({data}) => {
   return (
     <Layout>
       <SEO title="About" />
-      <div className="home-wrapper">
       <div className="side-wrapper">
+        <div className="content-wrapper">
         <div className="container main">
-          <div name="test" className="content">
+          <div className="content">
           {
             aboutJson.content.map(({title, content_html}, idx) => {
               return (
@@ -43,7 +43,7 @@ const AboutPage = ({data}) => {
 
             <hr className="divider" />
 
-            <h2 name="test2">Directors</h2>
+            <h2>Directors</h2>
             <div className="cards-list directors">
             
             <div className="card-item">
@@ -64,7 +64,7 @@ const AboutPage = ({data}) => {
 
             </div>
 
-            <h2 name="test">Past and Present Contributors</h2>
+            <h2>Past and Present Contributors</h2>
 
             <div className="cards-list">
 
@@ -83,6 +83,7 @@ const AboutPage = ({data}) => {
             </div>
           </div>
         </div>
+        </div>
       </div>
       <TertiaryNav 
       base="/about/" 
@@ -91,7 +92,6 @@ const AboutPage = ({data}) => {
           return [title, title]
       })
       }/>
-      </div>
       
       
     </Layout>

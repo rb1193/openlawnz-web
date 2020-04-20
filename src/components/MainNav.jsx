@@ -23,9 +23,9 @@ const MainNav = () => {
           <nav>
             <ul>
               <Link activeClassName="link-active" to="/"><li>Our Mission</li></Link>
-              <Link to="/get-empowered" activeClassName="link-active"><li>Get Empowered</li></Link>
-              <Link to="/about" activeClassName="link-active"><li>Get Involved</li></Link>
-              <Link activeClassName="link-active" to="/news"><li>Blog</li></Link>
+              <Link to="/get-empowered" partiallyActive={true} activeClassName="link-active"><li>Get Empowered</li></Link>
+              <Link to="/about" partiallyActive={true} activeClassName="link-active"><li>Get Involved</li></Link>
+              <Link activeClassName="link-active" partiallyActive={true} to="/news"><li>Blog</li></Link>
             </ul>
           </nav>
           <div className="nav-secondary">

@@ -13,20 +13,20 @@ const PluginPage = ({ data }) => {
   <Layout>
     <SEO title="Plugins" />
     
-    <div className="home-wrapper">
-      <div className="side-wrapper">
-      <InfoCard classModifier="info-card--large info-card--title info-card--column">
-        <h1>Plugins</h1>
+    <div className="side-wrapper">
+    <div className="content-wrapper">
+       <h1>Plugins</h1>
         <span>These plugins are built using the OpenLaw NZ API.</span>
-      </InfoCard>
-      <PluginShowcase data={pluginsShowcaseData}/>
-      </div>
-      <TertiaryNav 
+        <PluginShowcase data={pluginsShowcaseData}/>
+    </div>
+      
+     
+    </div>
+    <TertiaryNav 
       base={"/plugins/"} 
       data={pluginsShowcaseData.map(({title}) =>  {
           return [title, title]
       })}/>
-    </div>
   </Layout>
   )
 }

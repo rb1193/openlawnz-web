@@ -6,7 +6,7 @@ const PluginShowcase = props => {
       {props.data.map(
         ({ title, image_url, content_html, image_alt }, idx) => {
           return (
-          <div key={idx} className="item">
+          <div name={title} key={idx} className="item">
             
             <div className="content">
               

@@ -31,11 +31,9 @@ const HomePage = ({ data }) => {
           <InfoCardUnit one="346,395" two="CASE-TO-LEGISLATION RELATIONSHIPS" />
       </InfoCard>
 
-      <div className="home-wrapper">
-        <Mission />
-        <NewsSpotlight data={newsSpotlightData} />
-        <ContactUs />
-      </div>
+      <Mission />
+      <NewsSpotlight data={newsSpotlightData} />
+      <ContactUs />
     </Layout>
   )
 }

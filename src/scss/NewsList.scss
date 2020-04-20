@@ -1,10 +1,7 @@
 .news-list {
-  margin-top: 10px;
- 
-
   .item {
     padding: 20px 4vw 15px 4vw;
-
+    background-color: white;
     &:nth-child(2) {
       background-color: $openLawLightGray;
     }

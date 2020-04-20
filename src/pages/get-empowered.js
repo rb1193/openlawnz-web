@@ -13,32 +13,33 @@ const EmpowerPage = ({ data }) => {
     const micrositeData = data.allMicrositesJson.edges.map(n => n.node)
   return (
     <Layout>
-        <SEO title="Developers" />  
-        <div className="home-wrapper">  
-            <div className="side-wrapper">
-                <div className="container main">
-                    <h2>Get Empowered</h2>
+      <SEO title="Developers" />  
+      <div className="side-wrapper">
+        <div className="content-wrapper">
+          <div className="container main">
+            <h2>Get Empowered</h2>
 
-                    {
-                       micrositeData.map(({title, description, fields}, idx) => {
-                           return (
-                               <div className="microsite-paragraph" key={idx}>
-                                   <h3 name={fields.slug.slice(1)}>{title}</h3>
-                                   <p>{description}</p>
-                                   <Link to={"/microsite" + fields.slug}>View Site</Link>
-                                </div>
-                           )
-                       }) 
-                    }
-                </div>
-            </div>
-            <TertiaryNav 
-            base="/get-empowered/" 
-            data={micrositeData.map(({title, fields}) =>  {
-                fields = fields.slug.slice(1);
-                return [title, fields]
-            })}/>
+            {
+                micrositeData.map(({title, description, fields}, idx) => {
+                    return (
+                        <div className="microsite-paragraph" key={idx}>
+                            <h3 name={fields.slug.slice(1)}>{title}</h3>
+                            <p>{description}</p>
+                            <Link to={"/get-empowered" + fields.slug}>View Site</Link>
+                        </div>
+                    )
+                }) 
+            }
+          </div>
         </div>
+          
+      </div>
+      <TertiaryNav 
+      base="/get-empowered/" 
+      data={micrositeData.map(({title, fields}) =>  {
+          fields = fields.slug.slice(1);
+          return [title, fields]
+      })}/>
         
     </Layout>
   )

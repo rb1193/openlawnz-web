@@ -12,21 +12,19 @@ const DevelopersPage = ({ data }) => {
     <Layout>
       <SEO title="Developers" />  
       
-      <div className="home-wrapper">
         
-        <div className="container main">
-        <h1>Developers</h1>
-          <span>
-            Use our API to integrate case law intelligence into your own
-            applications.
-          </span>
-          
-          <div className="content" dangerouslySetInnerHTML={{
-              __html: developersContent[0].content_html,
-            }}>
-          </div>
-          
+      <div className="container main">
+        <h2>Developers</h2>
+        <span>
+          Use our API to integrate case law intelligence into your own
+          applications.
+        </span>
+        
+        <div className="content" dangerouslySetInnerHTML={{
+            __html: developersContent[0].content_html,
+          }}>
         </div>
+        
       </div>
     </Layout>
   )

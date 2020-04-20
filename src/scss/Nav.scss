@@ -6,7 +6,6 @@
   background-size: cover;
   background-position: top;
   min-height: 250px;
-  margin-bottom: 50px;
   position: relative;
   .nav-items {
     padding: 50px 6vw 0 6vw;
@@ -66,7 +65,7 @@
           margin: 0 20px;
           display: inline-block;
           text-decoration: none;
-          padding: 0px 5px 20px 5px;
+          padding: 0px 5px 15px 5px;
           margin-bottom: 5px;
           
           &:hover {
@@ -89,7 +88,7 @@
 
 .teritary-nav {
   @include nav-header;
-
+  margin-top: 25px;
   width: 25vw;
   position: sticky;
   vertical-align: top;

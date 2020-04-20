@@ -91,7 +91,7 @@ exports.createPages = async ({graphql, actions: { createPage } }) => {
   //generates static pages for each microsite based on template
   micrositeData.forEach(n => {
     createPage( {
-      path: '/microsite' + n.slug,
+      path: '/get-empowered' + n.slug,
       component: require.resolve("./src/templates/microsite.js"),
       context: n,
     })
