@@ -105,14 +105,14 @@
   ul {
     height: 100%;
     margin-left: 3vw;
-    a{
+    a {
       text-decoration: none;
       color: $openLawTeal;
       &:hover {
         color: $openLawLightGreen;
       }
       li {
-        width: 70%;
+        width: 75%;
         padding: 10px 0 10px 20px;
         border-bottom: 1px solid $openLawGold;
       }
