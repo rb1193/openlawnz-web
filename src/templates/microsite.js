@@ -32,11 +32,9 @@ const Microsite = ({ pageContext }) => (
                         />
                       </div>
                     )
-                    
                   })
                 }
             </div>
-            
           )
         })
       }

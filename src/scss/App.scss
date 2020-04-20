@@ -357,14 +357,6 @@ li {
   }
 }
 
-.header-title {
-  @include header-two;
-  color: $openLawDarkBlue;
-  text-align: center;
-  margin: 0;
-  padding: 5vh 10vw 0;
-}
-
 @import "./Nav.scss";
 @import "./Search.scss";
 @import "./AdvancedSearch.scss";
