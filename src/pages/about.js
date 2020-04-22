@@ -1,9 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import InfoCard from "../components/InfoCard.jsx"
-import SearchContainer from "../components/SearchContainer.jsx"
 import SEO from "../components/seo"
-import { AnchorLink } from "gatsby-plugin-anchor-links"
 import TertiaryNav from "../components/TertiaryNav.jsx"
 
 

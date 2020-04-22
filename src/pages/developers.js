@@ -1,8 +1,6 @@
 import React from "react"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
-import SearchContainer from "../components/SearchContainer.jsx"
-import InfoCard from "../components/InfoCard.jsx"
 //import External from "../images/svgs/external.svg"
 // Having an issue with this will come back to it later.
 

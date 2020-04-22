@@ -2,8 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import SearchContainer from "../components/SearchContainer"
-import InfoCard from "../components/InfoCard"
 import SEO from "../components/seo"
 import TertiaryNav from "../components/TertiaryNav"
 

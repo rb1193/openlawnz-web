@@ -158,7 +158,7 @@
   font-weight: bold;
   position: absolute;
   right: 0;
-
+  white-space: nowrap;
   a {
     margin-left: 30px;
     color: #fff;
@@ -182,8 +182,19 @@
   }
 }
 
+@media (max-width: 1000px) {
+  .search {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+  .input-wrapper {
+    max-width: 500px;
+  }
+}
 
-@media (min-width: 767px) {
+@media (min-width: 768px) {
+  
 .search-container {
   .search,
   .input-wrapper {
@@ -192,7 +203,7 @@
 
   .search-msg {
     width: 572px;
-    left: calc(50% - 370px);
+    left: calc(70% - 370px);
     p{
       width: 100%;
       text-align: left;
@@ -203,11 +214,4 @@
     display: inline;
   }
 }
-}
-
-.loading-text{
-position: fixed;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
 }

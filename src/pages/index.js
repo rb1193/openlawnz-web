@@ -2,14 +2,12 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import SearchContainer from "../components/SearchContainer.jsx"
 import Mission from "../components/Mission.jsx"
 import InfoCard from "../components/InfoCard.jsx"
 import InfoCardUnit from "../components/InfoCardUnit.jsx"
 import ContactUs from "../components/ContactUs.jsx"
 import NewsSpotlight from "../components/NewsSpotlight"
 
-import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 
 const HomePage = ({ data }) => {
@@ -39,8 +37,8 @@ const HomePage = ({ data }) => {
 }
 
 export const newsQuery = graphql`
-  query NewsQuery {
-    allNewsJson {
+query NewsQuery {
+  allNewsJson {
       edges {
         node {
           fields {

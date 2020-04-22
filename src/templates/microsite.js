@@ -1,6 +1,4 @@
 import React from "react"
-import format from "date-fns/format"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import TertiaryNav from "../components/TertiaryNav.jsx"

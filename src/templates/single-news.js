@@ -3,7 +3,6 @@ import format from "date-fns/format"
 
 import Layout from "../components/layout"
 import InfoCard from "../components/InfoCard"
-import SearchContainer from "../components/SearchContainer"
 import SEO from "../components/seo"
 
 
