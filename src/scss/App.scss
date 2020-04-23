@@ -158,25 +158,11 @@ li {
   margin-top: 50px
 }
 
-.test {
-  background-color: red;
-}
-
 .side-wrapper {
-  width: calc(100% - 25vw);
+  width: 100%;
   position: relative;
   display: inline-block;
   z-index: 10;
-  &:after {
-    content: '';
-    position: absolute;
-    width: 0px;
-    height: 100%;
-    top: 0;
-    right: 5px;
-    z-index: -1;
-    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
-  }
 }
 
 .content-wrapper {
@@ -320,6 +306,20 @@ li {
 }
 
 @media (min-width: 767px) {
+
+  .side-wrapper {
+    width: calc(100% - 25vw);
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0px;
+      height: 100%;
+      top: 0;
+      right: 5px;
+      z-index: -1;
+      box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
+    }
+  }
   
   .horizontal-container {
     flex-direction: row;
