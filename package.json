@@ -25,9 +25,9 @@
     "node-sass": "^4.14.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
-    "react-date-picker": "^8.0.1",
-    "react-dom": "^16.13.1",
-    "react-helmet": "^6.0.0",
+    "react-date-picker": "^8.0.0",
+    "react-dom": "^16.13.0",
+    "react-helmet": "^5.2.1",
     "react-paginate": "^6.3.2"
   },
   "devDependencies": {
