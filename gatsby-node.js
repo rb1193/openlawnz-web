@@ -17,6 +17,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       name: `slug`,
       value: slug,
     })
+    
   }
 }
 
@@ -88,12 +89,18 @@ exports.createPages = async ({graphql, actions: { createPage } }) => {
     })
   })
 
-  //generates static pages for each microsite based on template
+  //generates static pages for each section of a microsite
   micrositeData.forEach(n => {
-    createPage( {
-      path: '/get-empowered' + n.slug,
-      component: require.resolve("./src/templates/microsite.js"),
-      context: n,
+    let title = n.title
+    let section_headings = n.content.map(x => x.title)
+    //console.log(section_headings)
+    //console.log(n.content.map(x => x.title.replace(/\s/g, '-').toLowerCase()))
+    n.content.forEach(section => {
+      createPage( {
+        path: '/get-empowered' + `${n.slug}${section.title.replace(/\s/g, '-').toLowerCase()}`,
+        component: require.resolve("./src/templates/microsite_paragraph.js"),
+        context: {title, section, section_headings},
+      })
     })
   })
 

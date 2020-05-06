@@ -23,8 +23,9 @@ const PluginPage = ({ data }) => {
     <TertiaryNav 
       base={"/plugins/"} 
       data={pluginsShowcaseData.map(({title}) =>  {
-          return [title, title]
-      })}/>
+          return title
+      })}
+      type="#"/>
   </Layout>
   )
 }

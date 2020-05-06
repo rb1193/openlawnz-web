@@ -20,7 +20,7 @@ const AboutPage = ({data}) => {
             aboutJson.content.map(({title, content_html}, idx) => {
               return (
                 <div style={{marginBottom: '40px'}} key={idx}>
-                <h2 name={`${title}`}>{title}</h2>
+                <h2 name={title.replace(/\s/g, '-').toLowerCase()}>{title}</h2>
                   <div dangerouslySetInnerHTML={{
                     __html: content_html,
                   }}>
@@ -83,12 +83,14 @@ const AboutPage = ({data}) => {
         </div>
       </div>
       <TertiaryNav 
-      base="/about/" 
+      base="/about" 
       data={
         aboutJson.content.map(({title}) =>  {
-          return [title, title]
+          return title
       })
-      }/>
+      }
+      type="#"
+      />
       
       
     </Layout>
