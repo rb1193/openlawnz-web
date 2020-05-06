@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import TertiaryNav from "../components/TertiaryNav.jsx"
 
-
+import { graphql } from 'gatsby'
 
 const AboutPage = ({data}) => {
   const aboutJson = data.allAboutJson.edges.map(n => n.node)[0]

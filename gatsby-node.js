@@ -98,7 +98,7 @@ exports.createPages = async ({graphql, actions: { createPage } }) => {
     n.content.forEach(section => {
       createPage( {
         path: '/get-empowered' + `${n.slug}${section.title.replace(/\s/g, '-').toLowerCase()}`,
-        component: require.resolve("./src/templates/microsite_paragraph.js"),
+        component: require.resolve("./src/templates/microsite.js"),
         context: {title, section, section_headings},
       })
     })

@@ -4,6 +4,8 @@ import SEO from "../components/seo"
 import Layout from "../components/layout"
 import PluginShowcase from "../components/PluginShowcase.js"
 import TertiaryNav from "../components/TertiaryNav.jsx"
+import { graphql } from 'gatsby'
+
 const PluginPage = ({ data }) => {
   
   const pluginsShowcaseData = data.allPluginsJson.edges.map(n => n.node)
