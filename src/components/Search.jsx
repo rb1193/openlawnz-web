@@ -70,7 +70,7 @@ export default class Search extends Component {
           </form>
           {this.props.toggleTypeOfSearch && (
             <div className="toggle-search">
-              <a>
+              <a href="/">
                 Search Help
               </a>
               <a href="#advanced-search" onClick={this.props.toggleTypeOfSearch}>

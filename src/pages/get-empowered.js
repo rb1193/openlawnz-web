@@ -2,7 +2,6 @@ import React from "react"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 import {Link} from "gatsby"
-import TertiaryNav from "../components/TertiaryNav.jsx"
 //import External from "../images/svgs/external.svg"
 // Having an issue with this will come back to it later.
 
