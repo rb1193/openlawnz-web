@@ -55,6 +55,10 @@ exports.createPages = async ({graphql, actions: { createPage } }) => {
                 content_html
               }
             }
+            Terms {
+              title
+              description
+            }
           }
         }
       }
@@ -92,6 +96,7 @@ exports.createPages = async ({graphql, actions: { createPage } }) => {
   //generates static pages for each section of a microsite
   micrositeData.forEach(n => {
     let title = n.title
+    let keyTerms = n.Terms
     let section_headings = n.content.map(x => x.title)
     //console.log(section_headings)
     //console.log(n.content.map(x => x.title.replace(/\s/g, '-').toLowerCase()))
@@ -99,7 +104,7 @@ exports.createPages = async ({graphql, actions: { createPage } }) => {
       createPage( {
         path: '/get-empowered' + `${n.slug}${section.title.replace(/\s/g, '-').toLowerCase()}`,
         component: require.resolve("./src/templates/microsite.js"),
-        context: {title, section, section_headings},
+        context: {title, section, section_headings, keyTerms},
       })
     })
   })

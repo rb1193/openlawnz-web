@@ -29,5 +29,11 @@
         }
       ]
     }
+  ],
+  "Terms": [
+    {
+      "title": "Term_1",
+      "description": "Term One"
+    }
   ]
 }
