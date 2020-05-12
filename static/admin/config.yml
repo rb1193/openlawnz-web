@@ -121,3 +121,12 @@ collections:
             fields:
               - { name: title, Label: Title}
               - { name: content_html, Label: Content, widget: markdown }
+     
+      - label: Key Terms
+        label_singular: Term
+        name: Terms
+        widget: list
+        fields:
+          - { name: title, Label: Term }
+          - { name: description, Label: Description }
+      
