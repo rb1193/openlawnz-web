@@ -1,3 +1,138 @@
+.nav-container {
+  background: url(../images/open-law-background.png) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: top;
+  min-height: 240px;
+  position: relative;
+  .nav-items {
+    padding: 50px 6vw 0 6vw;
+    height: 100%;
+      .nav-logo {
+      float: left;
+      width: 170px;
+      z-index: -1;
+    }
+    
+  }
+  .nav-menu {
+    width: 100%;
+    height: 100%;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 19px;
+    font-weight: bold;
+    .nav-secondary {
+      font-size: 18px;
+      position: absolute;
+      top: 50px;
+      right: 6vw;
+      ul {
+        a {
+          margin: 0 10px;
+          display: inline-block;
+          text-decoration: none;
+          padding: 0px 5px 20px 5px;
+          margin-bottom: 5px;
+          li {
+            color: #ffffff; 
+            
+          }
+        }
+      }
+      
+    }
+    nav {
+      width: 100%;
+      
+      height: 50px;
+      
+      
+      ul {
+
+        position: absolute;
+        bottom: 0;
+        left: 2vw;
+        margin-block-end: 0; 
+
+        .link-active {
+          & { //prevents sec. nav being different height if no page is active
+            margin-bottom: 0px;
+          }
+          border-bottom: 5px solid $openLawLightBrown;
+        }
+        a {
+          margin: 0 20px;
+          display: inline-block;
+          text-decoration: none;
+          padding: 0px 5px 15px 5px;
+          margin-bottom: 5px;
+          
+          &:hover {
+            & { //prevents sec. nav being different height if no page is active
+              margin-bottom: 0px;
+            }
+            border-bottom: 5px solid $openLawLightBrown;
+          }
+
+          li {
+            color: #ffffff; 
+            
+          }
+          
+        }
+      }
+    }
+  }
+}
+
+.teritary-nav {
+  @include nav-header;
+  margin-top: 25px;
+  width: 25vw;
+  position: sticky;
+  vertical-align: top;
+  display: inline-block;
+  height: 100%;
+  top: 50px;
+  background-color: $openWhite;
+  font-weight: 700;
+  font-size: 17px;
+  .primary-menu {
+    height: 100%;
+    margin-left: 3vw;
+    a {
+      text-decoration: none;
+      color: $openLawTeal;
+      &:hover {
+        color: $openLawLightGreen;
+      }
+      
+    }
+  }
+
+  .tertiary-item {
+    width: 75%;
+    padding: 10px 0 10px 20px;
+    border-bottom: 1px solid $openLawGold;
+  }
+
+  .tertiary-sub-routes {
+    padding-left: 1vw;
+    width: 15vw;
+    li {
+      font-size: 16px;
+      padding-top: 10px;
+      font-weight: 600;
+    }
+  }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
 .visuallyhidden {
   // hide from visual users, show for screen readers
   position: absolute !important;
@@ -22,57 +157,23 @@
   }
 }
 
-.nav-container {
-  .nav-items {
-    position: absolute;
-    width: 100%;
-    padding: 65px 8vw;
-    display: flex;
-    flex-direction: row;
-
-    .nav-links {
-      position: absolute;
-      right: 8vw;
-
-      ul {
-        display: flex;
-        flex-direction: row;
-        @include header-five;
-
-        li {
-          padding: 0 2.3vw;
-        }
-
-        a {
-          color: $openWhite;
-        }
-
-        span {
-          color: $openWhite;
-        }
-
-        span:hover {
-          cursor: pointer;
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-}
-
 #menuToggle input {
   display: none;
 }
 
-@media (max-width: 890px) {
-  .nav-logo {
-    position: absolute;
-    left: 27px;
-    top: 19px;
-    svg {
-      width: 145px;
-    }
+
+@media (max-width: 1000px) { 
+  .nav-search {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+
+    padding-bottom: 10px;
   }
+ 
+}
+
+@media (max-width: 890px) { 
   #menuToggle {
     display: block;
     position: absolute;
@@ -80,7 +181,6 @@
     right: 0;
     width: 100vw;
     height: 40px;
-    z-index: 200;
 
     -webkit-user-select: none;
     user-select: none;
@@ -132,10 +232,6 @@
     transform: translate(0px, 20px);
   }
 
-  #menuToggle input:checked {
-    position: fixed;
-  }
-
   #menuToggle input:checked ~ span {
     position: fixed;
     opacity: 1;
@@ -143,49 +239,97 @@
     background: $openWhite;
   }
 
-  #menuToggle input:checked ~ span:nth-last-child(3) {
+  #menuToggle input:checked ~ span:nth-child(2) {
     position: fixed;
     opacity: 0;
     transform: rotate(0deg) scale(0.2, 0.2);
   }
 
-  #menuToggle input:checked ~ span:nth-last-child(2) {
+  #menuToggle input:checked ~ span:nth-child(3) {
     transform: rotate(-45deg) translate(-14px, 11px);
   }
 
-  #menu {
-    position: fixed;
-    z-index: 101;
-    display: block;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding-top: 15vh;
-    padding-left: 20vw;
-    background: #2b6064;
-    list-style-type: none;
-    -webkit-font-smoothing: antialiased;
+  .nav-container {
+    .nav-items {
+      .nav-logo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 102;
+        padding: 15px 6vw;
+        width: 250px;
+      }
+    }
+    .nav-menu {
+      position: relative;
+      .nav-secondary {
+        position: relative;
+        margin-top: 30vh;
+        margin-left: 8vw;
+        margin-right: 5vw;
+        ul {
+          a {
+            font-weight: 400;
+            padding-top: 15px;
+            border-bottom: 1px solid #d0d0d0;
+            display: block;
 
-    transform-origin: 0% 0%;
-    transform: translate(-100%, 0);
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+        }
+      }
+      nav {
+        ul {
+          left: 0;
+          width: 90%;
+          .link-active {
+            border-bottom: 1px solid #d0d0d0;
+          }
+          
+          position: relative;
+          margin-left: 0;
+          a {
+            font-weight: 400;
+            padding-top: 15px;
+            border-bottom: 1px solid #d0d0d0;
+            display: block;
 
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-  }
-
-  #menu li {
-    position: relative;
-    padding: 5vh 0;
-    font-size: 22px;
-    z-index: 255;
-    a{
-      font-weight: bold;
-      letter-spacing: 1.5px;
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+        }
+      }
     }
   }
 
-  #menuToggle input:checked ~ ul {
+  .nav-collapsing {
+      position: fixed;
+      z-index: 101;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      padding-top: 15vh;
+      background: #2b6064;
+      list-style-type: none;
+      -webkit-font-smoothing: antialiased;
+
+      overflow-y: scroll;
+      max-height: 100vh;
+
+      transform-origin: 0% 0%;
+      transform: translate(-100%, 0);
+
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  }
+
+  #menuToggle input:checked ~ .nav-collapsing {
     transform: none;
   }
+
 }

@@ -2,40 +2,40 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import SearchContainer from "../components/SearchContainer"
-import InfoCard from "../components/InfoCard"
 import SEO from "../components/seo"
+import TertiaryNav from "../components/TertiaryNav"
 
 const News = ({ pageContext }) => (
   <Layout>
     <SEO title="News" />
-    <div className="highlighted-content">
-      <SearchContainer />
-      <InfoCard classModifier="info-card--large info-card--title info-card--column-nosub">
-        <h1>News</h1>
-        <span>Stay up to date with us.</span>
-      </InfoCard>
+    <div className="side-wrapper">
+        <div className="news-list">
+          {pageContext.news.map((ni, idx) => (
+            <NewsItem key={idx} context={ni} />
+          ))}
+        </div>
     </div>
-    <div className="home-wrapper">
-      <div className="container news-list">
-        {pageContext.news.map((ni, idx) => (
-          <NewsItem key={idx} context={ni} />
-        ))}
-      </div>
-    </div>
+    <TertiaryNav 
+      base="/news/" 
+      data={
+        pageContext.news.map(({title}) =>  {
+          return [title, title]
+      })
+      }/>
   </Layout>
 )
 
 const NewsItem = ({
-  context: { title, slug, formattedDate, image_url, image_alt, summary },
+  context: { title, slug, formattedDate, image_url, image_alt, summary, content_html },
 }) => (
-  <div className="item">
+  <div name={title} className="item">
     <header>
-      <h2>
+      <h2 >
         <Link to={"/news/" + slug}>{title}</Link>
       </h2>
-      <span className="date">{formattedDate}</span>
     </header>
+
+      
     <div className="content">
       <div className="image-container">
         {image_url && (
@@ -44,11 +44,15 @@ const NewsItem = ({
           </Link>
         )}
       </div>
-      <p>
-        {summary}
-        <br />
-        <Link to={"/news/" + slug}>Read more</Link>
-      </p>
+      <div>
+
+        <p dangerouslySetInnerHTML={{
+          __html: summary,
+        }}>
+        </p>
+
+        <Link className="newsLink" to={"/news/" + slug}>Read more</Link>
+      </div>
     </div>
   </div>
 )

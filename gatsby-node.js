@@ -10,12 +10,21 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       value: slug,
     })
   }
+  if (node.internal.type === `MicrositesJson`) {
+    const slug = createFilePath({ node, getNode, basePath: `microsites` })
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
+    })
+    
+  }
 }
 
 exports.createPages = async ({graphql, actions: { createPage } }) => {
 
   const result = await graphql(`
-    query NewsQuery {
+    query PagesQuery {
       allNewsJson {
         edges {
           node {
@@ -31,16 +40,37 @@ exports.createPages = async ({graphql, actions: { createPage } }) => {
           }
         }
       }
+      allMicrositesJson {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            title
+            description
+            content {
+              title
+              paragraphs {
+                title
+                content_html
+              }
+            }
+          }
+        }
+      }
     }
   `)
 
-  const newsData = result.data.allNewsJson.edges
+  const newsData = result.data.allNewsJson.edges // organises and sorts news items
     .map(n => n.node)
     .map(n => ({ ...n, slug: n.fields.slug }))
     .sort((a,b) => {
       return +new Date(b.date) - +new Date(a.date)
     })
-
+  
+  const micrositeData = result.data.allMicrositesJson.edges 
+    .map(n => n.node)
+    .map(n => ({ ...n, slug: n.fields.slug }))
 
   createPage({
     path: `/news`,
@@ -50,7 +80,7 @@ exports.createPages = async ({graphql, actions: { createPage } }) => {
     },
   })
 
-
+  //generates static pages for each news article based on template
   newsData.forEach(n => {
     createPage({
       path: '/news' + n.slug,
@@ -58,6 +88,22 @@ exports.createPages = async ({graphql, actions: { createPage } }) => {
       context: n,
     })
   })
+
+  //generates static pages for each section of a microsite
+  micrositeData.forEach(n => {
+    let title = n.title
+    let section_headings = n.content.map(x => x.title)
+    //console.log(section_headings)
+    //console.log(n.content.map(x => x.title.replace(/\s/g, '-').toLowerCase()))
+    n.content.forEach(section => {
+      createPage( {
+        path: '/get-empowered' + `${n.slug}${section.title.replace(/\s/g, '-').toLowerCase()}`,
+        component: require.resolve("./src/templates/microsite.js"),
+        context: {title, section, section_headings},
+      })
+    })
+  })
+
 }
 
 exports.onCreatePage = ({ page, actions }) => {

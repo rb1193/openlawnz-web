@@ -2,9 +2,9 @@ import React from "react"
 import SEO from "../components/seo"
 
 import Layout from "../components/layout"
-import SearchContainer from "../components/SearchContainer.jsx"
-import InfoCard from "../components/InfoCard.jsx"
 import PluginShowcase from "../components/PluginShowcase.js"
+import TertiaryNav from "../components/TertiaryNav.jsx"
+import { graphql } from 'gatsby'
 
 const PluginPage = ({ data }) => {
   
@@ -12,16 +12,22 @@ const PluginPage = ({ data }) => {
   return (
   <Layout>
     <SEO title="Plugins" />
-    <div className="highlighted-content">
-      <SearchContainer />
-      <InfoCard classModifier="info-card--large info-card--title info-card--column">
-        <h1>Plugins</h1>
+    
+    <div className="side-wrapper">
+    <div className="content-wrapper">
+       <h1>Plugins</h1>
         <span>These plugins are built using the OpenLaw NZ API.</span>
-      </InfoCard>
+        <PluginShowcase data={pluginsShowcaseData}/>
     </div>
-    <div className="home-wrapper">
-          <PluginShowcase data={pluginsShowcaseData}/>
+      
+     
     </div>
+    <TertiaryNav 
+      base={"/plugins/"} 
+      data={pluginsShowcaseData.map(({title}) =>  {
+          return title
+      })}
+      type="#"/>
   </Layout>
   )
 }

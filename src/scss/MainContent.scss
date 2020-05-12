@@ -26,6 +26,13 @@
     margin-top: 0;
   }
 
+  h4 {
+    @include header-five;
+    color: $openLawDarkGreen;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
   img {
     max-width: 100%;
   }
@@ -165,6 +172,7 @@
 
 @media (min-width: 767px) {
   .main {
+    margin: 0px 4vw 115px 4vw;
     .paragraph-with-figure {
       flex-direction: row;
 
@@ -202,4 +210,10 @@
   font: inherit;
   cursor: pointer;
   outline: inherit;
+}
+
+
+.centre {
+  margin-left: auto;
+  margin-right: auto;
 }

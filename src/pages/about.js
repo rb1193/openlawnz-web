@@ -1,8 +1,9 @@
 import React from "react"
 import Layout from "../components/layout"
-import InfoCard from "../components/InfoCard.jsx"
-import SearchContainer from "../components/SearchContainer.jsx"
 import SEO from "../components/seo"
+import TertiaryNav from "../components/TertiaryNav.jsx"
+
+import { graphql } from 'gatsby'
 
 const AboutPage = ({data}) => {
   const aboutJson = data.allAboutJson.edges.map(n => n.node)[0]
@@ -11,20 +12,15 @@ const AboutPage = ({data}) => {
   return (
     <Layout>
       <SEO title="About" />
-      <div className="highlighted-content">
-        <SearchContainer />
-        <InfoCard classModifier="info-card--large info-card--title info-card--column-nosub">
-          <h1>About Us</h1>
-        </InfoCard>
-      </div>
-      <div className="home-wrapper">
+      <div className="side-wrapper">
+        <div className="content-wrapper">
         <div className="container main">
           <div className="content">
           {
             aboutJson.content.map(({title, content_html}, idx) => {
               return (
                 <div style={{marginBottom: '40px'}} key={idx}>
-                <h2>{title}</h2>
+                <h2 name={title.replace(/\s/g, '-').toLowerCase()}>{title}</h2>
                   <div dangerouslySetInnerHTML={{
                     __html: content_html,
                   }}>
@@ -84,7 +80,19 @@ const AboutPage = ({data}) => {
             </div>
           </div>
         </div>
+        </div>
       </div>
+      <TertiaryNav 
+      base="/about" 
+      data={
+        aboutJson.content.map(({title}) =>  {
+          return title
+      })
+      }
+      type="#"
+      />
+      
+      
     </Layout>
   )
 }

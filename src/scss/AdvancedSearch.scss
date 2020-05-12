@@ -1,7 +1,8 @@
 .advanced-search {
-  margin-top: 60px;
-  margin-bottom: 65px;
-
+  position: relative;
+  margin-bottom: 20px;
+  margin-top: 4px;
+  margin-left: 170px;
   .hidden {
     display: none;
   }
@@ -46,8 +47,7 @@
 
   .box {
     @include card-style;
-    max-width: 320px;
-    margin: 0 auto;
+    max-width: 740px;
     padding: 26px 37px;
     width: 100%;
   }
@@ -234,5 +234,16 @@
         margin-right: 15px;
       }
     }
+  }
+}
+
+@media (max-width: 1000px) {
+  .advanced-search {
+    margin-left: 0;
+    .box {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
   }
 }
