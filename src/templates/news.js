@@ -19,9 +19,10 @@ const News = ({ pageContext }) => (
       base="/news/" 
       data={
         pageContext.news.map(({title}) =>  {
-          return [title, title]
-      })
-      }/>
+          return title
+      })  
+      }
+      type="/"/>
   </Layout>
 )
 
