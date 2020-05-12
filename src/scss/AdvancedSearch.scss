@@ -108,6 +108,7 @@
 
     .react-date-picker {
       width: 100%;
+      margin-right: 3px; //Date Picker 3px too wide. Needs proper solution
 
       &__button svg {
         stroke: $openLawDarkGray;
@@ -219,7 +220,7 @@
 
       select,
       label {
-        flex-basis: initial;
+        flex-basis: 20%;
         margin-bottom: 0;
       }
     }
