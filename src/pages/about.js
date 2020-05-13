@@ -13,7 +13,6 @@ const AboutPage = ({data}) => {
     <Layout>
       <SEO title="About" />
       <div className="side-wrapper">
-        <div className="content-wrapper">
         <div className="container main">
           <div className="content">
           {
@@ -79,7 +78,6 @@ const AboutPage = ({data}) => {
               }
             </div>
           </div>
-        </div>
         </div>
       </div>
       <TertiaryNav 

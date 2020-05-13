@@ -7,6 +7,7 @@ import TertiaryNav from "../components/TertiaryNav"
 
 const News = ({ pageContext }) => (
   <Layout>
+
     <SEO title="News" />
     <div className="side-wrapper">
         <div className="news-list">

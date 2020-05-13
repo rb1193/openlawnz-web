@@ -1,8 +1,11 @@
 .main {
   .content {
-    @include card-style;
-    padding: 30px 40px 50px;
+    padding: 0 40px 50px;
     font-size: 16px;
+  }
+
+  .content-spaced {
+    margin-top: 15px;
   }
 
   .image-container {
@@ -172,7 +175,7 @@
 
 @media (min-width: 767px) {
   .main {
-    margin: 0px 4vw 115px 4vw;
+    margin: 40px 4vw 115px 4vw;
     .paragraph-with-figure {
       flex-direction: row;
 

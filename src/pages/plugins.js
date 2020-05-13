@@ -14,11 +14,14 @@ const PluginPage = ({ data }) => {
     <SEO title="Plugins" />
     
     <div className="side-wrapper">
-    <div className="content-wrapper">
-       <h1>Plugins</h1>
+      <div className="container main">
+        <div className="content">
+        <h2>Plugins</h2>
         <span>These plugins are built using the OpenLaw NZ API.</span>
         <PluginShowcase data={pluginsShowcaseData}/>
-    </div>
+        </div>
+      </div>
+    
       
      
     </div>

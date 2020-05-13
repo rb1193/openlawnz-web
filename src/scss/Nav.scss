@@ -112,11 +112,20 @@
     }
   }
 
+  
+
   .tertiary-item {
     width: 75%;
     padding: 10px 0 10px 20px;
     border-bottom: 1px solid $openLawGold;
   }
+  
+  .tertiary-active {
+    li {
+      border-bottom: 4px solid $openLawGold;
+    }
+  }
+
 
   .tertiary-sub-routes {
     padding-left: 1vw;
@@ -333,3 +342,4 @@
   }
 
 }
+

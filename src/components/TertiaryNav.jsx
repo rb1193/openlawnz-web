@@ -14,7 +14,9 @@ const TertiaryNav = props => {
 
                           {
                             <>  
-                              <Link to={(props.base + props.type + content.replace(/\s/g, '-').toLowerCase())}>
+                              <Link to={(props.base + props.type + content.replace(/\s/g, '-').toLowerCase())}
+                               activeClassName="tertiary-active">
+
                                 <li className="tertiary-item">{content}</li>
                               </Link>
                               {

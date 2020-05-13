@@ -10,8 +10,8 @@ const Microsite = ({ pageContext }) => (
   <Layout>
   <SEO title={`${pageContext.title} - ${pageContext.section.title}`} description={pageContext.description} />
   <div className="side-wrapper">
-  <div className="content-wrapper">
     <div className="container main">
+    <div className="content">
      <h2>{pageContext.title} - {pageContext.section.title}</h2>
       <div className="microsite-section" name={pageContext.section.title}>
       { 
