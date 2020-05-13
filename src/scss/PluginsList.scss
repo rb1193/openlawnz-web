@@ -1,6 +1,5 @@
 .plugins-list {
     .item {
-      @include card-style;
       margin-bottom: 40px;
   
       header {
@@ -25,7 +24,6 @@
       .content {
         align-items: center;
         font-size: 16px;
-        padding: 30px 38px 30px 40px;
       }
 
       img {

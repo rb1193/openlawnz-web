@@ -120,7 +120,7 @@ li {
   padding-left: 15px;
   margin-bottom: 115px;
   video{
-    padding: 10%;
+    padding: 10%; 
     width: 100%;
   }
 }
@@ -163,40 +163,6 @@ li {
   position: relative;
   display: inline-block;
   z-index: 10;
-}
-
-.content-wrapper {
-  padding-top: 40px;
-  padding-bottom: 1px;
-  width: 100%;
-  background-color: $openWhite;
-}
-.microsite-section {
-  padding-top: 10px;
-}
-.microsite-paragraph {
-  margin-bottom: 10px;
-  font-size: 15px;
-  ul {
-    li {
-      list-style-type: square;
-      ul {
-        li {
-          list-style-type: circle;
-        }
-      }
-    }
-  }
-  ol {
-    li {
-      list-style-type: decimal;
-      ol {
-        li {
-          list-style-type: lower-alpha;
-        }
-      }
-    }
-  }
 }
 
 .border {
@@ -366,4 +332,5 @@ li {
 @import "./MainContent.scss";
 @import "./Result.scss";
 @import "./SingleCase.scss";
-@import "./PluginsList.scss"
+@import "./PluginsList.scss";
+@import "./Microsite.scss"

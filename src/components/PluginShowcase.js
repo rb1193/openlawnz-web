@@ -2,13 +2,13 @@ import React from "react"
 
 const PluginShowcase = props => {
   return (
-    <section className="container plugins-list">   
+    <section className="plugins-list">   
       {props.data.map(
         ({ title, image_url, content_html, image_alt }, idx) => {
           return (
           <div name={title.replace(/\s/g, '-').toLowerCase()} key={idx} className="item">
             
-            <div className="content">
+            <div className="content-spaced">
               
             <h2>{title}</h2>
 
