@@ -130,3 +130,20 @@ collections:
           - { name: title, Label: Term }
           - { name: description, Label: Description }
       
+
+  - name: getInvolved
+    label: Get Involved
+    label_singular: Page
+    folder: content/get-involved
+    create: true
+    extension: json
+    fields:
+      - { name: title, Label: Title}
+      - { name: description, Label: Description }
+      - label: Paragraphs
+        label_singular: Paragraph
+        name: content
+        widget: list
+        fields:
+          - { name: title, Label: Title }
+          - { name: content_html, Label: Content, widget: markdown }
