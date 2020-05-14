@@ -2,7 +2,6 @@ import React from "react"
 
 import { Link } from "gatsby"
 
-
 const TertiaryNav = props => {
   return (
     <div className="tertiary-nav">
