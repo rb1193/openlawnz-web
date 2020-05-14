@@ -121,6 +121,13 @@ collections:
             fields:
               - { name: title, Label: Title}
               - { name: content_html, Label: Content, widget: markdown }
+          - label: FAQs
+            label_singular: FAQ
+            name: faqs
+            widget: list
+            fields:
+              - { name: question, label: Question }
+              - { name: answer_html, label: Answer, widget: markdown }
      
       - label: Key Terms
         label_singular: Term

@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import TertiaryNav from "../components/TertiaryNav.jsx"
+import Accordion from "../components/Accordion"
 
  
 
@@ -27,6 +28,9 @@ const Microsite = ({ pageContext }) => (
             )
           })
         }
+        {pageContext.section.faqs && <Accordion items={pageContext.section.faqs.map(faq => {
+          return { title: faq.question, content_html: faq.answer_html }
+        })}/>}
         </div>
       </div>
     </div>

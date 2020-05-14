@@ -54,6 +54,10 @@ exports.createPages = async ({graphql, actions: { createPage } }) => {
                 title
                 content_html
               }
+              faqs {
+                question
+                answer_html
+              }
             }
             Terms {
               title

@@ -9,6 +9,16 @@
           "title": "test",
           "content_html": "test"
         }
+      ],
+      "faqs": [
+        {
+          "question": "Is this FAQ working?",
+          "answer_html": "It appears to be.\n\n## The markdown isn't processing though\n\n- list 1\n- list 2"
+        },
+        {
+          "question": "Second FAQ?",
+          "answer_html": "This is the answer to the second frequently asked question"
+        }
       ]
     },
     {
