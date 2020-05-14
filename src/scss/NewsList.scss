@@ -1,19 +1,19 @@
 .news-list {
   .item {
-    padding: 20px 4vw 15px 4vw;
+    padding: 20px 4vw 15px 5vw;
     background-color: white;
     &:nth-child(2) {
       background-color: $openLawLightGray;
     }
     
     header {
-      padding: 18px 5px;
+      padding: 18px 0px;
 
       @media (min-width: 767px) {
         align-items: center;
         display: flex;
         justify-content: space-between;
-        padding: 28px 5px;
+        padding: 28px 0;
       }
     }
 
