@@ -118,12 +118,14 @@ collections:
             label_singular: Module
             name: modules
             widget: list
+            summary: "{{title}}"
             types:
               - label: Paragraph
                 name: paragraph
                 fields:
                 - { name: title, Label: Title}
                 - { name: content_html, Label: Content, widget: markdown }
+                
     
       - label: Key Terms
         label_singular: Term
