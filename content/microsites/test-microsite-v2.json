@@ -17,11 +17,17 @@
           "content_html": "Paragraph 1 Body - Test"
         },
         {
-          "type": "module2",
-          "title": "Testaa",
-          "bas": "Test"
+          "type": "paragraph",
+          "title": "Paragraph 2 Title",
+          "content_html": "Test\n\n\n\n\nTest"
+        },
+        {
+          "type": "paragraph",
+          "title": "Paragraph 3 Title",
+          "content_html": "Paragraph 3 content\n\n<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>\n\nTest"
         }
-      ]
+      ],
+      "asd": "asd"
     },
     {
       "title": "Section 2",
@@ -31,7 +37,8 @@
           "title": "Paragraph 1",
           "content_html": "Section 2 Paragraph 1 - Test"
         }
-      ]
+      ],
+      "asd": "asd"
     }
   ]
 }

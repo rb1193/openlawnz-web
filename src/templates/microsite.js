@@ -59,7 +59,7 @@ const Microsite = ({ pageContext }) => {
     secondary_data={pageContext.section.modules.map(x => x.title)}
     type="/"
     page={pageContext.section.title}
-    />*/
+    />
   </Layout>
   )
 }
