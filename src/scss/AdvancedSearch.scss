@@ -34,6 +34,9 @@
 
     &__item {
       padding: 7px 15px;
+      text-align: left;
+      width: 100%;
+      border-top: 1px solid $openLawLightGray;
 
       &:not(.listBox__item--clean):hover,
       &-focused {
