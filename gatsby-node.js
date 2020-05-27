@@ -19,6 +19,15 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     })
     
   }
+  if (node.internal.type === `GetInvolvedJson`) {
+    const slug = createFilePath({ node, getNode, basePath: `get-involved` })
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
+    })
+    
+  }
 }
 
 exports.createPages = async ({graphql, actions: { createPage } }) => {
@@ -50,13 +59,14 @@ exports.createPages = async ({graphql, actions: { createPage } }) => {
             description
             content {
               title
-              paragraphs {
+              modules {
+                type
                 title
-                content_html
-              }
-              faqs {
-                question
-                answer_html
+                content {
+                  content_html,
+                  question,
+                  answer_html
+                }
               }
             }
             Terms {

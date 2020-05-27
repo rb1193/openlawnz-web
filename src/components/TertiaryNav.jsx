@@ -2,10 +2,9 @@ import React from "react"
 
 import { Link } from "gatsby"
 
-
 const TertiaryNav = props => {
   return (
-    <div className="teritary-nav">
+    <div className="tertiary-nav">
           <ul className="primary-menu">
               {
                   props.data.map((content, idx) => {

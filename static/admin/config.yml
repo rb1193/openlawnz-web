@@ -114,21 +114,33 @@ collections:
         widget: list
         fields:
           - { name: title, Label: Title }
-          - label: Paragraphs
-            label_singular: Paragraph
-            name: paragraphs
+          - label: Modules
+            label_singular: Module
+            name: modules
             widget: list
-            fields:
-              - { name: title, Label: Title}
-              - { name: content_html, Label: Content, widget: markdown }
-          - label: FAQs
-            label_singular: FAQ
-            name: faqs
-            widget: list
-            fields:
-              - { name: question, label: Question }
-              - { name: answer_html, label: Answer, widget: markdown }
-     
+            summary: "{{title}} ({{type}})"
+            types:
+              - label: Text
+                name: text
+                summary: "{{title}} (Text)"
+                fields:
+                  - { name: title, Label: Title}
+                  - label: Text
+                    label_singular: Text
+                    name: content
+                    widget: list
+                    fields:
+                      - { name: title, Label: Summary }
+                      - { name: content_html, Label: Content, widget: markdown }
+              - label: FAQs
+                label_singular: FAQ
+                name: faqs
+                widget: list
+                fields:
+                  - { name: question, label: Question }
+                  - { name: answer_html, label: Answer, widget: markdown }
+                
+    
       - label: Key Terms
         label_singular: Term
         name: Terms
@@ -137,3 +149,20 @@ collections:
           - { name: title, Label: Term }
           - { name: description, Label: Description }
       
+
+  - name: getInvolved
+    label: Get Involved
+    label_singular: Page
+    folder: content/get-involved
+    create: true
+    extension: json
+    fields:
+      - { name: title, Label: Title}
+      - { name: description, Label: Description }
+      - label: Paragraphs
+        label_singular: Paragraph
+        name: content
+        widget: list
+        fields:
+          - { name: title, Label: Title }
+          - { name: content_html, Label: Content, widget: markdown }
