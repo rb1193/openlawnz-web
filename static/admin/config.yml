@@ -1,9 +1,3 @@
-backend:
-  name: git-gateway
-local_backend: true
-media_folder: static/assets
-public_folder: /assets
-
 collections:
   - name: news
     label: News
@@ -133,7 +127,7 @@ collections:
                       - { name: title, Label: Summary }
                       - { name: content_html, Label: Content, widget: markdown }
                 
-    
+  
       - label: Key Terms
         label_singular: Term
         name: Terms
