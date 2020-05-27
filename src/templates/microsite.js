@@ -5,6 +5,7 @@ import TertiaryNav from "../components/TertiaryNav.jsx"
 
 
 const Microsite = ({ pageContext }) => {
+  
   function selectModule(module, idx) { //selects the correct module type
     let title = module.title.replace(/\s/g, '-').toLowerCase()
     switch(module.type) { 
@@ -16,6 +17,22 @@ const Microsite = ({ pageContext }) => {
               className="microsite-paragraph"
               dangerouslySetInnerHTML={{ __html: module.content_html }}
             />
+          </div>
+        )
+      case "text": // Single heading, multiple paragraphs.
+        return (
+          <div key={idx} name={title}>
+            <h4>{module.title}</h4>
+            {
+              module.content.map(({content_html}, idx) => {
+                return (
+                  <div id={idx}
+                    className="microsite-paragraph"
+                    dangerouslySetInnerHTML={{ __html: content_html }}
+                  />
+                ) 
+              })
+            }
           </div>
         )
       default: //Error Paragraph
