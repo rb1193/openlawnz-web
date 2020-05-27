@@ -6,14 +6,19 @@
 
 .accordion-item-control {
   align-items: center;
+  background: transparent;
+  border: none;
   border-bottom: 1px solid $openLawMediumGray;
   border-top: 1px solid $openLawMediumGray;
+  cursor: pointer;
   display: flex;
   padding: 13px 56px 13px 13px;
+  width: 100%;
 }
 
 .accordion-item-title {
   @include header-five;
+  text-align: left;
   vertical-align: middle;
 }
 
@@ -23,13 +28,8 @@
   background-size: auto;
   background-position: center center;
   border: none;
-  cursor: pointer;
   padding: 15px;
   margin-right: 13px;
-
-  &:focus {
-    outline: dotted 1px;
-  }
 }
 
 .accordion-item .accordion-item-toggle {

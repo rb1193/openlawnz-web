@@ -25,17 +25,16 @@ export default function Accordion({ items }) {
           accordionState[index] === STATE_OPEN ? ["accordion-item", "accordion-item-open"] : ["accordion-item"]
         return (
           <article key={`accordion_item_${index}`} className={itemClasses.join(" ")}>
-            <div className="accordion-item-control">
-              <button
-                id={`accordion-item-toggle-${index}`}
-                tabIndex="0"
-                className="accordion-item-toggle"
-                aria-expanded={accordionState[index] === STATE_OPEN}
-                aria-controls={`accordion-item-container-${index}`}
-                onClick={() => toggleAccordionItem(index)}
-              />
+            <button
+              className="accordion-item-control"
+              tabIndex="0"
+              aria-expanded={accordionState[index] === STATE_OPEN}
+              aria-controls={`accordion-item-container-${index}`}
+              onClick={() => toggleAccordionItem(index)}
+            >
+              <span className="accordion-item-toggle" />
               <span className="accordion-item-title">{item.title}</span>
-            </div>
+            </button>
             <div
               id={`accordion-item-container-${index}`}
               role="region"
