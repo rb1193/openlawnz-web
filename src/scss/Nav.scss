@@ -121,7 +121,7 @@
 
   .tertiary-item {
     width: 100%;
-    padding: 10px 0 10px 20px;
+    padding: 10px 0 10px 10px;
     border-bottom: 1px solid $openLawGold;
   }
   
@@ -175,7 +175,7 @@
 }
 
 
-@media (max-width: 1000px) { 
+@media (max-width: 1024px) { 
   .nav-search {
     margin-left: auto;
     margin-right: auto;
