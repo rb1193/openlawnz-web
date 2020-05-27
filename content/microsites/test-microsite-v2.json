@@ -12,29 +12,56 @@
       "title": "Section 1",
       "modules": [
         {
-          "type": "paragraph",
+          "type": "text",
           "title": "Paragraph 1 Title",
-          "content_html": "Paragraph 1 Body - Test"
-        },
-        {
-          "type": "paragraph",
-          "title": "Paragraph 2 Title",
-          "content_html": "Test\n\n\n\n\nTest"
-        },
-        {
-          "type": "paragraph",
-          "title": "Paragraph 3 Title",
-          "content_html": "Paragraph 3 content\n\n<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>\n\nTest"
+          "content": [
+            {
+              "content_html": "Paragraph 1",
+              "title": "P1"
+            },
+            {
+              "content_html": "Paragraph 2",
+              "title": "P2"
+            }
+          ]
         },
         {
           "type": "text",
-          "title": "Paragraph 4 Title",
+          "title": "Paragraph 2 Title",
           "content": [
             {
-              "content_html": "Paragraph 1"
+              "content_html": "Test <br/><br/>\n\nTest",
+              "title": "P1"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "title": "Paragraph 3 Title",
+          "content": [
+            {
+              "content_html": "Test 2\n\n<br/>\n<br/>\n<br/>\n\nTest 4",
+              "title": "P1"
             },
             {
-              "content_html": "Paragraph 2"
+              "content_html": "Test 2\n\n<br/>\n<br/>\n<br/>\n\nTest 4",
+              "title": "P2"
+            },
+            {
+              "content_html": "Test 2\n\n<br/>\n<br/>\n<br/>\n\nTest 4",
+              "title": "P3"
+            },
+            {
+              "content_html": "Test 2\n\n<br/>\n<br/>\n<br/>\n\nTest 4",
+              "title": "P4"
+            },
+            {
+              "content_html": "Test 2\n\n<br/>\n<br/>\n<br/>\n\nTest 4",
+              "title": "P5"
+            },
+            {
+              "content_html": "Test 2\n\n<br/>\n<br/>\n<br/>\n\nTest 4",
+              "title": "P6"
             }
           ]
         }
@@ -45,9 +72,14 @@
       "title": "Section 2",
       "modules": [
         {
-          "type": "paragraph",
-          "title": "Paragraph 1",
-          "content_html": "Section 2 Paragraph 1 - Test"
+          "type": "text",
+          "title": "Test",
+          "content": [
+            {
+              "content_html": "Test",
+              "title": "P1"
+            }
+          ]
         }
       ],
       "asd": "asd"
