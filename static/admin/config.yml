@@ -134,11 +134,17 @@ collections:
                       - { name: content_html, Label: Content, widget: markdown }
               - label: FAQs
                 label_singular: FAQ
+                summary: "{{title}} (FAQs)"
                 name: faqs
-                widget: list
                 fields:
-                  - { name: question, label: Question }
-                  - { name: answer_html, label: Answer, widget: markdown }
+                  - { name: title, Label: Title }
+                  - label: FAQ Items
+                    label_singular: FAQ Item
+                    name: content
+                    widget: list
+                    fields:
+                    - { name: question, label: Question }
+                    - { name: answer_html, label: Answer, widget: markdown }
                 
     
       - label: Key Terms
