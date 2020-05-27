@@ -120,22 +120,17 @@ collections:
             widget: list
             summary: "{{title}} ({{type}})"
             types:
-              - label: Paragraph
-                name: paragraph
-                summary: "{{title}} (Paragraph)"
-                fields:
-                - { name: title, Label: Title}
-                - { name: content_html, Label: Content, widget: markdown }
               - label: Text
                 name: text
                 summary: "{{title}} (Text)"
                 fields:
                   - { name: title, Label: Title}
-                  - label: Paragraphs
-                    label_singular: Paragraph
+                  - label: Text
+                    label_singular: Text
                     name: content
                     widget: list
                     fields:
+                      - { name: title, Label: Summary }
                       - { name: content_html, Label: Content, widget: markdown }
                 
     

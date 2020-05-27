@@ -9,16 +9,6 @@ const Microsite = ({ pageContext }) => {
   function selectModule(module, idx) { //selects the correct module type
     let title = module.title.replace(/\s/g, '-').toLowerCase()
     switch(module.type) { 
-      case "paragraph": //default Microsite Paragraph
-        return (
-          <div key={idx} name={title}>
-            <h4>{module.title}</h4>
-            <div
-              className="microsite-paragraph"
-              dangerouslySetInnerHTML={{ __html: module.content_html }}
-            />
-          </div>
-        )
       case "text": // Single heading, multiple paragraphs.
         return (
           <div key={idx} name={title}>
@@ -26,7 +16,7 @@ const Microsite = ({ pageContext }) => {
             {
               module.content.map(({content_html}, idx) => {
                 return (
-                  <div id={idx}
+                  <div key={idx}
                     className="microsite-paragraph"
                     dangerouslySetInnerHTML={{ __html: content_html }}
                   />
