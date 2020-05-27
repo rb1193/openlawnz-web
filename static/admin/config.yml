@@ -114,14 +114,26 @@ collections:
         widget: list
         fields:
           - { name: title, Label: Title }
-          - label: Paragraphs
-            label_singular: Paragraph
-            name: paragraphs
+          - label: Modules
+            label_singular: Module
+            name: modules
             widget: list
-            fields:
-              - { name: title, Label: Title}
-              - { name: content_html, Label: Content, widget: markdown }
-     
+            summary: "{{title}} ({{type}})"
+            types:
+              - label: Text
+                name: text
+                summary: "{{title}} (Text)"
+                fields:
+                  - { name: title, Label: Title}
+                  - label: Text
+                    label_singular: Text
+                    name: content
+                    widget: list
+                    fields:
+                      - { name: title, Label: Summary }
+                      - { name: content_html, Label: Content, widget: markdown }
+                
+    
       - label: Key Terms
         label_singular: Term
         name: Terms
