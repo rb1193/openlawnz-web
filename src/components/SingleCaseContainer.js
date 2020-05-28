@@ -85,7 +85,6 @@ const SingleCase = ({ id }) => {
       {error && (
         <React.Fragment>
           <div className="highlighted-content">
-            <SearchContainer />
             <InfoCard>
               <h2 className={"header-case"}>This case cannot be found</h2>
             </InfoCard>
@@ -97,7 +96,6 @@ const SingleCase = ({ id }) => {
         <React.Fragment>
           {data && <SEO title={data.caseName} />}
           <div className="highlighted-content">
-            <SearchContainer />
             <InfoCard>
               <h2 className={!data ? "header-case" : handleInfoCardHeaderSize(data.caseName)}>
                 {!data ? "-" : data.caseName}
