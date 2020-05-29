@@ -6,7 +6,7 @@ export default function WizardStep({ step, navigate }) {
   const [selectedOption, setSelectedOption] = useState(null)
 
   const onOptionClick = (option) => {
-    if (option.hasOwnProperty("next")) {
+    if (option.next !== null) {
       navigate({ type: WizardOperations.NEXT, payload: option.next })
       return
     }

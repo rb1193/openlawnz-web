@@ -126,7 +126,18 @@ collections:
                     fields:
                       - { name: title, Label: Summary }
                       - { name: content_html, Label: Content, widget: markdown }
-                
+              - label: Wizard
+                name: wizard
+                summary: "{{title}} (Wizard)"
+                fields:
+                  - { name: title, Label: Title}
+                  - name: wizard
+                    label: "Select Wizard"
+                    widget: relation
+                    collection: wizards
+                    searchFields: ["title"]
+                    valueField: "title"
+                    displayFields: ["title"]
   
       - label: Key Terms
         label_singular: Term
@@ -135,6 +146,66 @@ collections:
         fields:
           - { name: title, Label: Term }
           - { name: description, Label: Description }
+  
+  - name: wizards
+    label: Wizards
+    label_singular: Wizard
+    folder: content/wizard
+    create: true
+    extension: json
+    fields:
+    - { name: title, label: Title }
+    - name: key
+      label: "Key"
+      hint: "The unique key for this step. Once created, do not change this. Only lower case letters, numbers and underscores can be used."
+      pattern: ['[a-z0-9_]+', "Only lower case letters, numbers and underscores can be used"]
+    - label: "Background Image"
+      name: "background"
+      widget: "image"
+      media_library:
+        config:
+          multiple: false
+    - label: Steps
+      label_singular: step
+      name: steps
+      widget: list
+      fields:
+        - { name: label, label: Label }
+        - name: key
+          label: "Key"
+          hint: "The unique key for this step. Only lower case letters, numbers and underscores can be used."
+          pattern: ['[a-z0-9_]+', "Only lower case letters, numbers and underscores can be used"]
+        - { name: question, label: Question, widget: text }
+        - name: options
+          label: Options
+          label_singular: Option
+          widget: list
+          summary: "{{label}}"
+          types:
+            - name: leaf_option
+              label: Leaf Option
+              summary: "{{label}} (Leaf)"
+              fields:
+                - { name: label, label: Label }
+                - name: value
+                  label: "Value"
+                  hint: "The unique value for this option. Only lower case letters, numbers and underscores can be used."
+                  pattern: ['[a-z0-9_]+', "Only lower case letters, numbers and underscores can be used"]
+                - { name: content, label: Content, widget: markdown }
+                - { name: tooltip, label: Tooltip, widget: text, required: false }
+            - name: branch_option
+              label: Branch Option
+              summary: "{{label}} (Branch)"
+              fields:
+                - { name: label, label: Label }
+                - name: value
+                  label: "Value"
+                  hint: "The unique value for this option. Only lower case letters, numbers and underscores can be used."
+                  pattern: ['[a-z0-9_]+', "Only lower case letters, numbers and underscores can be used"]
+                - name: next
+                  label: "Next Step"
+                  widget: wizard_option_next_step
+                - { name: tooltip, label: Tooltip, widget: text, required: false }
       
 
   - name: getInvolved

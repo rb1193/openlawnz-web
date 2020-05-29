@@ -2,12 +2,20 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import TertiaryNav from "../components/TertiaryNav.jsx"
-
+import Wizard from "../components/Wizard/Wizard"
 
 const Microsite = ({ pageContext }) => {
   
   function selectModule(module, idx) { //selects the correct module type
     let title = module.title.replace(/\s/g, '-').toLowerCase()
+
+    const errorModule = (message) => {
+      return <div className="microsite-paragraph" key={idx} name={title}>
+        <h4>{module.title}</h4>
+        Error: {message}
+      </div>
+    }
+    
     switch(module.type) { 
       case "text": // Single heading, multiple paragraphs.
         return (
@@ -25,12 +33,19 @@ const Microsite = ({ pageContext }) => {
             }
           </div>
         )
+      case "wizard":
+        // This is uncomfortably fragile but the Netlify CMS does not support auto-generated ID/key fields
+        // as of 29/05/2020
+        const wizardData = pageContext.wizardData.find(wizard => wizard.key === module.wizard)
+        if (!wizardData) return errorModule("Wizard data not found")
+        return (
+          <div key={idx} name={wizardData.title}>
+            <Wizard title={wizardData.title} background={wizardData.background} steps={wizardData.steps} />
+          </div>
+        )
       default: //Error Paragraph
         return (
-          <div className="microsite-paragraph" key={idx} name={title}>
-            <h4>{module.title}</h4>
-            Error: Module type not found
-          </div>
+          errorModule("Module type not found")
         )
     }
   }

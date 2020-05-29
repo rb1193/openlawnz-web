@@ -1,4 +1,5 @@
-import { init } from "netlify-cms-app";
+import { init, registerWidget } from "netlify-cms-app";
+import { NextStepControl } from './widgets/NextStep'
 
 window.CMS_MANUAL_INIT = true;
 
@@ -16,3 +17,5 @@ const config = {
 };
 
 init({ config });
+
+registerWidget('wizard_option_next_step', NextStepControl)
