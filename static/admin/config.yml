@@ -144,7 +144,7 @@ collections:
                     widget: list
                     fields:
                     - { name: question, label: Question }
-                    - { name: answer_html, label: Answer, widget: markdown }
+                    - { name: answer, label: Answer, widget: text }
                 
     
       - label: Key Terms

@@ -42,7 +42,7 @@ export default function Accordion({ items }) {
               aria-labelledby={`accordion-item-toggle-${index}`}
               className="accordion-item-container"
             >
-              <p className="accordion-item-content" dangerouslySetInnerHTML={{ __html: item.content_html }}></p>
+              <p className="accordion-item-content">{item.content}</p>
             </div>
           </article>
         )
