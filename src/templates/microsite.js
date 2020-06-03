@@ -39,7 +39,7 @@ const Microsite = ({ pageContext }) => {
         const wizardData = pageContext.wizardData.find(wizard => wizard.key === module.wizard)
         if (!wizardData) return errorModule("Wizard data not found")
         return (
-          <div key={idx} name={wizardData.title}>
+          <div key={idx} name={wizardData.title.replace(/\s/g, '-').toLowerCase()}>
             <Wizard title={wizardData.title} background={wizardData.background} steps={wizardData.steps} />
           </div>
         )
