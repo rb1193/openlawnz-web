@@ -1,0 +1,123 @@
+{
+  "title": "Have you been charged an unfair fee?",
+  "key": "unfair_fees",
+  "background": "/assets/openlaw-wizard-bg.svg",
+  "steps": [
+    {
+      "label": "Was fee disclosed?",
+      "key": "step_1",
+      "question": "Was the fee disclosed to you in the initial disclosure statement before you signed the credit contract?",
+      "options": [
+        {
+          "type": "branch_option",
+          "label": "Yes, the fee was disclosed",
+          "value": "yes",
+          "next": "step_2"
+        },
+        {
+          "type": "leaf_option",
+          "label": "No",
+          "value": "no",
+          "content": "You may have grounds for a complaint if the fee wasn't disclosed to you \r\n\n\nLenders must disclose all fees to you before you sign the credit contract. You could <a href=\"http://www.moneytalks.co.nz\">contact a free financial mentor</a> to discuss what’s happened. Alternatively, talk with your lender."
+        }
+      ]
+    },
+    {
+      "question": "Was the fee clearly described? This means that your lender made it clear what the fee is for, the type of costs recovered, when your lender would charge the fee and why your lender would charge it.  ",
+      "label": "Was the fee clearly described?",
+      "key": "step_2",
+      "options": [
+        {
+          "type": "leaf_option",
+          "label": "No",
+          "value": "no",
+          "content": "Lenders must describe all fees to you. Sometimes, the name of the fee will make it obvious what it is for, such as an “Establishment Fee” or “Set-up Fee”. If you have concerns, you could <a href=\"http://www.moneytalks.co.nz\">contact a free financial mentor</a> to discuss what’s happened.  Alternatively, talk with your lender.  "
+        },
+        {
+          "type": "branch_option",
+          "label": "Yes",
+          "value": "yes",
+          "next": "step_3"
+        }
+      ]
+    },
+    {
+      "label": "What type of fee has been charged",
+      "key": "step_3",
+      "question": "What type of fee has been charged? ",
+      "options": [
+        {
+          "type": "branch_option",
+          "label": "Credit fee",
+          "value": "credit_fee",
+          "next": "step_4",
+          "tooltip": "Establishment fee (charged at the beginning of the loan to cover administrative set-up costs), prepayment or break fees (charged to cover administrative costs when you repay your loan before its due plus any losses incurred by the lender due to interest rate changes since you took out the loan), overdraft fees (a fee charged by the bank to borrow money on unarranged terms) "
+        },
+        {
+          "type": "branch_option",
+          "label": "Default fee",
+          "value": "default_fee",
+          "next": "step_4",
+          "tooltip": "default interest (additional interest charged on amounts that you haven’t repaid by the due date) and default fees (costs incurred by the lender to try to recover the money you owe, plus any administrative costs).  "
+        },
+        {
+          "type": "branch_option",
+          "label": "Third party",
+          "value": "third_party",
+          "next": "step_5",
+          "tooltip": "Fees charged to the bank by third parties, such as brokers.  "
+        },
+        {
+          "type": "branch_option",
+          "label": "Other",
+          "next": "step_4",
+          "value": "other"
+        }
+      ]
+    },
+    {
+      "label": "Fee covers reasonable costs",
+      "question": "Do you think that the fee only covers your lender’s reasonable costs in providing the relevant service? For example, an establishment fee must only cover administrative and set-up costs associated with your loan; a default fee must only cover costs associated with your default. ",
+      "key": "step_4",
+      "options": [
+        {
+          "type": "leaf_option",
+          "label": "Yes - the fee only covers my lender’s reasonable costs",
+          "value": "yes",
+          "content": "It looks like the fee you have been charged is fair and reasonable. If you still have concerns, you should discuss the matter with your lender. "
+        },
+        {
+          "type": "leaf_option",
+          "label": "No – I think that my lender is making a profit from the fee",
+          "value": "no",
+          "content": "Any fee must only cover your lender’s costs and your lender must not make a profit from the fee. If you think that your lender is profiting from the fee you should make a complaint to your lender.  "
+        },
+        {
+          "type": "leaf_option",
+          "label": "I don't know",
+          "value": "dont_know",
+          "content": "You should contact your lender and ask them to explain what costs the fee covers. If you aren’t convinced by their response, you could make a complaint to your lender.  "
+        }
+      ]
+    },
+    {
+      "label": "Does the fee cover the third party’s costs only?",
+      "question": "Does the fee cover the third party’s costs only?",
+      "key": "step_5",
+      "options": [
+        {
+          "type": "leaf_option",
+          "label": "Yes",
+          "value": "yes",
+          "content": "It looks like the fee you have been charged is fair and reasonable. If you still have concerns, you should discuss the matter with your lender. "
+        },
+        {
+          "type": "branch_option",
+          "label": "No",
+          "value": "no",
+          "next": "step_3"
+        }
+      ]
+    }
+  ]
+}

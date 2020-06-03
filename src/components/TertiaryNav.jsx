@@ -13,19 +13,19 @@ const TertiaryNav = props => {
 
                           {
                             <>  
-                              <Link to={(props.base + props.type + content.replace(/\s/g, '-').toLowerCase())}
+                              <Link to={(props.base + "/" + content.replace(/\s/g, '-').toLowerCase())}
                                activeClassName="tertiary-active">
 
                                 <li className="tertiary-item">{content}</li>
                               </Link>
                               {
-                                content === props.page &&  props.type === "/" &&
+                                content === props.page &&
                                 <>
                                  <ul className="tertiary-sub-routes">
                                     {
                                       props.secondary_data.map((x, idx) => {
                                         return (
-                                        <Link to={(props.base + props.type + content.replace(/\s/g, '-').toLowerCase()) + "#" + x.replace(/\s/g, '-').toLowerCase()} key={idx}>
+                                        <Link to={(props.base + "/" + content.replace(/\s/g, '-').toLowerCase()) + "#" + x.replace(/\s/g, '-').toLowerCase()} key={idx}>
                                             <li>
                                               {x}
                                             </li>
