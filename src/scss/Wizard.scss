@@ -65,6 +65,7 @@
   @include header-five;
   font-weight: 600;
   font-style: italic;
+  max-width: 100%; //Forces text to wrap on IE
 }
 
 .wizard-step-selected-option-content {
