@@ -72,16 +72,6 @@
       "title": "Section 2",
       "modules": [
         {
-          "type": "text",
-          "title": "Test",
-          "content": [
-            {
-              "content_html": "Test",
-              "title": "P1"
-            }
-          ]
-        },
-        {
           "type": "wizard",
           "title": "Do you have a right to cancel your contract?",
           "wizard": "fees_wizard"

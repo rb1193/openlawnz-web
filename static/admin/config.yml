@@ -136,7 +136,7 @@ collections:
                     widget: relation
                     collection: wizards
                     searchFields: ["title"]
-                    valueField: "title"
+                    valueField: "key"
                     displayFields: ["title"]
   
       - label: Key Terms

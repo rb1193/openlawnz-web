@@ -44,7 +44,7 @@
           & { //prevents sec. nav being different height if no page is active
             margin-bottom: 0px;
           }
-          border-bottom: 5px solid $openLawLightBrown;
+          border-bottom: 6px solid $openLawA11yBrown;
         }
         a {
           margin: 0 20px;
@@ -57,7 +57,7 @@
             & { //prevents sec. nav being different height if no page is active
               margin-bottom: 0px;
             }
-            border-bottom: 5px solid $openLawLightBrown;
+            border-bottom: 6px solid $openLawA11yBrown;
           }
 
           li {
@@ -325,9 +325,9 @@
     margin-left: 3vw;
     a {
       text-decoration: none;
-      color: $openLawTeal;
+      color: $openLawA11yTeal;
       &:hover {
-        color: $openLawLightGreen;
+        color: $openLawTeal;
       }
       
     }
@@ -338,12 +338,12 @@
   .tertiary-item {
     width: 100%;
     padding: 10px 0 10px 10px;
-    border-bottom: 1px solid $openLawGold;
+    border-bottom: 1px solid $openLawLightBrown;
   }
   
   .tertiary-active {
     li {
-      border-bottom: 4px solid $openLawGold;
+      border-bottom: 4px solid $openLawLightBrown;
     }
   }
 

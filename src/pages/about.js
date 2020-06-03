@@ -80,17 +80,6 @@ const AboutPage = ({data}) => {
           </div>
         </div>
       </div>
-      <TertiaryNav 
-      base="/about" 
-      data={
-        aboutJson.content.map(({title}) =>  {
-          return title
-      })
-      }
-      type="#"
-      />
-      
-      
     </Layout>
   )
 }
