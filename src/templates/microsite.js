@@ -36,7 +36,7 @@ const Microsite = ({ pageContext }) => {
         )
       case "faqs":
         return (
-          <div key={idx} name={title}>
+          <div key={idx} name={title}  className="module-block">
             <h4>{module.title}</h4>
             <Accordion id={`faqs-${idx}`} items={module.content.map(faq => {
               return { title: faq.question, content: faq.answer }

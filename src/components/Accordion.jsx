@@ -18,14 +18,15 @@ export default function Accordion({ id, items }) {
     )
   }
 
-  const titleId = `${id}-item-${index}-title`
-  const containerId = `${id}-item-${index}-container`
-
   return (
     <section className="accordion">
       {items.map((item, index) => {
         const itemClasses =
           accordionState[index] === STATE_OPEN ? ["accordion-item", "accordion-item-open"] : ["accordion-item"]
+
+        const titleId = `${id}-item-${index}-title`
+        const containerId = `${id}-item-${index}-container`
+
         return (
           <article key={`accordion_item_${index}`} className={itemClasses.join(" ")}>
             <button
