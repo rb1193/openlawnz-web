@@ -3,7 +3,7 @@ import React, { useState } from "react"
 const STATE_CLOSED = false
 const STATE_OPEN = true
 
-export default function Accordion({ items }) {
+export default function Accordion({ id, items }) {
   const initialAccordionState = items.map(() => STATE_CLOSED)
   const [accordionState, setAccordionState] = useState(initialAccordionState)
 
@@ -18,6 +18,9 @@ export default function Accordion({ items }) {
     )
   }
 
+  const titleId = `${id}-item-${index}-title`
+  const containerId = `${id}-item-${index}-container`
+
   return (
     <section className="accordion">
       {items.map((item, index) => {
@@ -29,17 +32,17 @@ export default function Accordion({ items }) {
               className="accordion-item-control"
               tabIndex="0"
               aria-expanded={accordionState[index] === STATE_OPEN}
-              aria-controls={`accordion-item-container-${index}`}
+              aria-controls={containerId}
               onClick={() => toggleAccordionItem(index)}
             >
               <span className="accordion-item-toggle" />
-              <span className="accordion-item-title">{item.title}</span>
+              <span id={titleId} className="accordion-item-title">{item.title}</span>
             </button>
             <div
-              id={`accordion-item-container-${index}`}
+              id={containerId}
               role="region"
               aria-hidden={accordionState[index] === STATE_CLOSED}
-              aria-labelledby={`accordion-item-toggle-${index}`}
+              aria-labelledby={titleId}
               className="accordion-item-container"
             >
               <p className="accordion-item-content">{item.content}</p>
