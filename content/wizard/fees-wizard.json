@@ -1,0 +1,105 @@
+{
+  "title": "Do you have a right to cancel your contract?",
+  "key": "fees_wizard",
+  "background": "/assets/openlaw-wizard-bg.svg",
+  "steps": [
+    {
+      "label": "Fee Disclosed",
+      "question": "Was the fee disclosed to you in the initial disclosure statement before you signed the credit contract?",
+      "key": "fee_disclosed",
+      "options": [
+        {
+          "type": "branch_option",
+          "next": "fee_clearly_described",
+          "label": "Yes",
+          "value": "yes"
+        },
+        {
+          "type": "leaf_option",
+          "label": "No",
+          "value": "no",
+          "content": "You probably have cause for complaint."
+        }
+      ]
+    },
+    {
+      "label": "Fee Clearly Described",
+      "key": "fee_clearly_described",
+      "question": "Was the fee clearly described? This means that your lender made it clear what the fee is for, the type of costs recovered, when your lender would charge the fee and why your lender would charge it.",
+      "options": [
+        {
+          "type": "branch_option",
+          "label": "Yes",
+          "value": "yes",
+          "next": "fee_type"
+        },
+        {
+          "type": "leaf_option",
+          "label": "No",
+          "value": "no",
+          "content": "You probably have cause for complaint"
+        }
+      ]
+    },
+    {
+      "label": "Fee Type",
+      "key": "fee_type",
+      "question": "What type of fee has been charged",
+      "options": [
+        {
+          "type": "branch_option",
+          "label": "Credit Fee",
+          "value": "credit_fee",
+          "next": "fee_reasonable",
+          "tooltip": "Explanation of credit fees"
+        },
+        {
+          "type": "branch_option",
+          "label": "Default Fee",
+          "value": "default_fee",
+          "next": "fee_reasonable",
+          "tooltip": "Explanation of default fees"
+        },
+        {
+          "type": "branch_option",
+          "label": "Third Party Fee",
+          "value": "third_party_fee",
+          "next": "fee_reasonable",
+          "tooltip": "Explanation of third party fees"
+        },
+        {
+          "type": "branch_option",
+          "label": "Other Fee",
+          "value": "other_fee",
+          "next": "fee_reasonable",
+          "tooltip": "Explanation of other types of fee"
+        }
+      ]
+    },
+    {
+      "label": "Fee Reasonable",
+      "key": "fee_reasonable",
+      "question": "Do you think that the fee only covers your lender’s reasonable costs in providing the relevant service? For example, an establishment fee must only cover administrative and set-up costs associated with your loan; a default fee must only cover costs associated with your default.",
+      "options": [
+        {
+          "type": "leaf_option",
+          "label": "Yes",
+          "value": "yes",
+          "content": "You do not have grounds for complaint"
+        },
+        {
+          "type": "leaf_option",
+          "label": "No",
+          "value": "no",
+          "content": "You may have grounds for complaint"
+        },
+        {
+          "type": "leaf_option",
+          "label": "Don't Know",
+          "value": "dunno",
+          "content": "You should ask your lender for further information"
+        }
+      ]
+    }
+  ]
+}

@@ -67,11 +67,30 @@ exports.createPages = async ({graphql, actions: { createPage } }) => {
                   question,
                   answer
                 }
+                wizard
               }
             }
             Terms {
               title
               description
+            }
+          }
+        }
+      }
+      allWizardJson {
+        nodes {
+          title
+          key
+          background
+          steps {
+            key
+            question
+            options {
+              label
+              value
+              next
+              content
+              tooltip
             }
           }
         }
@@ -89,6 +108,8 @@ exports.createPages = async ({graphql, actions: { createPage } }) => {
   const micrositeData = result.data.allMicrositesJson.edges 
     .map(n => n.node)
     .map(n => ({ ...n, slug: n.fields.slug }))
+
+  const wizardData = result.data.allWizardJson.nodes
 
   createPage({
     path: `/news`,
@@ -118,7 +139,7 @@ exports.createPages = async ({graphql, actions: { createPage } }) => {
       createPage( {
         path: '/get-empowered' + `${n.slug}${section.title.replace(/\s/g, '-').toLowerCase()}`,
         component: require.resolve("./src/templates/microsite.js"),
-        context: {title, section, section_headings, keyTerms},
+        context: {title, section, section_headings, keyTerms, wizardData},
       })
     })
   })

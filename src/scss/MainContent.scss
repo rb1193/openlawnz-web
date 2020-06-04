@@ -12,11 +12,19 @@
   .image-container {
     text-align: center;
   }
-
-  h2 {
-    @include header-three;
+  h1 {
+    @include header-one;
     color: $openLawDarkGreen;
-    margin-top: 40px;
+    margin-top: 45px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  h2 {
+    @include header-two;
+    color: $openLawDarkGreen;
+    margin-top: 45px;
 
     &:first-child {
       margin-top: 0;
@@ -24,13 +32,20 @@
   }
 
   h3 {
-    @include header-four;
+    @include header-three;
     color: $openLawDarkGreen;
     margin-bottom: 10px;
     margin-top: 0;
   }
 
   h4 {
+    @include header-four;
+    color: $openLawDarkGreen;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  h5 {
     @include header-five;
     color: $openLawDarkGreen;
     margin-bottom: 10px;

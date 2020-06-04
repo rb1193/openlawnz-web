@@ -173,11 +173,6 @@ class SearchPage extends Component {
       <Layout>
         <SEO title="Search results" />
         <div className="highlighted-content">
-          <SearchContainer
-            populateComponent
-            showAdvancedSearch={advancedQuery}
-            onSubmit={this.handleSubmit}
-          />
           <InfoCard classModifier="info-card--large info-card--title info-card--column">
             {searchInProgress ? (
               <span>
@@ -204,7 +199,7 @@ class SearchPage extends Component {
           </InfoCard>
         </div>
         <div className="home-wrapper">
-          <div className="container">
+          <div className="container centre">
             {length >= perPage && (
               <Pagination
                 onPageChange={this.handlePageClick}
