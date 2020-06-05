@@ -1,5 +1,6 @@
-import { init, registerWidget } from "netlify-cms-app";
+import { init, registerEventListener, registerWidget } from "netlify-cms-app";
 import { NextStepControl } from './widgets/NextStep'
+import markdownToHtml from "./listeners/markdownToHtml";
 
 window.CMS_MANUAL_INIT = true;
 
@@ -17,5 +18,10 @@ const config = {
 };
 
 init({ config });
+
+registerEventListener({
+  name: 'preSave',
+  handler: markdownToHtml
+});
 
 registerWidget('wizard_option_next_step', NextStepControl)

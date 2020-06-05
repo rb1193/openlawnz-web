@@ -63,7 +63,7 @@ exports.createPages = async ({graphql, actions: { createPage } }) => {
                 type
                 title
                 content {
-                  content_html
+                  content_html_output
                 }
                 wizard
               }
@@ -152,4 +152,3 @@ exports.onCreatePage = ({ page, actions }) => {
     createPage(page)
   }
 }
-
