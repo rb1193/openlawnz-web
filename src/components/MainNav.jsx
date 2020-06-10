@@ -8,14 +8,38 @@ import SearchContainer from "./SearchContainer"
 const MainNav = () => {
   const [isNavOpen, setIsNavOpen] = React.useState(false)
   const toggleNavState = () => setIsNavOpen(!isNavOpen)
+  let navHeight = 175
+
+  if (typeof document !== 'undefined' && typeof window !== 'undefined') {
+     window.onscroll = function() {
+      let nav = document.getElementById("nav")
+
+      if (nav.offsetHeight - 65 > navHeight && nav.offsetHeight > 240) {
+        navHeight = nav.offsetHeight - 65;
+      }
+
+      if (document.documentElement.scrollTop >= navHeight) {
+        document.body.style.marginTop = `${navHeight + 65}px`;
+        
+        nav.classList.add("nav-collapsed");
+        nav.classList.remove("nav-container");
+      } else {
+        nav.classList.add("nav-container");
+        document.body.style.marginTop = "0px";
+        nav.classList.remove("nav-collapsed");
+        
+      }
+    }
+  }
 
   return (
-    <header role="banner" className="nav-container">
+    <header role="banner" id="nav" className="nav-container">
       <div className="nav-items">
         <div className="nav-logo">
           <Link to="/">
             <span className="visuallyhidden">OpenLaw NZ</span>
             <Logo alt="OpenLaw NZ" className="main-logo" />
+            <img alt="OpenLaw NZ (Small) " src="/assets/openlaw-logo-small.png"/>
           </Link>
         </div>
 

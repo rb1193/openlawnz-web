@@ -8,7 +8,7 @@ const ourMissionPage = ({data}) => {
   const pageContext = data.allOurMissionJson.nodes;
   return (
     <Layout>
-      <SEO title="About" />
+      <SEO title="Our Mission" />
         <div className="side-wrapper">
           <div className="container main">
             <div className="content">

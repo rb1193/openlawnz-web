@@ -8,7 +8,7 @@ const getInvolvedPage = ({data}) => {
   const pageContext = data.allGetInvolvedJson.nodes;
   return (
     <Layout>
-      <SEO title="About" />
+      <SEO title="Get Involved" />
         <div className="side-wrapper">
             <div className="container main">
                 <div className="content">
