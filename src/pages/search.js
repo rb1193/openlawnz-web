@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 
 import dateFormat from "date-fns/format"
 import parseISO from "date-fns/parseISO"
-import SearchContainer from "../components/SearchContainer.jsx"
+// import SearchContainer from "../components/SearchContainer.jsx"
 import ReactPaginate from "react-paginate"
 import InfoCard from "../components/InfoCard.jsx"
 

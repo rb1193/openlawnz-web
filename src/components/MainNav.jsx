@@ -38,10 +38,10 @@ const MainNav = () => {
           <div className="nav-collapsing">
             <nav>
               <ul>
-                <Link activeClassName="link-active" to="/"><li>Our Mission</li></Link>
+                <Link to="/our-mission" partiallyActive={true} activeClassName="link-active"  ><li>Our Mission</li></Link>
                 <Link to="/get-empowered" partiallyActive={true} activeClassName="link-active"><li>Get Empowered</li></Link>
-                <Link to="/about" partiallyActive={true} activeClassName="link-active"><li>Get Involved</li></Link>
-                <Link activeClassName="link-active" partiallyActive={true} to="/news"><li>Blog</li></Link>
+                <Link to="/get-involved" partiallyActive={true} activeClassName="link-active"><li>Get Involved</li></Link>
+                <Link activeClassName="link-active" partiallyActive={true} to="/news"><li>News</li></Link>
               </ul>
             </nav>
           </div>
@@ -50,7 +50,7 @@ const MainNav = () => {
               Developers
             </a>
             <a className="developers-icon" href="https://github.com/openlawnz">
-              <img src="assets/github-mark.png"/>
+              <img src="assets/github-mark.png" alt="Developers"/>
             </a>
           </div>
         </div>
