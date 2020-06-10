@@ -23,7 +23,7 @@ exports.createPages = async ({graphql, actions: { createPage } }) => {
               slug
             }
             date
-            content_html
+            content_output
             title
             summary
             image_url

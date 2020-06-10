@@ -30,7 +30,7 @@ const SingleNews = ({ pageContext }) => (
           )}
           <div
             dangerouslySetInnerHTML={{
-              __html: pageContext.content_html,
+              __html: pageContext.content_output,
             }}
           />
         </div>

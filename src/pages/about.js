@@ -21,12 +21,12 @@ const AboutPage = ({data}) => {
         <div className="container main">
           <div className="content">
           {
-            aboutJson.content.map(({title, content_html}, idx) => {
+            aboutJson.content.map(({title, content_output}, idx) => {
               return (
                 <div style={{marginBottom: '40px'}} key={idx}>
                 <h2>{title}</h2>
                   <div dangerouslySetInnerHTML={{
-                    __html: content_html,
+                    __html: content_output,
                   }}>
                   </div>
                 </div>
@@ -97,7 +97,7 @@ export const aboutQuery = graphql`
           title
           content {
             title,
-            content_html
+            content_output
           }
           directors { 
             dir_one_name,
