@@ -3,13 +3,14 @@
   background-size: 50% auto;
   background: linear-gradient(to bottom, rgba(0,0,0, 0) 50%, white 50%);
   padding-bottom: 10px;
+  padding-top: 50px;
 }
 
 .info-card {
     @include card-style;
     display: flex;
     flex-direction: column;
-    margin: 50px auto;
+    margin: 0 auto;
     max-width: 320px;
     padding: 30px 20px;
     width: 100%;

@@ -15,6 +15,9 @@
       width: 170px;
       z-index: -1;
     }
+    img {
+      display: none;
+    }
     svg {
       margin-left: 0;
     }
@@ -54,9 +57,7 @@
           margin-bottom: 6px;
           
           &:hover {
-            & { //prevents sec. nav being different height if no page is active
-              margin-bottom: 0px;
-            }
+            margin-bottom: 0px;  
             border-bottom: 6px solid $openLawA11yBrown;
           }
 
@@ -70,6 +71,7 @@
     }
   }
 }
+
 
 .nav-secondary {
   font-size: 18px;
@@ -93,6 +95,80 @@
     display: none;
   }
 }
+
+.nav-collapsed {
+  background: url(../images/open-law-background.png) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: top;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 101;
+
+  .nav-items {
+    padding: 5px 0px 0px 2vw;
+      .nav-logo {
+      float: left;
+    }
+    img {
+      position: absolute;
+      width: 40px;
+      left: 2vw;
+      top: 20%;
+    }
+    svg {
+      display: none;
+    }
+    
+  }
+  
+  .nav-menu {
+    width: 100%;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 19px;
+    font-weight: bold;
+    nav {
+      width: 100%;
+      ul {
+        margin-bottom: 0;
+        .link-active {
+          margin-bottom: 0px;
+          
+          border-bottom: 6px solid $openLawA11yBrown;
+        }
+        a {
+          margin: 0 20px;
+          display: inline-block;
+          text-decoration: none;
+          padding: 0px 5px 15px 5px;
+          margin-bottom: 6px;
+          
+          &:hover {
+            margin-bottom: 0px;  
+            border-bottom: 6px solid $openLawA11yBrown;
+          }
+
+          li {
+            color: #ffffff; 
+            
+          }
+          
+        }
+      }
+    }
+  
+  }
+  .nav-search {
+    display: none;
+  }
+  .nav-secondary {
+    display: none;
+  }
+}
+
 
 @media(max-width: 1024px) {
   .nav-secondary {
@@ -205,6 +281,17 @@
       background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
   }
 
+  .nav-collapsed {
+    #menuToggle span {
+      top: 20px;
+    }
+    #menuToggle input {
+      height: 65px;
+      width: 100px;
+    }
+  }
+ 
+
   #menuToggle span:first-child {
     transform-origin: 0% 0%;
   }
@@ -233,7 +320,9 @@
   #menuToggle input:checked ~ span:nth-child(3) {
     transform: rotate(-45deg) translate(-14px, 11px);
   }
-
+  .nav-collapsed {
+    height: 65px;
+  }
   .nav-container {
     .nav-items {
       .nav-logo {
@@ -245,6 +334,8 @@
         width: 250px;
       }
     }
+  }
+  .nav-container, .nav-collapsed {
     .nav-menu {
       position: relative;
      
