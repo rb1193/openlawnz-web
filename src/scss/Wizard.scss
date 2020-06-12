@@ -74,16 +74,8 @@
   font-style: italic;
 }
 
-.wizard-step-options {
-  align-self: stretch;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
-
 .wizard-step-option {
   display: flex;
-  flex-basis: 50%;
   margin-bottom: 20px;
 }
 
