@@ -8,14 +8,38 @@ import SearchContainer from "./SearchContainer"
 const MainNav = () => {
   const [isNavOpen, setIsNavOpen] = React.useState(false)
   const toggleNavState = () => setIsNavOpen(!isNavOpen)
+  let navHeight = 175
+
+  if (typeof document !== 'undefined' && typeof window !== 'undefined') {
+     window.onscroll = function() {
+      let nav = document.getElementById("nav")
+
+      if (nav.offsetHeight - 65 > navHeight && nav.offsetHeight > 240) {
+        navHeight = nav.offsetHeight - 65;
+      }
+
+      if (document.documentElement.scrollTop >= navHeight) {
+        document.body.style.marginTop = `${navHeight + 65}px`;
+        
+        nav.classList.add("nav-collapsed");
+        nav.classList.remove("nav-container");
+      } else {
+        nav.classList.add("nav-container");
+        document.body.style.marginTop = "0px";
+        nav.classList.remove("nav-collapsed");
+        
+      }
+    }
+  }
 
   return (
-    <header role="banner" className="nav-container">
+    <header role="banner" id="nav" className="nav-container">
       <div className="nav-items">
         <div className="nav-logo">
           <Link to="/">
             <span className="visuallyhidden">OpenLaw NZ</span>
             <Logo alt="OpenLaw NZ" className="main-logo" />
+            <img alt="OpenLaw NZ (Small) " src="/assets/openlaw-logo-small.png"/>
           </Link>
         </div>
 
@@ -38,10 +62,10 @@ const MainNav = () => {
           <div className="nav-collapsing">
             <nav>
               <ul>
-                <Link activeClassName="link-active" to="/"><li>Our Mission</li></Link>
+                <Link to="/our-mission" partiallyActive={true} activeClassName="link-active"  ><li>Our Mission</li></Link>
                 <Link to="/get-empowered" partiallyActive={true} activeClassName="link-active"><li>Get Empowered</li></Link>
-                <Link to="/about" partiallyActive={true} activeClassName="link-active"><li>Get Involved</li></Link>
-                <Link activeClassName="link-active" partiallyActive={true} to="/news"><li>Blog</li></Link>
+                <Link to="/get-involved" partiallyActive={true} activeClassName="link-active"><li>Get Involved</li></Link>
+                <Link activeClassName="link-active" partiallyActive={true} to="/news"><li>News</li></Link>
               </ul>
             </nav>
           </div>
@@ -50,7 +74,7 @@ const MainNav = () => {
               Developers
             </a>
             <a className="developers-icon" href="https://github.com/openlawnz">
-              <img src="assets/github-mark.png"/>
+              <img src="assets/github-mark.png" alt="Developers"/>
             </a>
           </div>
         </div>

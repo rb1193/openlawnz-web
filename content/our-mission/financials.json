@@ -1,0 +1,26 @@
+{
+  "title": "Financials",
+  "description": "OpenLaw NZ is a registered charity and most of our important documents are public. You can access them here or at the charities website. ",
+  "content": [
+    {
+      "type": "text",
+      "title": "Financial reports ",
+      "group": [
+        {
+          "title": "Links",
+          "content_html": "<ul>\n<li>\n<a>Year ending 31 March 2019</a>\n</li>\n<li>\n<a>Year ending 31 March 2020</a>\n</li>\n</ul>"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Legal Documents",
+      "group": [
+        {
+          "title": "Constitution",
+          "content_html": "<a>OpenLaw NZ Constitution</a."
+        }
+      ]
+    }
+  ]
+}

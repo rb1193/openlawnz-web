@@ -221,6 +221,64 @@ collections:
                 - { name: tooltip, label: Tooltip, widget: text, required: false }
       
 
+  - name: ourMission
+    label: Our Mission
+    label_singular: Page
+    folder: content/our-mission
+    create: true
+    extension: json
+    fields:
+      - { name: title, Label: Title}
+      - { name: description, Label: Description }
+      - label: Sections
+        label_singular: Section
+        name: content
+        widget: list 
+        types:
+          - label: Text
+            name: text
+            summary: "{{title}} (Text)"
+            fields:
+              - { name: title, Label: Title}
+              - label: Text
+                label_singular: Text
+                name: group
+                widget: list
+                fields:
+                  - { name: title, label: "Summary", hint: "This will not appear on the page" }
+                  - { name: content_html, label: "Content", widget: markdown }
+          - label: "Contributors List"
+            name: contributors
+            fields:
+              - { name: title, label: "Heading" }
+              - label: Contributors
+                name: contributors
+                widget: list
+                fields:
+                  - { name: title, label: Name }
+                  - label: "Image"
+                    name: "image_url"
+                    widget: "image"
+                    media_library:
+                      config:
+                        multiple: false
+          - label: "Directors List"
+            name: "directors"
+            fields:
+              - { name: title, label: "Heading" }
+              - label: Directors
+                name: directors
+                widget: list
+                fields:
+                  - { name: name, label: Name }
+                  - { name: bio, label: Bio, widget: markdown }
+                  - label: "Image"
+                    name: "image_url"
+                    widget: "image"
+                    media_library:
+                      config:
+                        multiple: false
+
   - name: getInvolved
     label: Get Involved
     label_singular: Page
@@ -230,10 +288,35 @@ collections:
     fields:
       - { name: title, Label: Title}
       - { name: description, Label: Description }
-      - label: Paragraphs
-        label_singular: Paragraph
+      - label: Sections
+        label_singular: Section
         name: content
-        widget: list
-        fields:
-          - { name: title, Label: Title }
-          - { name: content_html, Label: Content, widget: markdown }
+        widget: list 
+        types:
+          - label: Text
+            name: text
+            summary: "{{title}} (Text)"
+            fields:
+              - { name: title, Label: Title}
+              - label: Text
+                label_singular: Text
+                name: group
+                widget: list
+                fields:
+                  - { name: title, label: "Summary", hint: "This will not appear on the page" }
+                  - { name: content_html, label: "Content", widget: markdown }
+          - label: "Contributors List"
+            name: contributors
+            fields:
+              - { name: title, label: "Heading" }
+              - label: Contributors
+                name: contributors
+                widget: list
+                fields:
+                  - { name: title, label: Name }
+                  - label: "Image"
+                    name: "image_url"
+                    widget: "image"
+                    media_library:
+                      config:
+                        multiple: false

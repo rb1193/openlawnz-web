@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 
 import SEO from "../components/seo"
-import SearchContainer from "./SearchContainer.jsx"
 import InfoCard from "./InfoCard.jsx"
 
 import Download from "../images/svgs/download-icon.svg"

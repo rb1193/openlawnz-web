@@ -19,6 +19,16 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     })
     
   }
+  if (node.internal.type === `OurMissionJson`) {
+    const slug = createFilePath({ node, getNode, basePath: `our-mission` })
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
+    })
+    
+  }
+
   if (node.internal.type === `GetInvolvedJson`) {
     const slug = createFilePath({ node, getNode, basePath: `get-involved` })
     createNodeField({
@@ -95,6 +105,53 @@ exports.createPages = async ({graphql, actions: { createPage } }) => {
           }
         }
       }
+      allOurMissionJson {
+        nodes {
+          description
+          title
+          fields {
+            slug
+          }
+          content {
+            contributors {
+              image_url
+              title
+            }
+            directors {
+              bio
+              name
+              image_url
+            }
+            group {
+              content_html
+              title
+            }
+            title
+            type
+          }
+        }
+      }
+      allGetInvolvedJson {
+        nodes {
+          description
+          title
+          content {
+            title
+            type
+            group {
+              title
+              content_html
+            }
+            contributors {
+              title
+              image_url
+            }
+          }
+          fields {
+            slug
+          }
+        }
+      }
     }
   `)
 
@@ -107,6 +164,12 @@ exports.createPages = async ({graphql, actions: { createPage } }) => {
   
   const micrositeData = result.data.allMicrositesJson.edges 
     .map(n => n.node)
+    .map(n => ({ ...n, slug: n.fields.slug }))
+
+  const ourMissionData = result.data.allOurMissionJson.nodes
+    .map(n => ({ ...n, slug: n.fields.slug }))
+
+  const getInvolvedData = result.data.allGetInvolvedJson.nodes
     .map(n => ({ ...n, slug: n.fields.slug }))
 
   const wizardData = result.data.allWizardJson.nodes
@@ -144,6 +207,21 @@ exports.createPages = async ({graphql, actions: { createPage } }) => {
     })
   })
 
+  ourMissionData.forEach(n => {
+    createPage( {
+      path: "/our-mission" + n.slug,
+      component: require.resolve("./src/templates/our-mission-page.js"),
+      context: n,
+    })
+  })
+
+  getInvolvedData.forEach(n => {
+    createPage( {
+      path: "/get-involved" + n.slug,
+      component: require.resolve("./src/templates/get-involved-page.js"),
+      context: n,
+    })
+  })
 }
 
 exports.onCreatePage = ({ page, actions }) => {
