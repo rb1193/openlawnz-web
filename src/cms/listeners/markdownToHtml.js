@@ -1,5 +1,6 @@
 import { Map, List } from "immutable"
 import { markdownToHtml } from "netlify-cms-widget-markdown/dist/esm/serializers/index"
+import DOMPurify from "dompurify"
 
 export default function entryToHtml({ entry }) {
   return objectToHtml(entry.get("data"))
@@ -13,15 +14,18 @@ function objectToHtml(object) {
   object.forEach((value, key) => {
     if (key.substring(key.length - MARKDOWN_SUFFIX.length) === MARKDOWN_SUFFIX) {
       const htmlKey = key.substring(0, key.length - MARKDOWN_SUFFIX.length) + HTML_SUFFIX
-      htmlOutput = htmlOutput.set(htmlKey, markdownToHtml(value))
+      htmlOutput = htmlOutput.set(htmlKey, DOMPurify.sanitize(markdownToHtml(value)))
     }
     if (Map.isMap(value)) {
       htmlOutput = htmlOutput.set(key, objectToHtml(value))
     }
     if (List.isList(value)) {
-      htmlOutput = htmlOutput.set(key, value.map(item => {
-        return Map.isMap(item) ? objectToHtml(item) : item
-      }))
+      htmlOutput = htmlOutput.set(
+        key,
+        value.map((item) => {
+          return Map.isMap(item) ? objectToHtml(item) : item
+        })
+      )
     }
   })
   return object.merge(htmlOutput)
