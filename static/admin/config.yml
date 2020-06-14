@@ -126,6 +126,19 @@ collections:
                     fields:
                       - { name: title, Label: Summary }
                       - { name: content_html, Label: Content, widget: markdown }
+              - label: FAQs
+                label_singular: FAQ
+                summary: "{{title}} (FAQs)"
+                name: faqs
+                fields:
+                  - { name: title, Label: Title }
+                  - label: FAQ Items
+                    label_singular: FAQ Item
+                    name: content
+                    widget: list
+                    fields:
+                    - { name: question, label: Question }
+                    - { name: answer, label: Answer, widget: text }
               - label: Wizard
                 name: wizard
                 summary: "{{title}} (Wizard)"

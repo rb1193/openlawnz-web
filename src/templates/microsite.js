@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import TertiaryNav from "../components/TertiaryNav.jsx"
+import Accordion from "../components/Accordion"
 import Wizard from "../components/Wizard/Wizard"
 
 const Microsite = ({ pageContext }) => {
@@ -33,6 +34,15 @@ const Microsite = ({ pageContext }) => {
             }
           </div>
         )
+      case "faqs":
+        return (
+          <div key={idx} name={title}  className="module-block">
+            <h4>{module.title}</h4>
+            <Accordion id={`faqs-${idx}`} items={module.content.map(faq => {
+              return { title: faq.question, content: faq.answer }
+            })}/>
+          </div>
+        )
       case "wizard":
         // This is uncomfortably fragile but the Netlify CMS does not support auto-generated ID/key fields
         // as of 29/05/2020
@@ -55,20 +65,19 @@ const Microsite = ({ pageContext }) => {
   <SEO title={`${pageContext.title} - ${pageContext.section.title}`} description={pageContext.description} />
   <div className="side-wrapper">
     <div className="container main">
-    <div className="content">
-     <h1>{pageContext.title} - {pageContext.section.title}</h1>
-      <div className="microsite-section" name={pageContext.section.title}>
-        {
-          pageContext.section.modules.map((module, idx) => {
-            
-            return (
-              <div key={idx}>
-                {selectModule(module, idx)}
-              </div>
-            )
-          })
-        }
-        
+      <div className="content">
+        <h1>{pageContext.title} - {pageContext.section.title}</h1>
+        <div className="microsite-section" name={pageContext.section.title}>
+          {
+            pageContext.section.modules.map((module, idx) => {
+              
+              return (
+                <div key={idx}>
+                  {selectModule(module, idx)}
+                </div>
+              )
+            })
+          }
         </div>
       </div>
     </div>

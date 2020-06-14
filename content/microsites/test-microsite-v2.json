@@ -72,6 +72,30 @@
       "title": "Section 2",
       "modules": [
         {
+          "type": "text",
+          "title": "Test",
+          "content": [
+            {
+              "content_html": "Test",
+              "title": "P1"
+            }
+          ]
+        },
+        {
+          "type": "faqs",
+          "title": "Test FAQ accordion",
+          "content": [
+            {
+              "question": "Is this FAQ working?",
+              "answer": "It appears to be.\n\n## The markdown isn't processing though\n\n- list 1\n- list 2"
+            },
+            {
+              "question": "Second FAQ?",
+              "answer": "This is the answer to the second frequently asked question"
+            }
+          ]
+        },
+        {
           "type": "wizard",
           "title": "Do you have a right to cancel your contract?",
           "wizard": "fees_wizard"
