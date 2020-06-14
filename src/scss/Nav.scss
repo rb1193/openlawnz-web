@@ -222,15 +222,13 @@
   display: none;
 }
 
-
 @media (max-width: 890px) { 
+
   .nav-search {
     margin-top: 100px;
     padding-bottom: 10px;
   }
-}
 
-@media (max-width: 890px) { 
   #menuToggle {
     display: block;
     position: absolute;
@@ -281,6 +279,12 @@
   }
 
   .nav-collapsed {
+    .nav-items {
+      img {
+        left: 4vw;
+        top: 20%;
+      }
+    }
     #menuToggle span {
       top: 20px;
     }
