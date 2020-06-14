@@ -26,8 +26,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `OpenLaw NZ`,
+        short_name: `OpenLaw NZ`,
         start_url: `/`,
         background_color: `#2b6064`,
         theme_color: `#2b6064`,
