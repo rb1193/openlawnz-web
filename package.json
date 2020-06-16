@@ -19,7 +19,7 @@
     "gatsby-plugin-sharp": "^2.6.11",
     "gatsby-source-filesystem": "^2.3.11",
     "gatsby-transformer-json": "^2.4.5",
-    "gatsby-transformer-sharp": "^2.5.3",
+    "gatsby-transformer-sharp": "^2.5.5",
     "immer": "^6.0.9",
     "netlify-cms-app": "^2.12.14",
     "node-sass": "^4.14.1",
