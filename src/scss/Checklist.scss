@@ -1,0 +1,25 @@
+.checklist-item-header {
+    display: flex;
+}
+
+.checklist-item-title {
+    margin-left: 10px;
+}
+
+.checklist-item-checkbox {
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 0;
+    height: 20px;
+    position: relative;
+    width: 20px;
+}
+
+.checklist-item-checkbox img {
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.checklist-sub-item {
+    display: flex;
+}

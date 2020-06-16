@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import TertiaryNav from "../components/TertiaryNav.jsx"
 import Accordion from "../components/Accordion"
+import ChecklistAccordion from "../components/ChecklistAccordion"
 import Wizard from "../components/Wizard/Wizard"
 
 const Microsite = ({ pageContext }) => {
@@ -36,7 +37,7 @@ const Microsite = ({ pageContext }) => {
         )
       case "faqs":
         return (
-          <div key={idx} name={title}  className="module-block">
+          <div key={idx} name={title} className="module-block">
             <h4>{module.title}</h4>
             <Accordion id={`faqs-${idx}`} items={module.content.map(faq => {
               return { title: faq.question, content: faq.answer }
@@ -51,6 +52,15 @@ const Microsite = ({ pageContext }) => {
         return (
           <div key={idx} className="module-block" name={wizardData.title.replace(/\s/g, '-').toLowerCase()}>
             <Wizard title={wizardData.title} background={wizardData.background} steps={wizardData.steps} />
+          </div>
+        )
+      case "checklist":
+        return (
+          <div key={idx} name={title} className="module-block">
+            <h4>{module.title}</h4>
+            <ChecklistAccordion id={`checklist-${idx}`} items={module.content.map(item => {
+              return { title: item.title, items: item.items }
+            })}/>
           </div>
         )
       default: //Error Paragraph
