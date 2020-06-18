@@ -1,9 +1,40 @@
+.checklist {
+    @include card-style;
+}
+
 .checklist-item-header {
+    border-bottom: 1px solid $openLawMediumGray;
+    border-top: 1px solid $openLawMediumGray;
     display: flex;
+    padding: 17px;
 }
 
 .checklist-item-title {
-    margin-left: 10px;
+    font-weight: bold;
+    line-height: 22px;
+}
+
+.checklist-sub-item-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.checklist-sub-item {
+    display: flex;
+    padding: 25px 25px 25px 50px;
+}
+
+.checklist-sub-item-content {
+    margin-left: 20px;
+}
+
+.checklist-sub-item-title {
+    line-height: 22px;
+    margin-bottom: 8px;
+}
+
+.checklist-sub-item-description {
+    font-size: 14px;
 }
 
 .checklist-item-checkbox {
@@ -12,6 +43,7 @@
     border-radius: 0;
     height: 20px;
     position: relative;
+    vertical-align: top;
     width: 20px;
 }
 
@@ -20,6 +52,8 @@
     transform: translate(-50%, -50%);
 }
 
-.checklist-sub-item {
-    display: flex;
+@media (max-width: 767px) {
+    .checklist-sub-item {
+        padding: 25px;
+    }
 }

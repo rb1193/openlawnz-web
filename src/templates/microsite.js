@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import TertiaryNav from "../components/TertiaryNav.jsx"
 import Accordion from "../components/Accordion"
-import ChecklistAccordion from "../components/ChecklistAccordion"
+import Checklist from "../components/Checklist"
 import Wizard from "../components/Wizard/Wizard"
 
 const Microsite = ({ pageContext }) => {
@@ -58,7 +58,7 @@ const Microsite = ({ pageContext }) => {
         return (
           <div key={idx} name={title} className="module-block">
             <h4>{module.title}</h4>
-            <ChecklistAccordion id={`checklist-${idx}`} items={module.content.map(item => {
+            <Checklist id={`checklist-${idx}`} items={module.content.map(item => {
               return { title: item.title, items: item.items }
             })}/>
           </div>
