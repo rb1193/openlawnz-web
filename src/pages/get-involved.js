@@ -21,7 +21,7 @@ const getInvolvedPage = ({data}) => {
                             <h3>{title}</h3>
                             <p>{description} 
                             <br/>
-                            <Link to={`get-involved${fields.slug}`}>View Page</Link>
+                            <Link to={`/get-involved${fields.slug}`}>View Page</Link>
                             </p>
                         </div>
                         )
