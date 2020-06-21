@@ -1,7 +1,7 @@
 .main {
-  margin-top: 50px;
+  padding-top: 40px;
   .content {
-    padding: 0px 0px 50px;
+    padding: 0px 0px 50px 0;
     font-size: 16px;
   }
 
@@ -14,7 +14,7 @@
   }
   h1 {
     @include header-one;
-    color: $openLawDarkGreen;
+    color: $openLawArapawa;
     margin-top: 45px;
 
     &:first-child {
@@ -191,7 +191,7 @@
 
 @media (min-width: 767px) {
   .main {
-    margin: 40px 4vw 115px 4vw;
+    margin: 0px 4vw 115px 4vw;
     .paragraph-with-figure {
       flex-direction: row;
 

@@ -9,6 +9,7 @@ const ourMissionPage = ({data}) => {
   return (
     <Layout>
       <SEO title="Our Mission" />
+      <div className="tertiary-background">
         <div className="side-wrapper">
           <div className="container main">
             <div className="content">
@@ -21,7 +22,7 @@ const ourMissionPage = ({data}) => {
                       <h3>{title}</h3>
                       <p>{description} 
                         <br/>
-                        <Link to={`our-mission${fields.slug}`}>View Page</Link>
+                        <Link to={`/our-mission${fields.slug}`}>View Page</Link>
                       </p>
                     </div>
                   )
@@ -38,6 +39,7 @@ const ourMissionPage = ({data}) => {
       })  
       }
       type="/"/>
+      </div>
     </Layout>
   )
 }

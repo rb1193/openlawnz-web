@@ -9,21 +9,23 @@ const News = ({ pageContext }) => (
   <Layout>
 
     <SEO title="News" />
-    <div className="side-wrapper">
-        <div className="news-list">
-          {pageContext.news.map((ni, idx) => (
-            <NewsItem key={idx} context={ni} />
-          ))}
-        </div>
+    <div className="tertiary-background">
+      <div className="side-wrapper">
+          <div className="news-list">
+            {pageContext.news.map((ni, idx) => (
+              <NewsItem key={idx} context={ni} />
+            ))}
+          </div>
+      </div>
+      <TertiaryNav 
+        base="/news/" 
+        data={
+          pageContext.news.map(({title}) =>  {
+            return title
+        })  
+        }
+        type="/"/>
     </div>
-    <TertiaryNav 
-      base="/news/" 
-      data={
-        pageContext.news.map(({title}) =>  {
-          return title
-      })  
-      }
-      type="/"/>
   </Layout>
 )
 
