@@ -1,0 +1,57 @@
+.landing-card {
+    @include card-style;
+    width: 100%;
+    margin: 20px 0;
+    padding: 30px;
+    position: relative;
+    min-height: 300px;
+    overflow: hidden;
+    h2 {
+        position: relative;
+        padding-top: 40px;
+        color: black;
+        z-index: 999;
+    }
+    p {
+        position: relative;
+        font-size: 18px;
+        font-weight: bold;
+        width: 50%;
+        display: inline-block;
+        z-index: 999;
+        
+    }
+    a {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+    }
+    img {
+        position: absolute;
+        top: 10%;
+        height: 80%;
+        right: 1%;
+    }
+
+    @media (max-width: 1400px) {
+        img {
+            opacity: 40%;
+        }
+    }
+    @media (max-width: 1024px) {
+        img {
+            top: auto;
+            height: auto;
+            bottom: 10%;
+            width: 400px;
+           
+            right: 0;
+        }
+        p {
+            width: 100%;
+        }
+    }
+}

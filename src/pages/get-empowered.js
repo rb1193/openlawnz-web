@@ -1,8 +1,9 @@
 import React from "react"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
-import {Link, graphql} from "gatsby"
+import {graphql} from "gatsby"
 // import TertiaryNav from "../components/TertiaryNav.jsx"
+import LandingCard from "../components/LandingCard"
 
 
 const EmpowerPage = ({ data }) => {
@@ -12,17 +13,13 @@ const EmpowerPage = ({ data }) => {
     <Layout>
       <SEO title="Get Empowered" />  
       <div className="side-wrapper">
-        <div className="container main">
+        <div className="main">
           <div className="content">
           <h1>Get Empowered</h1>
             {
-              micrositeData.map(({title, description, fields, content}, idx) => {
+              micrositeData.map((content, idx) => {
                   return (
-                    <div className="microsite-paragraph" key={idx}>
-                        <h3 name={fields.slug.slice(1)}>{title}</h3>
-                        <p>{description}</p>
-                        <Link to={`/get-empowered/${fields.slug}/${content[0].title.replace(/\s/g, '-').toLowerCase()}`}>View Site</Link>
-                    </div>
+                    <LandingCard slug={`/get-empowered/${content.fields.slug}${content.content[0].title.replace(/\s/g, '-').toLowerCase()}`} key={idx} content={content}/>
                   )
               }) 
             }
@@ -46,6 +43,7 @@ export const empowerQuery = graphql`
               title
             }
             description
+            image_url
         }
       }
     }
