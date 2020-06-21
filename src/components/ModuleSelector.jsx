@@ -11,7 +11,7 @@ const ModuleSelector = (props) => {
     const errorModule = (message) => {
       return <div className="microsite-paragraph" name={title}>
         <h4>{module.title}</h4>
-        Error: {message}
+        <p>Error: {message}</p>
       </div>
     }
     
@@ -23,7 +23,7 @@ const ModuleSelector = (props) => {
             {
               module.content.map(({content_html}, idx) => {
                 return (
-                  <div key={idx}
+                  <p key={idx}
                     className="microsite-paragraph"
                     dangerouslySetInnerHTML={{ __html: content_html }}
                   />
@@ -90,9 +90,7 @@ const ModuleSelector = (props) => {
             </div>
             )
         default: //Error Paragraph
-            return (
-            errorModule("Module type not found")
-            )
+            return errorModule("Module type not found")
     }
 }
 
