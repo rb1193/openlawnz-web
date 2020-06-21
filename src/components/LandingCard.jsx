@@ -9,7 +9,7 @@ const LandingCard = (props) => {
         <h2>{content.title}</h2>
         <p>{content.description}</p>
         
-        <img src={content.image_url}/>
+        <img src={content.image_url} alt={content.title}/>
         
         <Link to={`${props.slug}`}/>
     </div>
