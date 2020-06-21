@@ -5,7 +5,7 @@
     {
       "type": "text",
       "title": "Summary",
-      "group": [
+      "content": [
         {
           "content_html": "OpenLaw NZ is a registered charity. We’re operated by a fantastic group of volunteers, helping with code, design, orchestration, data parsing, machine learning and devops. ",
           "title": "OpenLaw NZ is a registered charity. We’re operated by a fantastic group of volunteers..."

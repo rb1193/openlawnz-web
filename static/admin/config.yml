@@ -242,7 +242,7 @@ collections:
               - { name: title, Label: Title}
               - label: Text
                 label_singular: Text
-                name: group
+                name: content
                 widget: list
                 fields:
                   - { name: title, label: "Summary", hint: "This will not appear on the page" }
@@ -300,7 +300,7 @@ collections:
               - { name: title, Label: Title}
               - label: Text
                 label_singular: Text
-                name: group
+                name: content
                 widget: list
                 fields:
                   - { name: title, label: "Summary", hint: "This will not appear on the page" }

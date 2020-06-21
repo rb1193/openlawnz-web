@@ -5,7 +5,7 @@
     {
       "type": "text",
       "title": "Summary",
-      "group": [
+      "content": [
         {
           "content_html": "OpenLaw NZ technology will help lawyers and law firms become more efficient and better resourced. Our case law API can be used to build custom research solutions and document tools. Our advanced search and researcher interface can be used to export and analyse case law data at scale.  ",
           "title": "OpenLaw NZ technology"
@@ -15,7 +15,7 @@
     {
       "type": "text",
       "title": "API Integrations",
-      "group": [
+      "content": [
         {
           "content_html": "The OpenLaw NZ API facilitates access and interaction with machine-readable legal data. It means legal data can be integrated and used inside your own applications, document management software, and Microsoft Word. ",
           "title": "The OpenLaw NZ API facilitates access..."
@@ -36,7 +36,7 @@
     },
     {
       "type": "text",
-      "group": [
+      "content": [
         {
           "content_html": "Our platform can be used to automate the analysis of large amounts of case law very quickly. We’re currently building a prototype researcher interface to facilitate this. If you’re interested, drop us a line. ",
           "title": "Analysis"

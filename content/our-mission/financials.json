@@ -5,7 +5,7 @@
     {
       "type": "text",
       "title": "Financial reports ",
-      "group": [
+      "content": [
         {
           "title": "Links",
           "content_html": "<ul>\n<li>\n<a>Year ending 31 March 2019</a>\n</li>\n<li>\n<a>Year ending 31 March 2020</a>\n</li>\n</ul>"
@@ -15,7 +15,7 @@
     {
       "type": "text",
       "title": "Legal Documents",
-      "group": [
+      "content": [
         {
           "title": "Constitution",
           "content_html": "<a>OpenLaw NZ Constitution</a."
