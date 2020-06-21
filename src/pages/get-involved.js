@@ -9,6 +9,7 @@ const getInvolvedPage = ({data}) => {
   return (
     <Layout>
       <SEO title="Get Involved" />
+      <div className="tertiary-background">
         <div className="side-wrapper">
             <div className="container main">
                 <div className="content">
@@ -38,6 +39,7 @@ const getInvolvedPage = ({data}) => {
         })  
         }
         type="/"/>
+        </div>
     </Layout>
   )
 }
