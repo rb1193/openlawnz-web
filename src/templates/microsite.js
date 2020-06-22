@@ -31,7 +31,7 @@ const Microsite = ({ pageContext }) => {
     <TertiaryNav 
       base={"/get-empowered/" + pageContext.title.replace(/\s/g, '-').toLowerCase()} 
       data={pageContext.section_headings.map((x) =>  {
-          return x
+          return [x, x]
       })}
       secondary_data={pageContext.section.modules.map(x => x.title)}
       type="/"

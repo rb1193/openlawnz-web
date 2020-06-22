@@ -19,7 +19,7 @@ const ModuleSelector = (props) => {
       case "text": // Single heading, multiple paragraphs.
         return (
           <div name={title} className="module-block">
-            <h3>{module.title}</h3>
+            <h3 >{module.title}</h3>
             {
               module.content.map(({content_html}, idx) => {
                 return (

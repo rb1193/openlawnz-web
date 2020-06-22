@@ -34,11 +34,10 @@ const getInvolvedPage = ({data}) => {
         <TertiaryNav 
         base="/get-involved/" 
         data={
-            pageContext.map(({title}) =>  {
-            return title
-        })  
-        }
-        type="/"/>
+          pageContext.map(({title}) =>  {
+            return [title, title]
+          })  
+        }/>
         </div>
     </Layout>
   )
