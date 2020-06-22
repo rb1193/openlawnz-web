@@ -17,11 +17,12 @@ const TertiaryNav = props => {
               <div key={idx}>
               {
                 <>  
+                <li className="tertiary-item">
                   <Link to={(props.base + "/" + toSlug(content[1]))}
                   activeClassName="tertiary-active">
 
-                  <li className="tertiary-item">{content[0]}</li>
                   </Link>
+                  </li>
                   {
                     content[0] === props.page &&
                     <>
@@ -29,11 +30,11 @@ const TertiaryNav = props => {
                         {
                           props.secondary_data.map((x, idx) => {
                             return (
-                              <Link to={(props.base + "/" + toSlug(content[1])) + "#" + toSlug(x)} key={idx}>
-                                <li>
-                                  {x}
-                                </li>
-                              </Link>
+                              <li>
+                                <Link to={(props.base + "/" + toSlug(content[1])) + "#" + toSlug(x)} key={idx}>
+                                 {x}
+                                </Link>
+                              </li>
                             )  
                           })
                         }
