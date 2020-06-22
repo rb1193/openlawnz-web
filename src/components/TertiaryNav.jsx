@@ -21,6 +21,7 @@ const TertiaryNav = props => {
                   <Link to={(props.base + "/" + toSlug(content[1]))}
                   activeClassName="tertiary-active">
 
+                  {content[0]}
                   </Link>
                   </li>
                   {
