@@ -19,12 +19,13 @@
 
     h2 {
       @include header-two;
-      color: $openLawGold;
+      color: $openLawA11yBrown;
       margin-bottom: 10px;
+      font-family: 'Nunito', sans-serif;
       
 
       @media (min-width: 767px) {
-        font-size: 38px;
+        font-size: 30px;
       }
 
       @media (min-width: 767px) {

@@ -73,34 +73,36 @@ const Microsite = ({ pageContext }) => {
   return (
   <Layout>
   <SEO title={`${pageContext.title} - ${pageContext.section.title}`} description={pageContext.description} />
-  <div className="side-wrapper">
-    <div className="container main">
-      <div className="content">
-        <h1>{pageContext.title} - {pageContext.section.title}</h1>
-        <div className="microsite-section" name={pageContext.section.title}>
-          {
-            pageContext.section.modules.map((module, idx) => {
-              
-              return (
-                <div key={idx}>
-                  {selectModule(module, idx)}
-                </div>
-              )
-            })
-          }
+  <div className="tertiary-background">
+    <div className="side-wrapper">
+      <div className="container main">
+        <div className="content">
+          <h1>{pageContext.title} - {pageContext.section.title}</h1>
+          <div className="microsite-section" name={pageContext.section.title}>
+            {
+              pageContext.section.modules.map((module, idx) => {
+                
+                return (
+                  <div key={idx}>
+                    {selectModule(module, idx)}
+                  </div>
+                )
+              })
+            }
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <TertiaryNav 
-    base={"/get-empowered/" + pageContext.title.replace(/\s/g, '-').toLowerCase()} 
-    data={pageContext.section_headings.map((x) =>  {
-        return x
-    })}
-    secondary_data={pageContext.section.modules.map(x => x.title)}
-    type="/"
-    page={pageContext.section.title}
-    />
+    <TertiaryNav 
+      base={"/get-empowered/" + pageContext.title.replace(/\s/g, '-').toLowerCase()} 
+      data={pageContext.section_headings.map((x) =>  {
+          return x
+      })}
+      secondary_data={pageContext.section.modules.map(x => x.title)}
+      type="/"
+      page={pageContext.section.title}
+      />
+    </div>
   </Layout>
   )
 }

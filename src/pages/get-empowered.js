@@ -14,7 +14,7 @@ const EmpowerPage = ({ data }) => {
       <div className="side-wrapper">
         <div className="container main">
           <div className="content">
-          <h2>Get Empowered</h2>
+          <h1>Get Empowered</h1>
             {
               micrositeData.map(({title, description, fields, content}, idx) => {
                   return (

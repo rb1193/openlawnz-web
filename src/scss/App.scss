@@ -1,7 +1,6 @@
 $openWhite: #ffffff;
 $openAllyLink: #3878b7;
 $openLawDarkGreen: #3f7578;
-$openLawExtraDarkGreen: #225160;
 $openLawLightGreen: #6cb5ba;
 $openLawDarkBlue: #225160;
 $openLawTeal: #00a8b3;
@@ -176,6 +175,7 @@ li {
   position: relative;
   display: inline-block;
   z-index: 10;
+  background-color: white;
 }
 
 .border {
@@ -287,8 +287,9 @@ li {
 @media (min-width: 767px) {
 
   .side-wrapper {
-    width: calc(100% - 30vw);
+    width: calc(100% - 32vw);
     max-width: calc(100% - 375px);
+    padding-right: 4vw;
   }
   
   .horizontal-container {

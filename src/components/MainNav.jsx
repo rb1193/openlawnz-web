@@ -14,7 +14,7 @@ const MainNav = () => {
      window.onscroll = function() {
       let nav = document.getElementById("nav")
 
-      if (nav.offsetHeight - 65 > navHeight && nav.offsetHeight > 240) {
+      if (nav.offsetHeight - 65 > navHeight || (nav.offsetHeight && nav.offsetHeight >= 240)) {
         navHeight = nav.offsetHeight - 65;
       }
 
@@ -62,10 +62,10 @@ const MainNav = () => {
           <div className="nav-collapsing">
             <nav>
               <ul>
-                <Link to="/our-mission" partiallyActive={true} activeClassName="link-active"  ><li>Our Mission</li></Link>
-                <Link to="/get-empowered" partiallyActive={true} activeClassName="link-active"><li>Get Empowered</li></Link>
-                <Link to="/get-involved" partiallyActive={true} activeClassName="link-active"><li>Get Involved</li></Link>
-                <Link activeClassName="link-active" partiallyActive={true} to="/news"><li>News</li></Link>
+                <li><Link to="/our-mission" partiallyActive={true} activeClassName="link-active"  >Our Mission</Link></li>
+                <li><Link to="/get-empowered" partiallyActive={true} activeClassName="link-active">Get Empowered</Link></li>
+                <li><Link to="/get-involved" partiallyActive={true} activeClassName="link-active">Get Involved</Link></li>
+                <li><Link activeClassName="link-active" partiallyActive={true} to="/news">News</Link></li>
               </ul>
             </nav>
           </div>
