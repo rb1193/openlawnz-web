@@ -15,14 +15,11 @@ const Microsite = ({ pageContext }) => {
           <h1>{pageContext.title} - {pageContext.section.title}</h1>
           <div className="microsite-section" name={pageContext.section.title}>
             {
-              pageContext.section.modules.map((module, idx) => {
-                
-                return (
-                  <div key={idx}>
-                    <ModuleSelector module={module} wizardData={pageContext.wizardData} idx={idx}/>
-                  </div>
-                )
-              })
+              pageContext.section.modules.map((module, idx) => (
+                <div key={idx}>
+                  <ModuleSelector module={module} wizardModuleData={pageContext.wizardData} idx={idx}/>
+                </div>
+              ))
             }
           </div>
         </div>

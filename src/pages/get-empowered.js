@@ -3,14 +3,10 @@ import SEO from "../components/seo"
 import Layout from "../components/layout"
 import {Link, graphql} from "gatsby"
 import TertiaryNav from "../components/TertiaryNav.jsx"
-
+import { toSlug } from "../js/ToSlug"
 
 const EmpowerPage = ({ data }) => {
-    const micrositeData = data.allMicrositesJson.edges.map(n => n.node)
-  
-  const toSlug = (string) => {
-    return string.replace(/\s/g, '-').toLowerCase()
-  }
+  const micrositeData = data.allMicrositesJson.edges.map(n => n.node)
 
   return (
     <Layout>
