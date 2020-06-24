@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import TertiaryNav from "../components/TertiaryNav.jsx"
+import { toSlug } from "../js/ToSlug"
 
 import ModuleSelector from "../components/ModuleSelector"
 const Microsite = ({ pageContext }) => {
@@ -26,12 +27,11 @@ const Microsite = ({ pageContext }) => {
       </div>
     </div>
     <TertiaryNav 
-      base={"/get-empowered/" + pageContext.title.replace(/\s/g, '-').toLowerCase()} 
+      base={"/get-empowered/" + toSlug(pageContext.title)} 
       data={pageContext.section_headings.map((x) =>  {
           return [x, x]
       })}
       secondary_data={pageContext.section.modules.map(x => x.title)}
-      type="/"
       page={pageContext.section.title}
       />
     </div>

@@ -17,11 +17,9 @@ const getInvolvedPage = ({data}) => {
                   <h1>Get Involved</h1>
                   <p>Get Involved with OpenLawNZ</p>
                   {
-                    pageContext.map((content, idx) => {
-                      return (
-                        <LandingCard slug={`/get-involved${content.fields.slug}`} key={idx} content={content}/>
-                      )
-                    })
+                    pageContext.map((content, idx) => (
+                      <LandingCard slug={`/get-involved${content.fields.slug}`} key={idx} content={content}/>
+                    ))
                   }
                 </div>
             </div>
