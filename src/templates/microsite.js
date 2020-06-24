@@ -5,7 +5,7 @@ import TertiaryNav from "../components/TertiaryNav.jsx"
 import Accordion from "../components/Accordion"
 import Wizard from "../components/Wizard/Wizard"
 
-const Microsite = ({ pageContext }) => {
+export const MicrositeContent = ({ pageContext }) => {
   
   function selectModule(module, idx) { //selects the correct module type
     let title = module.title.replace(/\s/g, '-').toLowerCase()
@@ -61,8 +61,7 @@ const Microsite = ({ pageContext }) => {
   }
 
   return (
-  <Layout>
-  <SEO title={`${pageContext.title} - ${pageContext.section.title}`} description={pageContext.description} />
+  
   <div className="tertiary-background">
     <div className="side-wrapper">
       <div className="container main">
@@ -93,9 +92,15 @@ const Microsite = ({ pageContext }) => {
       page={pageContext.section.title}
       />
     </div>
-  </Layout>
   )
 }
+
+const Microsite = ({ pageContext }) => (
+  <Layout>
+    <SEO title={`${pageContext.title} - ${pageContext.section.title}`} description={pageContext.description} />
+    <MicrositeContent pageContext={pageContext} />
+  </Layout>
+)
 
 
 export default Microsite
