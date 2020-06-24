@@ -10,6 +10,9 @@ import LandingCard from "../components/LandingCard"
 
 const EmpowerPage = ({ data }) => {
   const micrositeData = data.allMicrositesJson.edges.map(n => n.node)
+  return (
+    <Layout>
+      <SEO title="Get Empowered" /> 
       <div className="tertiary-background">
         <div className="side-wrapper">
           <div className="container main">
