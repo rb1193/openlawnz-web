@@ -92,7 +92,7 @@ collections:
     fields:
       - { name: title, label: Title }
       - { name: content_html, label: Content, widget: markdown }
-  
+      
   - name: microsites
     label: Microsites
     label_singular: Microsite
@@ -102,6 +102,12 @@ collections:
     fields:
       - { name: title, Label: Title}
       - { name: description, Label: Description, widget: markdown }
+      - label: "Image"
+        name: "image_url"
+        widget: "image"
+        media_library:
+          config:
+            multiple: false
       - label: Sections
         label_singular: Section
         name: content
@@ -230,6 +236,12 @@ collections:
     fields:
       - { name: title, Label: Title}
       - { name: description, Label: Description }
+      - label: "Image"
+        name: "image_url"
+        widget: "image"
+        media_library:
+          config:
+            multiple: false
       - label: Sections
         label_singular: Section
         name: content
@@ -288,6 +300,12 @@ collections:
     fields:
       - { name: title, Label: Title}
       - { name: description, Label: Description }
+      - label: "Image"
+        name: "image_url"
+        widget: "image"
+        media_library:
+          config:
+            multiple: false
       - label: Sections
         label_singular: Section
         name: content
