@@ -122,7 +122,7 @@ exports.createPages = async ({graphql, actions: { createPage } }) => {
               name
               image_url
             }
-            group {
+            content {
               content_html
               title
             }
@@ -138,7 +138,7 @@ exports.createPages = async ({graphql, actions: { createPage } }) => {
           content {
             title
             type
-            group {
+            content {
               title
               content_html
             }

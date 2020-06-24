@@ -5,7 +5,7 @@
     {
       "type": "text",
       "title": "Code and development  ",
-      "group": [
+      "content": [
         {
           "content_html": "Our software is open-source software, and that means anybody can browse our github repositories and submit a pull request to improve parts of our code. We maintain an active list of issues under each of our repositories.  ",
           "title": "Software"
@@ -19,7 +19,7 @@
     {
       "type": "text",
       "title": "Write with us ",
-      "group": [
+      "content": [
         {
           "content_html": "We’re building areas in our website devoted to increasing general knowledge about specific areas of law. An example is our credit contracts area. If you are interested in writing or contributing to a topic, and are interested in building innovative technology, our development team can help bring your ideas to life.  ",
           "title": "Website Expansion"
@@ -37,7 +37,7 @@
     {
       "type": "text",
       "title": "Other areas",
-      "group": [
+      "content": [
         {
           "title": "Seek Volunteer",
           "content_html": "Occasionally we list other volunteer positions on seek volunteer. You can browse all our listings at our <a href=\"https://seekvolunteer.co.nz/volunteering-organisations/1567/openlaw-nz-ltd\">organisation page</a> there. "
@@ -47,7 +47,7 @@
     {
       "type": "text",
       "title": "Why Contribute?",
-      "group": [
+      "content": [
         {
           "title": "Why Contribute?",
           "content_html": "Your contributions to OpenLaw NZ: \n<ul>\n<li>Are peer reviewed for code and writing (through Github, OpenLaw NZ slack)</li>\n<li>Integrate with high quality designs </li>\n<li>Will be open source and permanent </li>\n<li>Can be integrated into our research platform (eg related cases) </li>\n</ul>"

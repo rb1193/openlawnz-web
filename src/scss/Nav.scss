@@ -424,15 +424,16 @@
 
   .tertiary-item {
     width: 100%;
-    padding: 12px 0 12px 10px;
     border-bottom: 1px solid $openLawA11yBrown;
-    line-height: 1;
+    line-height: 1.2;
+    a {
+      display: block;
+      padding: 12px 0 12px 10px;
+    }
   }
   
   .tertiary-active {
-    li {
-      border-bottom: 4px solid $openLawA11yBrown;
-    }
+    border-bottom: 3px solid $openLawA11yBrown;
   }
 
 
@@ -442,6 +443,9 @@
       font-size: 16px;
       padding-top: 10px;
       font-weight: 600;
+      a:hover {
+        color: $openLawA11yBrown;
+      }
     }
   }
 

@@ -35,10 +35,9 @@ const ourMissionPage = ({data}) => {
       base="/our-mission/" 
       data={
         pageContext.map(({title}) =>  {
-          return title
+          return [title, title]
       })  
-      }
-      type="/"/>
+      }/>
       </div>
     </Layout>
   )

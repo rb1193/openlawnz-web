@@ -3,6 +3,10 @@
     padding-top: 10px;
   }
   .module-block {
+
+    margin-top: -70px; //causes anchor links to jump above block so it is not concealed by nav
+    padding-top: 70px;
+
     padding-bottom: 25px;
   }
  
