@@ -22,8 +22,6 @@ init({ config })
 
 registerWidget("wizard_option_next_step", NextStepControl)
 
-registerPreviewTemplate("about", previews.aboutPreview)
-registerPreviewTemplate("developers", previews.developersPreview)
 registerPreviewTemplate("news", previews.newsPreview)
 registerPreviewTemplate("getInvolved", previews.getInvolvedPreview)
 registerPreviewTemplate("ourMission", previews.ourMissionPreview)
