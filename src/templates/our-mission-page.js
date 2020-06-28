@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const OurMissionPage = ({ pageContext }) => {
+export const OurMissionPageContent = ({ pageContext }) => {
 
   function selectModule(module) {
     const errorModule = (message) => {
@@ -74,26 +74,29 @@ const OurMissionPage = ({ pageContext }) => {
   }
 
   return (
-  <Layout>
-      <SEO title={pageContext.title} description={pageContext.description} />
-      <div className="container main">
-        <div className="content">
-          <h1>{pageContext.title}</h1>
-          {
-            pageContext.content.map((module, idx) => {
-              return (
-                <div key={idx}>
-                  {selectModule(module)}
-                </div>
-              )
-            })
-          }
-        </div>
-
+    <div className="container main">
+      <div className="content">
+        <h1>{pageContext.title}</h1>
+        {
+          pageContext.content.map((module, idx) => {
+            return (
+              <div key={idx}>
+                {selectModule(module)}
+              </div>
+            )
+          })
+        }
       </div>
-  </Layout>
+
+    </div>
   )
 }
 
+const OurMissionPage = ({pageContext}) => (
+  <Layout>
+      <SEO title={pageContext.title} description={pageContext.description} />
+      <OurMissionPageContent pageContext={pageContext} />
+  </Layout>
+)
 
 export default OurMissionPage
