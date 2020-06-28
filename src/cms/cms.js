@@ -1,5 +1,5 @@
 import { init, registerEventListener } from 'netlify-cms-app'
-import markdownToHtml from './listeners/markdownToHtml'
+import addHtmlToEntry from './listeners/addHtmlToEntry'
 
 window.CMS_MANUAL_INIT = true;
 
@@ -20,5 +20,5 @@ init({ config });
 
 registerEventListener({
   name: 'preSave',
-  handler: markdownToHtml
+  handler: addHtmlToEntry
 });
