@@ -32,14 +32,14 @@ const NewsItem = ({
   <div className="item">
     <header>
       <h2>
-        <Link to={"/news/" + slug}>{title}</Link>
+        <Link to={"/news" + slug}>{title}</Link>
       </h2>
       <span className="date">{formattedDate}</span>
     </header>
     <div className="content">
       <div className="image-container">
         {image_url && (
-          <Link to={"/news/" + slug}>
+          <Link to={"/news" + slug}>
             <img src={image_url} alt={image_alt} />
           </Link>
         )}
@@ -47,7 +47,7 @@ const NewsItem = ({
       <p>
         {summary}
         <br />
-        <Link to={"/news/" + slug}>Read more</Link>
+        <Link to={"/news" + slug}>Read more</Link>
       </p>
     </div>
   </div>
