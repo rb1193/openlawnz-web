@@ -3,8 +3,12 @@
   background-position: bottom right;
   background-repeat: no-repeat;
   background-size: contain;
-  padding: 20px 30px;
   position: relative;
+}
+
+.wizard-bg-overlay {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px 30px;
 }
 
 .wizard-start {
@@ -114,5 +118,9 @@
   .wizard-step-content {
     min-height: 300px;
     padding: 20px 0;
+  }
+
+  .wizard-step-option {
+    flex-basis: 100%;
   }
 }
