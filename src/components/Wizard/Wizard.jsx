@@ -31,7 +31,7 @@ export default function Wizard({ background, title, steps }) {
           <WizardStart title={title} start={() => dispatch({ type: WizardOperations.NEXT, payload: steps[0].key })} />
         ) : (
           <WizardStep
-            step={steps.find((step) => step.key === wizardStack[wizardStack.length - 1])}
+            step={steps.find(({ key }) => key === wizardStack[wizardStack.length - 1])}
             navigate={dispatch}
           />
         )}
