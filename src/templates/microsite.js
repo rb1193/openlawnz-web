@@ -58,9 +58,7 @@ const Microsite = ({ pageContext }) => {
         return (
           <div key={idx} name={title} className="module-block">
             <h4>{module.title}</h4>
-            <Checklist id={`checklist-${idx}`} items={module.content.map(item => {
-              return { title: item.title, items: item.items }
-            })}/>
+            <Checklist id={`checklist-${idx}`} items={module.content}/>
           </div>
         )
       default: //Error Paragraph

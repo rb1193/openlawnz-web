@@ -77,7 +77,7 @@ exports.createPages = async ({graphql, actions: { createPage } }) => {
                   question
                   answer
                   title
-                  items {
+                  subitems {
                     title
                     content
                   }

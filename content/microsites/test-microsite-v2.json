@@ -106,7 +106,7 @@
           "content": [
             {
               "title": "Loan Amount",
-              "items": [
+              "subitems": [
                 {
                   "title": "Do you know the exact amount of the loan?",
                   "content": "You should have been told the exact amount."
@@ -115,7 +115,7 @@
             },
             {
               "title": "Interest, fees and charges",
-              "items": [
+              "subitems": [
                 {
                   "title": "Fees",
                   "content": "Any charges that you must pay under or in connection with the contract, including when such fees are due."
@@ -140,7 +140,7 @@
             },
             {
               "title": "Repayments",
-              "items": [
+              "subitems": [
                 {
                   "title": "Due dates",
                   "content": "You should know exactly when repayments are due."
