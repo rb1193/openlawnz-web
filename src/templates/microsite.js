@@ -5,7 +5,7 @@ import TertiaryNav from "../components/TertiaryNav.jsx"
 import { toSlug } from "../js/ToSlug"
 
 import ModuleSelector from "../components/ModuleSelector"
-const MicrositeContent = ({ pageContext }) => {
+export const MicrositeContent = ({ pageContext }) => {
   return (
   
   <div className="tertiary-background">
