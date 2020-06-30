@@ -6,7 +6,7 @@ export default function WizardStep({ step, navigate }) {
   const [selectedOption, setSelectedOption] = useState(null)
 
   const onOptionClick = (option) => {
-    if (option.next !== null) {
+    if (option.next !== null && option.next !== undefined) {
       navigate({ type: WizardOperations.NEXT, payload: option.next })
       return
     }

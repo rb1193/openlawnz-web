@@ -3,11 +3,11 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ModuleSelector from "../components/ModuleSelector"
 
-const OurMissionPage = ({ pageContext }) => {
+export const OurMissionPageContent = ({ pageContext }) => {
 
 
   return (
-  <Layout>
+  <div>
       <SEO title={pageContext.title} description={pageContext.description} />
       <div className="container main">
         <div className="content">
@@ -24,9 +24,16 @@ const OurMissionPage = ({ pageContext }) => {
         </div>
 
       </div>
-  </Layout>
+
+    </div>
   )
 }
 
+const OurMissionPage = ({pageContext}) => (
+  <Layout>
+      <SEO title={pageContext.title} description={pageContext.description} />
+      <OurMissionPageContent pageContext={pageContext} />
+  </Layout>
+)
 
 export default OurMissionPage

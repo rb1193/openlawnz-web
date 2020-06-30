@@ -99,6 +99,59 @@
           "type": "wizard",
           "title": "Do you have a right to cancel your contract?",
           "wizard": "fees_wizard"
+        },
+        {
+          "type": "checklist",
+          "title": "Check that your lender has shared all the required information",
+          "content": [
+            {
+              "title": "Loan Amount",
+              "subitems": [
+                {
+                  "title": "Do you know the exact amount of the loan?",
+                  "content": "You should have been told the exact amount."
+                }
+              ]
+            },
+            {
+              "title": "Interest, fees and charges",
+              "subitems": [
+                {
+                  "title": "Fees",
+                  "content": "Any charges that you must pay under or in connection with the contract, including when such fees are due."
+                },
+                {
+                  "title": "Interest",
+                  "content": "This sets out the annual interest rate, which is the rate at which your lender charges interest on the amount you have borrowed."
+                },
+                {
+                  "title": "Total interest charges",
+                  "content": "This is the total amount of interest charged over the term of the contract. This doesn’t include any fees, such as establishment and administration fees."
+                },
+                {
+                  "title": "Interest free period",
+                  "content": "An interest free period is when you do not pay interest for a limited time. This loan structure is common in the retail market where you will see promotions such as “18 months’ interest free”. However, lenders can still charge fees during an interest free period, such as establishment and administration fees. This clause should highlight the date that you will start to get charged interest."
+                },
+                {
+                  "title": "Method of charging interest",
+                  "content": "This sets out when your lender charges interest to your account, e.g. monthly or fortnightly. For example, your lender might calculate interest daily (by multiplying the unpaid balance by the daily interest rate, which is the annual interest rate divided by 365) but you only charge you every month."
+                }
+              ]
+            },
+            {
+              "title": "Repayments",
+              "subitems": [
+                {
+                  "title": "Due dates",
+                  "content": "You should know exactly when repayments are due."
+                },
+                {
+                  "title": "Amounts",
+                  "content": "You should know how much each repayment should be."
+                }
+              ]
+            }
+          ]
         }
       ],
       "asd": "asd"

@@ -3,9 +3,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ModuleSelector from "../components/ModuleSelector"
 
-const GetInvolvedPage = ({ pageContext }) => {
+const GetInvolvedPageContent = ({ pageContext }) => {
   return (
-  <Layout>
+  <div>
       <SEO title={pageContext.title} description={pageContext.description} />
       <div className="container main">
         <div className="content">
@@ -22,9 +22,15 @@ const GetInvolvedPage = ({ pageContext }) => {
         </div>
 
       </div>
-  </Layout>
+    </div>
   )
 }
 
+const GetInvolvedPage = ({ pageContext }) => (
+  <Layout>
+    <SEO title={pageContext.title} description={pageContext.description} />
+    <GetInvolvedPageContent pageContext={pageContext} />
+  </Layout>
+)
 
 export default GetInvolvedPage

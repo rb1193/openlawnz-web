@@ -26,11 +26,16 @@ export default function Wizard({ background, title, steps }) {
 
   return (
     <section className="wizard" style={{ backgroundImage: `url(${background})` }}>
-      {wizardStack.length === 0 ? (
-        <WizardStart title={title} start={() => dispatch({ type: WizardOperations.NEXT, payload: steps[0].key })} />
-      ) : (
-        <WizardStep step={steps.find((step) => step.key === wizardStack[wizardStack.length - 1])} navigate={dispatch} />
-      )}
+      <div className="wizard-bg-overlay">
+        {wizardStack.length === 0 ? (
+          <WizardStart title={title} start={() => dispatch({ type: WizardOperations.NEXT, payload: steps[0].key })} />
+        ) : (
+          <WizardStep
+            step={steps.find(({ key }) => key === wizardStack[wizardStack.length - 1])}
+            navigate={dispatch}
+          />
+        )}
+      </div>
     </section>
   )
 }
