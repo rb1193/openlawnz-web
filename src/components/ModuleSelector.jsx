@@ -1,16 +1,14 @@
 import React from "react"
 import Accordion from "../components/Accordion"
 import Wizard from "../components/Wizard/Wizard"
-
-const ModuleSelector = (props) => {
+import { toSlug } from "../js/ToSlug"
+const ModuleSelector = ({module, idx, wizardModuleData}) => {
     
-    module = props.module
-
-    let title = module.title.replace(/\s/g, '-').toLowerCase()
+    let title = toSlug(module.title)
     
     const errorModule = (message) => {
       return <div className="microsite-paragraph" name={title}>
-        <h4>{module.title}</h4>
+        <h2>{module.title}</h2>
         <p>Error: {message}</p>
       </div>
     }
@@ -19,7 +17,7 @@ const ModuleSelector = (props) => {
       case "text": // Single heading, multiple paragraphs.
         return (
           <div name={title} className="module-block">
-            <h3>{module.title}</h3>
+            <h2>{module.title}</h2>
             {
               module.content.map(({content_html}, idx) => {
                 return (
@@ -36,7 +34,7 @@ const ModuleSelector = (props) => {
             return (
             <div name={title}  className="module-block">
                 <h4>{module.title}</h4>
-                <Accordion id={`faqs-${props.idx}`} items={module.content.map(faq => {
+                <Accordion id={`faqs-${idx}`} items={module.content.map(faq => {
                 return { title: faq.question, content: faq.answer }
                 })}/>
             </div>
@@ -44,7 +42,7 @@ const ModuleSelector = (props) => {
         case "contributors":
             return (
               <div>
-                <h3>{module.title}</h3>
+                <h2>{module.title}</h2>
                 <div className="cards-list">
                   {
                     module.contributors.map(({image_url, title}, idx) => {
@@ -64,7 +62,7 @@ const ModuleSelector = (props) => {
         case "directors":
             return (
                 <div>
-                <h3>{module.title}</h3>
+                <h2>{module.title}</h2>
                 <div className="cards-list directors">
                     {module.directors.map(({name, bio, image_url}, idx) => {
                     return (
@@ -82,7 +80,7 @@ const ModuleSelector = (props) => {
         case "wizard":
             // This is uncomfortably fragile but the Netlify CMS does not support auto-generated ID/key fields
             // as of 29/05/2020
-            const wizardData = props.wizardData.find(wizard => wizard.key === module.wizard)
+            const wizardData = wizardModuleData.find(wizard => wizard.key === module.wizard)
             if (!wizardData) return errorModule("Wizard data not found")
             return (
             <div className="module-block" name={wizardData.title.replace(/\s/g, '-').toLowerCase()}>

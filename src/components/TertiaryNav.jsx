@@ -1,13 +1,9 @@
 import React from "react"
 
 import { Link } from "gatsby"
+import { toSlug } from "../js/ToSlug"
 
 const TertiaryNav = props => {
-
-  const toSlug = (string) => {
-    return string.replace(/\s/g, '-').toLowerCase()
-  }
-  
   return (
     <div className="tertiary-nav">
       <ul className="primary-menu">
@@ -31,8 +27,8 @@ const TertiaryNav = props => {
                         {
                           props.secondary_data.map((x, idx) => {
                             return (
-                              <li>
-                                <Link to={(props.base + "/" + toSlug(content[1])) + "#" + toSlug(x)} key={idx}>
+                              <li key={idx}>
+                                <Link  to={(props.base + "/" + toSlug(content[1])) + "#" + toSlug(x)} key={idx}>
                                  {x}
                                 </Link>
                               </li>
