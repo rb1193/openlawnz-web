@@ -1,17 +1,17 @@
 import React from "react"
 import { Link } from "gatsby"
 
-const LandingCard = (props) => {
-    let content = props.content
+const LandingCard = ({content, idx, slug}) => {
+    let {title, description, image_url} = content
     return (
-    <div className="landing-card" key={props.idx}>
+    <div className="landing-card" key={idx}>
         
-        <h2>{content.title}</h2>
-        <p>{content.description}</p>
+        <h2>{title}</h2>
+        <p>{description}</p>
         
-        <img src={content.image_url} alt={content.title}/>
+        <img src={image_url} alt={title}/>
         
-        <Link to={`${props.slug}`}/>
+        <Link to={`${slug}`}/>
     </div>
     )
 }
