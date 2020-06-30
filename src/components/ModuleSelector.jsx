@@ -2,6 +2,8 @@ import React from "react"
 import Accordion from "../components/Accordion"
 import Wizard from "../components/Wizard/Wizard"
 import { toSlug } from "../js/ToSlug"
+import Checklist from "../components/Checklist"
+
 const ModuleSelector = ({module, idx, wizardModuleData}) => {
     
     let title = toSlug(module.title)
@@ -87,6 +89,13 @@ const ModuleSelector = ({module, idx, wizardModuleData}) => {
                 <Wizard title={wizardData.title} background={wizardData.background} steps={wizardData.steps} />
             </div>
             )
+        case "checklist":
+          return (
+            <div key={idx} name={title} className="module-block">
+              <h4>{module.title}</h4>
+              <Checklist id={`checklist-${idx}`} items={module.content}/>
+            </div>
+          )
         default: //Error Paragraph
             return errorModule("Module type not found")
     }
