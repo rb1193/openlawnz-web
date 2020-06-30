@@ -151,6 +151,14 @@ collections:
                     searchFields: ["title"]
                     valueField: "key"
                     displayFields: ["title"]
+              - label: Case List
+                name: case_list
+                fields:
+                  - { name: title, Label: Title}
+                  - name: cases
+                    label: Cases
+                    label_singular: Case
+                    widget: case_list
   
       - label: Key Terms
         label_singular: Term

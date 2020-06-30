@@ -1,0 +1,50 @@
+.case-list {
+  @include card-style;
+}
+
+.case-list-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.case-list-table-heading {
+  background-color: $openLawDarkTeal;
+  border: none;
+  color: $openWhite;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 20px 15px;
+  text-align: left;
+}
+
+.case-list-table-cell {
+  font-weight: bold;
+  padding: 20px 15px;
+  vertical-align: top;
+  word-wrap: break-word;
+}
+
+.case-list-case-link {
+  color: $openLawCharcoal;
+  text-decoration: underline;
+
+  &:hover {
+    color: $openLawCharcoal;
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .case-list-table-heading:nth-child(3n + 2),
+  .case-list-table-cell:nth-child(3n + 2),
+  .case-list-table-heading:nth-child(3n),
+  .case-list-table-cell:nth-child(3n) {
+    display: none;
+  }
+}
+
+@media (min-width: 1001px) {
+  .case-list-table-heading:nth-child(3n + 1) {
+    width: 50%;
+  }
+}

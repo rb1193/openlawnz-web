@@ -5,6 +5,7 @@ import TertiaryNav from "../components/TertiaryNav.jsx"
 import Accordion from "../components/Accordion"
 import Checklist from "../components/Checklist"
 import Wizard from "../components/Wizard/Wizard"
+import CaseList from "../components/CaseList"
 
 export const MicrositeContent = ({ pageContext }) => {
   
@@ -59,6 +60,13 @@ export const MicrositeContent = ({ pageContext }) => {
           <div key={idx} name={title} className="module-block">
             <h4>{module.title}</h4>
             <Checklist id={`checklist-${idx}`} items={module.content}/>
+          </div>
+        )
+      case "case_list":
+        return (
+          <div key={idx} name={title} className="module-block">
+            <h4>{module.title}</h4>
+            <CaseList id={`case-list-${idx}`} cases={module.cases}/>
           </div>
         )
       default: //Error Paragraph
