@@ -1,5 +1,4 @@
 import React from "react"
-import PluginShowcase from "../components/PluginShowcase"
 import Wizard from "../components/Wizard/Wizard"
 import { GetInvolvedPageContent } from "../templates/get-involved-page"
 import { MicrositeContent } from "../templates/microsite"
@@ -21,10 +20,6 @@ export function getInvolvedPreview({ entry }) {
 
 export function ourMissionPreview({ entry }) {
   return <OurMissionPageContent pageContext={entry.get("data").toJS()} />
-}
-
-export function pluginPreview({ entry }) {
-  return <PluginShowcase data={[entry.get("data").toJS()]} />
 }
 
 export function micrositesPreview({ entry }) {

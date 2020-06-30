@@ -4,7 +4,7 @@
   "content": [
     {
       "type": "text",
-      "group": [
+      "content": [
         {
           "content_html": "The Ministry of Justice has kindly allowed us access to their database of case law from Judicial Decisions Online and other websites. Because case law is not subject to copyright restrictions, we have been able to re-purpose those PDFs and convert them into usable pieces of data that a computer can read.  ",
           "title": "Access"
@@ -23,7 +23,7 @@
     {
       "type": "text",
       "title": "Stewardship",
-      "group": [
+      "content": [
         {
           "title": "We want to make legal information as accessible as we can.  ",
           "content_html": "We want to make legal information as accessible as we can.  "

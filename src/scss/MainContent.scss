@@ -1,9 +1,12 @@
 .main {
-  padding-top: 40px;
+  padding: 40px 1vw 0 1vw;
+
   .content {
     padding: 0px 0px 50px 0;
     font-size: 16px;
+    word-wrap: break-word;
   }
+
 
   .content-spaced {
     margin-top: 15px;

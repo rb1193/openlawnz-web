@@ -19,7 +19,7 @@ const ourMissionPage = ({data}) => {
                 pageContext.map(({title, description, fields}, idx) => {
                   return (
                     <div className="module-block" key={idx}>
-                      <h3>{title}</h3>
+                      <h2>{title}</h2>
                       <p>{description} 
                         <br/>
                         <Link to={`/our-mission${fields.slug}`}>View Page</Link>
@@ -35,10 +35,9 @@ const ourMissionPage = ({data}) => {
       base="/our-mission/" 
       data={
         pageContext.map(({title}) =>  {
-          return title
+          return [title, title]
       })  
-      }
-      type="/"/>
+      }/>
       </div>
     </Layout>
   )

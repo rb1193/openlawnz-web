@@ -5,7 +5,7 @@
     {
       "type": "text",
       "title": "Summary",
-      "group": [
+      "content": [
         {
           "content_html": "We will help community law centres, citizens advice, and other people in need of legal information and assistance as much as we can. We are always keen to hear feedback from our stakeholders. ",
           "title": "Community"
@@ -16,5 +16,6 @@
         }
       ]
     }
-  ]
+  ],
+  "image_url": "/assets/community-engagement.png"
 }

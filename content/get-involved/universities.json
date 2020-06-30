@@ -5,7 +5,7 @@
     {
       "type": "text",
       "title": "Academics",
-      "group": [
+      "content": [
         {
           "content_html": "Our platform can be used to automate the analysis of large amounts of case law very quickly. We’re currently building a prototype researcher interface to facilitate this. If you’re interested, drop us a line. ",
           "title": "Automation"
@@ -19,7 +19,7 @@
     {
       "type": "text",
       "title": "Law Students",
-      "group": [
+      "content": [
         {
           "title": "Uses",
           "content_html": "Law students can use OpenLaw NZ to: \n\n<ul>\n<li>Carry out legal research</li>\n<li>Explore legal data and discover new insights by analysing data at scale </li>\n<li>For the more adventurous, build innovative tools for the public using our API </li>\n</ul>\n\nYou may also be able to contribute to the development of the OpenLaw NZ platform.  "
@@ -34,5 +34,6 @@
         }
       ]
     }
-  ]
+  ],
+  "image_url": "/assets/university.png"
 }

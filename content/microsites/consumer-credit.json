@@ -90,6 +90,24 @@
               "title": "Fees charged must be reasonable"
             }
           ]
+        },
+        {
+          "type": "faqs",
+          "title": "FAQs",
+          "content": [
+            {
+              "question": "Type here to add frequent asked question ?",
+              "answer": "Here is an answer"
+            },
+            {
+              "question": "Type here to add frequent asked question ?",
+              "answer": "Answer"
+            },
+            {
+              "answer": "Type here to add frequent asked question ?",
+              "question": "Answer"
+            }
+          ]
         }
       ]
     },
@@ -154,5 +172,6 @@
         }
       ]
     }
-  ]
+  ],
+  "image_url": "/assets/consumer-credit.png"
 }

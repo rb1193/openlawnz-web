@@ -1,77 +1,10 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import ModuleSelector from "../components/ModuleSelector"
 
 export const OurMissionPageContent = ({ pageContext }) => {
 
-  function selectModule(module) {
-    const errorModule = (message) => {
-      return <div className="microsite-paragraph">
-        <h4>{module.title}</h4>
-        Error: {message}
-      </div>
-    }
-    switch(module.type) {
-      case "text":
-        return ( 
-          <div className="module-block">
-            <h3>{module.title}</h3>
-            {
-              module.group.map(({content_html}, idx) => {
-                return (
-                  <div key={idx}
-                    className="microsite-paragraph"
-                    dangerouslySetInnerHTML={{ __html: content_html }}
-                  />
-                ) 
-              })
-            }
-          </div>
-        )
-      case "contributors":
-        return (
-          <div>
-            <h3>{module.title}</h3>
-            <div className="cards-list">
-              {
-                module.contributors.map(({image_url, title}, idx) => {
-                  return(
-                    <div key={idx} className="card-item-small">
-                      <div>
-                        <img src={image_url} alt={title}/>
-                        <strong>{title}</strong>
-                      </div>
-                    </div>
-                  )
-                })
-              }
-            </div>
-          </div>
-        )
-      case "directors":
-        return (
-          <div>
-            <h3>{module.title}</h3>
-            <div className="cards-list directors">
-              {module.directors.map(({name, bio, image_url}, idx) => {
-                return (
-                  <div className="card-item" key={idx}>
-                    <img src={image_url} alt={name}></img>
-                    <strong>{name}</strong>
-                    <p>{bio}</p>
-                  </div>
-                )
-              })}
-            </div>
-            
-          </div>
-        )
-      default:
-        return (
-          errorModule("Module type not found")
-        )
-    }
-  }
 
   return (
     <div className="container main">
@@ -81,7 +14,7 @@ export const OurMissionPageContent = ({ pageContext }) => {
           pageContext.content.map((module, idx) => {
             return (
               <div key={idx}>
-                {selectModule(module)}
+                <ModuleSelector module={module} wizardModuleData={pageContext.wizardData} idx={idx}/>
               </div>
             )
           })
