@@ -125,8 +125,6 @@ li {
 
 .container {
   width: 100%;
-  padding-right: 1vw;
-  padding-left: 1vw;
   margin-bottom: 115px;
   video{
     padding: 10%; 
@@ -291,7 +289,6 @@ li {
   .side-wrapper {
     width: calc(100% - 32vw);
     max-width: calc(100% - 375px);
-    padding-right: 4vw;
   }
   
   .horizontal-container {
@@ -342,5 +339,6 @@ li {
 @import "./Accordion.scss";
 @import "./Tooltip.scss";
 @import "./Wizard.scss";
+@import "./LandingCard.scss";
 @import "./Checklist.scss";
 @import "./CaseList.scss";

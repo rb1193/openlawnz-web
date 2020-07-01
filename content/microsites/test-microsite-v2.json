@@ -123,9 +123,38 @@
               "date": "2007-09-27"
             }
           ]
+        },
+        {
+          "type": "checklist",
+          "title": "Things To Do",
+          "content": [
+            {
+              "title": "Loan Amount",
+              "subitems": [
+                {
+                  "title": "Check the amount",
+                  "content": "Have you checked the amount?"
+                },
+                {
+                  "title": "Check the interest rate",
+                  "content": "Have you go the right interet rate?"
+                }
+              ]
+            },
+            {
+              "title": "Loan Conditions",
+              "subitems": [
+                {
+                  "title": "Length",
+                  "content": "Are you happy with the length of the agreement?"
+                }
+              ]
+            }
+          ]
         }
       ],
       "asd": "asd"
     }
-  ]
+  ],
+  "image_url": "/assets/tenancies.png"
 }

@@ -3,11 +3,16 @@
     padding-top: 10px;
   }
   .module-block {
+
+    margin-top: -70px; //causes anchor links to jump above block so it is not concealed by nav
+    padding-top: 70px;
+
     padding-bottom: 25px;
   }
  
   .microsite-paragraph {
     margin-bottom: 10px;
+    margin-right: 4vw;
     font-size: 16px;
     ul {
       li {
