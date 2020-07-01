@@ -77,6 +77,10 @@ exports.createPages = async ({graphql, actions: { createPage } }) => {
                   question
                   answer
                   title
+                  subitems {
+                    title
+                    content
+                  }
                 }
                 wizard
                 cases {
