@@ -101,53 +101,52 @@
           "wizard": "fees_wizard"
         },
         {
+          "type": "case_list",
+          "title": "Case",
+          "cases": [
+            {
+              "caseId": 25514,
+              "citation": "HC HAM CIV-2007-419-911 ",
+              "caseName": "SINGH V K & M K SINGH FARMS",
+              "date": "2008-07-02"
+            },
+            {
+              "caseId": 6661,
+              "citation": "[2016] NZHC 2380",
+              "caseName": "R v SMITH ",
+              "date": "2016-10-06"
+            },
+            {
+              "caseId": 26808,
+              "citation": "HC WN CIV-2006-485-2566 ",
+              "caseName": "GOVERNORS LIMITED V GEORGE ALBERT ANDERSON AND MARGARET ADAIR ANDERSON AND ORS",
+              "date": "2007-09-27"
+            }
+          ]
+        },
+        {
           "type": "checklist",
-          "title": "Check that your lender has shared all the required information",
+          "title": "Things To Do",
           "content": [
             {
               "title": "Loan Amount",
               "subitems": [
                 {
-                  "title": "Do you know the exact amount of the loan?",
-                  "content": "You should have been told the exact amount."
+                  "title": "Check the amount",
+                  "content": "Have you checked the amount?"
+                },
+                {
+                  "title": "Check the interest rate",
+                  "content": "Have you go the right interet rate?"
                 }
               ]
             },
             {
-              "title": "Interest, fees and charges",
+              "title": "Loan Conditions",
               "subitems": [
                 {
-                  "title": "Fees",
-                  "content": "Any charges that you must pay under or in connection with the contract, including when such fees are due."
-                },
-                {
-                  "title": "Interest",
-                  "content": "This sets out the annual interest rate, which is the rate at which your lender charges interest on the amount you have borrowed."
-                },
-                {
-                  "title": "Total interest charges",
-                  "content": "This is the total amount of interest charged over the term of the contract. This doesn’t include any fees, such as establishment and administration fees."
-                },
-                {
-                  "title": "Interest free period",
-                  "content": "An interest free period is when you do not pay interest for a limited time. This loan structure is common in the retail market where you will see promotions such as “18 months’ interest free”. However, lenders can still charge fees during an interest free period, such as establishment and administration fees. This clause should highlight the date that you will start to get charged interest."
-                },
-                {
-                  "title": "Method of charging interest",
-                  "content": "This sets out when your lender charges interest to your account, e.g. monthly or fortnightly. For example, your lender might calculate interest daily (by multiplying the unpaid balance by the daily interest rate, which is the annual interest rate divided by 365) but you only charge you every month."
-                }
-              ]
-            },
-            {
-              "title": "Repayments",
-              "subitems": [
-                {
-                  "title": "Due dates",
-                  "content": "You should know exactly when repayments are due."
-                },
-                {
-                  "title": "Amounts",
-                  "content": "You should know how much each repayment should be."
+                  "title": "Length",
+                  "content": "Are you happy with the length of the agreement?"
                 }
               ]
             }

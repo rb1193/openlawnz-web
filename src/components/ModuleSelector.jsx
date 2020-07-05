@@ -3,6 +3,7 @@ import Accordion from "../components/Accordion"
 import Wizard from "../components/Wizard/Wizard"
 import { toSlug } from "../js/ToSlug"
 import Checklist from "../components/Checklist"
+import CaseList from "../components/CaseList"
 
 const ModuleSelector = ({module, idx, wizardModuleData}) => {
     
@@ -94,6 +95,13 @@ const ModuleSelector = ({module, idx, wizardModuleData}) => {
             <div key={idx} name={title} className="module-block">
               <h4>{module.title}</h4>
               <Checklist id={`checklist-${idx}`} items={module.content}/>
+            </div>
+          )
+        case "case_list":
+          return (
+            <div key={idx} name={title} className="module-block">
+              <h4>{module.title}</h4>
+              <CaseList id={`case-list-${idx}`} cases={module.cases}/>
             </div>
           )
         default: //Error Paragraph

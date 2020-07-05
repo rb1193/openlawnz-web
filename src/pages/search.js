@@ -207,7 +207,7 @@ class SearchPage extends Component {
                 pageCount={pageCount}
               />
             )}
-            <table className="table">
+            <table className="table case-table">
               <thead>
                 <tr>
                   <th>Case Name</th>
