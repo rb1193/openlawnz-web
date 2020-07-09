@@ -19,7 +19,7 @@ const EmpowerPage = ({ data }) => {
             <h1>Get Empowered</h1>
               {
                 micrositeData.map((content, idx) => (
-                  <LandingCard slug={`/get-empowered/${content.fields.slug}${toSlug(content.content[0].title)}`} key={idx} content={content}/>
+                  <LandingCard slug={`/get-empowered${content.fields.slug}${toSlug(content.content[0].title)}`} key={idx} content={content}/>
                 )) 
               }
             </div>

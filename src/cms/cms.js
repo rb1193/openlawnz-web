@@ -1,6 +1,7 @@
 import { init, registerWidget, registerPreviewTemplate } from "netlify-cms-app"
 import { NextStepControl } from "./widgets/NextStep"
 import * as previews from "./previews"
+import CasesControl from "./widgets/CasesControl"
 
 window.CMS_MANUAL_INIT = true
 
@@ -21,6 +22,7 @@ const config = {
 init({ config })
 
 registerWidget("wizard_option_next_step", NextStepControl)
+registerWidget("case_list", CasesControl)
 
 registerPreviewTemplate("news", previews.newsPreview)
 registerPreviewTemplate("getInvolved", previews.getInvolvedPreview)
