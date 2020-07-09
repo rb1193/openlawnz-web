@@ -2,7 +2,8 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ModuleSelector from "../components/ModuleSelector"
-export const GetInvolvedPageContent = ({ pageContext }) => (
+
+ export const GetInvolvedPageContent = ({ pageContext }) => (
   <div className="container main">
     <div className="content">
       <h1>{pageContext.title}</h1>
@@ -23,4 +24,5 @@ const GetInvolvedPage = ({ pageContext }) => (
   </Layout>
 )
 
+export default GetInvolvedPage
 export default GetInvolvedPage
