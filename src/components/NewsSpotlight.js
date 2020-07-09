@@ -26,7 +26,7 @@ const NewsSpotlight = props => {
 
        
 
-                  <Link to={"/news/" + slug} className="link">
+                  <Link to={"/news" + slug} className="link">
                     Find out more
                   </Link>
                 </div>
