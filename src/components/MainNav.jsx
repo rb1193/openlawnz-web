@@ -8,29 +8,6 @@ import SearchContainer from "./SearchContainer"
 const MainNav = () => {
   const [isNavOpen, setIsNavOpen] = React.useState(false)
   const toggleNavState = () => setIsNavOpen(!isNavOpen)
-  let navHeight = 175
-
-  if (typeof document !== 'undefined' && typeof window !== 'undefined') {
-     window.onscroll = function() {
-      let nav = document.getElementById("nav")
-
-      if (nav.offsetHeight - 65 > navHeight || (nav.offsetHeight && nav.offsetHeight >= 240)) {
-        navHeight = nav.offsetHeight - 65;
-      }
-
-      if (document.documentElement.scrollTop >= navHeight) {
-        document.body.style.marginTop = `${navHeight + 65}px`;
-        
-        nav.classList.add("nav-collapsed");
-        nav.classList.remove("nav-container");
-      } else {
-        nav.classList.add("nav-container");
-        document.body.style.marginTop = "0px";
-        nav.classList.remove("nav-collapsed");
-        
-      }
-    }
-  }
 
   return (
     <header role="banner" id="nav" className="nav-container">
@@ -72,9 +49,6 @@ const MainNav = () => {
           <div className="nav-secondary">
             <a className="developers-text" href="https://github.com/openlawnz">
               Developers
-            </a>
-            <a className="developers-icon" href="https://github.com/openlawnz">
-              <img src="assets/github-mark.png" alt="Developers"/>
             </a>
           </div>
         </div>
