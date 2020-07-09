@@ -26,7 +26,7 @@ const EmpowerPage = ({ data }) => {
           </div>
         </div>
         <TertiaryNav 
-        base= "/get-empowered/"
+        base= "/get-empowered"
         data={micrositeData.map(({title, content}) =>  {
             return [title,`${title}/${content[0].title}`]
         })}
