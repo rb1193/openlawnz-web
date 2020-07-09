@@ -13,7 +13,6 @@ const EmpowerPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Get Empowered" /> 
-      <div className="tertiary-background">
         <div className="side-wrapper">
           <div className="main">
             <div className="content">
@@ -32,7 +31,6 @@ const EmpowerPage = ({ data }) => {
             return [title,`${title}/${content[0].title}`]
         })}
         />
-      </div>
     </Layout>
   )
 }

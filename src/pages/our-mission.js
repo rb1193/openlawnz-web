@@ -9,7 +9,6 @@ const ourMissionPage = ({data}) => {
   return (
     <Layout>
       <SEO title="Our Mission" />
-      <div className="tertiary-background">
         <div className="side-wrapper">
           <div className="container main">
             <div className="content">
@@ -38,7 +37,6 @@ const ourMissionPage = ({data}) => {
           return [title, title]
       })  
       }/>
-      </div>
     </Layout>
   )
 }

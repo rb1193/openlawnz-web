@@ -25,4 +25,3 @@ const GetInvolvedPage = ({ pageContext }) => (
 )
 
 export default GetInvolvedPage
-export default GetInvolvedPage

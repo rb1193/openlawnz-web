@@ -6,7 +6,7 @@ import { toSlug } from "../js/ToSlug"
 
 import ModuleSelector from "../components/ModuleSelector"
 export const MicrositeContent = ({ pageContext }) => ( 
-  <div className="tertiary-background">
+  <div>
     <div className="side-wrapper">
       <div className="container main">
         <div className="content">
