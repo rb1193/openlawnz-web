@@ -390,8 +390,10 @@ nav {
 
   @media (max-width: 767px) {
     display: block;
-
+    margin: 0 auto;
+    width: 85%;
     .primary-menu {
+      padding-left: 0;
       margin: 20px 0;
     }
   }
