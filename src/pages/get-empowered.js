@@ -14,7 +14,7 @@ const EmpowerPage = ({ data }) => {
     <Layout>
       <SEO title="Get Empowered" /> 
         <div className="side-wrapper">
-          <div className="main">
+          <div className="container-wide main">
             <div className="content">
             <h1>Get Empowered</h1>
               {

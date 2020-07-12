@@ -4,20 +4,22 @@ import SEO from "../components/seo"
 import ModuleSelector from "../components/ModuleSelector"
 
 export const OurMissionPageContent = ({ pageContext }) => (
-  <div className="container main">
-    <div className="content">
-      <h1>{pageContext.title}</h1>
-      {
-        pageContext.content.map((module, idx) => {
-          return (
-            <div key={idx}>
-              <ModuleSelector module={module} wizardModuleData={pageContext.wizardData} idx={idx}/>
-            </div>
-          )
-        })
-      }
-    </div>
+  <div className="side-wrapper">
+    <div className="container-wide main">
+      <div className="content">
+        <h1>{pageContext.title}</h1>
+        {
+          pageContext.content.map((module, idx) => {
+            return (
+              <div key={idx}>
+                <ModuleSelector module={module} wizardModuleData={pageContext.wizardData} idx={idx}/>
+              </div>
+            )
+          })
+        }
+      </div>
 
+    </div>
   </div>
 )
 

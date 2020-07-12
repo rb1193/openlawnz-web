@@ -7,11 +7,13 @@ const LandingCard = ({content, idx, slug}) => {
     <div className="landing-card" key={idx}>
         
         <h2>{title}</h2>
+        <hr/>   
+        <img src={image_url} alt={title}/>
         <p>{description}</p>
         
-        <img src={image_url} alt={title}/>
         
-        <Link to={`${slug}`}/>
+        
+        <Link to={slug}/>
     </div>
     )
 }

@@ -5,15 +5,15 @@
   -o-background-size: cover;
   background-size: cover;
   background-position: top;
-  min-height: 240px;
-  position: relative;
   .nav-items {
-    padding: 50px 5vw 0px 5vw;
+    position: relative;
+    max-width: 1720px;
+    padding-top: 50px;
     height: 100%;
-      .nav-logo {
+    width: 89.5%;
+    .nav-logo {
       float: left;
       width: 170px;
-      z-index: -1;
     }
     img {
       display: none;
@@ -25,32 +25,21 @@
   }
   
   .nav-menu {
-    width: 100%;
-    height: 100%;
     font-family: "Nunito Sans", sans-serif;
     font-size: 19px;
     font-weight: 600;
+    padding-top: 10px;
     nav {
-      width: 100%;
-      
-      height: 50px;
-      
-      
       ul {
-
-        position: absolute;
-        bottom: 0;
-        left: 2vw;
-        margin-bottom: 0;
-
+        padding-left: 0;
         .link-active { 
             border-bottom: 6px solid $openLawA11yBrown;
         }
         li {
-          margin: 0 20px;
+          margin-right: 40px;
           display: inline-block;
           text-decoration: none;
-          padding: 0px 0px 15px 0px;
+          padding-bottom: 15px;
           margin-bottom: 6px;
           
           &:hover {
@@ -72,10 +61,11 @@
 
 
 .nav-secondary {
+  display: none;
   font-size: 18px;
   position: absolute;
   top: 50px;
-  right: 6vw;
+  right: 0;
   margin-top: 20px;
   text-align: center;
   display: block;
@@ -293,7 +283,7 @@
 .tertiary-nav {
   @include nav-header;
   padding-top: 20px;
-  width: 26vw;
+  width: 30%;
   min-width: 375px;
   position: sticky;
   vertical-align: top;
@@ -303,7 +293,8 @@
   font-size: 24px;
   .primary-menu {
     height: 100%;
-    margin-left: 3vw;
+    margin-left: 10%;
+    margin-right: 18%;
     a {
       text-decoration: none;
       color: $openLawArapawa;
@@ -332,7 +323,7 @@
 
 
   .tertiary-sub-routes {
-    padding-left: 1vw;
+    padding-left: 15px;
     li {
       font-size: 16px;
       padding-top: 10px;

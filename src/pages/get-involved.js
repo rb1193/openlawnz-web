@@ -11,7 +11,7 @@ const getInvolvedPage = ({data}) => {
     <Layout>
       <SEO title="Get Involved" />
         <div className="side-wrapper">
-            <div className="main">
+            <div className="container-wide main">
                 <div className="content">
                   <h1>Get Involved</h1>
                   <p>Get Involved with OpenLawNZ</p>

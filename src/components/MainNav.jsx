@@ -11,7 +11,7 @@ const MainNav = () => {
 
   return (
     <header role="banner" id="nav" className="nav-container">
-      <div className="nav-items">
+      <div className="nav-items centre">
         <div className="nav-logo">
           <Link to="/">
             <span className="visuallyhidden">OpenLaw NZ</span>
@@ -45,12 +45,14 @@ const MainNav = () => {
                 <li><Link activeClassName="link-active" partiallyActive={true} to="/news">News</Link></li>
               </ul>
             </nav>
+           
           </div>
-          <div className="nav-secondary">
-            <a className="developers-text" href="https://github.com/openlawnz">
-              Developers
-            </a>
-          </div>
+         
+        </div>
+        <div className="nav-secondary">
+          <a className="developers-text" href="https://github.com/openlawnz">
+            Developers
+          </a>
         </div>
       </div>
     </header>

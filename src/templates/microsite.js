@@ -8,7 +8,7 @@ import ModuleSelector from "../components/ModuleSelector"
 export const MicrositeContent = ({ pageContext }) => ( 
   <div>
     <div className="side-wrapper">
-      <div className="container main">
+      <div className="container-wide main">
         <div className="content">
           <h1>{pageContext.title} - {pageContext.section.title}</h1>
           <div className="microsite-section" name={pageContext.section.title}>
