@@ -15,21 +15,6 @@
           "content_html": "If you think our platform would (or could be expanded) to help a community group you are involved in, we’d love to talk. We might be able to build a tool that helps you. Get in touch with us. "
         }
       ]
-    },
-    {
-      "type": "checklist",
-      "title": "Test",
-      "content": [
-        {
-          "title": "Test",
-          "subitems": [
-            {
-              "title": "Test",
-              "content": "Test"
-            }
-          ]
-        }
-      ]
     }
   ],
   "image_url": "/assets/community-engagement.png"
