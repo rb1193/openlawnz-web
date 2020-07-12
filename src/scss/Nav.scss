@@ -241,6 +241,7 @@ nav {
         display: block;
         position: relative;
         margin-bottom: 0px;
+        padding-bottom: 10px;
         
         span {
           width: 22px;
@@ -271,7 +272,7 @@ nav {
 
         a {
           display: block;
-          padding:5px 5px 5px 5px;
+          padding: 5px 5px 10px 5px;
         }
         &:hover {
           border-bottom: none;
@@ -284,7 +285,7 @@ nav {
           margin-left: 15px;
           li {
             font-size: 17px;
-            padding: 15px 0 0 0;
+            padding: 10px 0 5px 0;
           }
         }
       }
