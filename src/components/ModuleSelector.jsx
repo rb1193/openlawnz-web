@@ -15,9 +15,23 @@ const ModuleSelector = ({module, idx, wizardModuleData}) => {
         <p>Error: {message}</p>
       </div>
     }
+
+    const blankModule = () => (
+      <div className="microsite-paragraph">
+        <h2>{module.title}</h2>
+      </div>
+    )
+
+    if (module.title === undefined) return (
+      <div className="microsite-paragraph">
+        <h2>Module Title</h2>
+      </div>
+    )
     
     switch(module.type) { 
       case "text": // Single heading, multiple paragraphs.
+
+        if (module.content === undefined) return blankModule()
         return (
           <div name={title} className="module-block">
             <h2>{module.title}</h2>
@@ -34,15 +48,17 @@ const ModuleSelector = ({module, idx, wizardModuleData}) => {
           </div>
         )
         case "faqs":
+          if (module.content === undefined) return blankModule()
             return (
             <div name={title}  className="module-block">
-                <h4>{module.title}</h4>
+                <h2>{module.title}</h2>
                 <Accordion id={`faqs-${idx}`} items={module.content.map(faq => {
                 return { title: faq.question, content: faq.answer }
                 })}/>
             </div>
             )
         case "contributors":
+            if (module.contributors === undefined) return blankModule()
             return (
               <div>
                 <h2>{module.title}</h2>
@@ -52,7 +68,7 @@ const ModuleSelector = ({module, idx, wizardModuleData}) => {
                       return(
                         <div key={idx} className="card-item-small">
                           <div>
-                            <img src={image_url} alt={title}/>
+                            <img src={image_url || "/assets/avatar.png"} alt={title}/>
                             <strong>{title}</strong>
                           </div>
                         </div>
@@ -63,6 +79,7 @@ const ModuleSelector = ({module, idx, wizardModuleData}) => {
               </div>
             )
         case "directors":
+            if (module.directors === undefined) return blankModule()
             return (
                 <div>
                 <h2>{module.title}</h2>
@@ -91,16 +108,18 @@ const ModuleSelector = ({module, idx, wizardModuleData}) => {
             </div>
             )
         case "checklist":
+          if (module.content === undefined) return blankModule()
           return (
             <div key={idx} name={title} className="module-block">
-              <h4>{module.title}</h4>
+              <h2>{module.title}</h2>
               <Checklist id={`checklist-${idx}`} items={module.content}/>
             </div>
           )
         case "case_list":
+          if (module.cases === undefined) return blankModule()
           return (
             <div key={idx} name={title} className="module-block">
-              <h4>{module.title}</h4>
+              <h2>{module.title}</h2>
               <CaseList id={`case-list-${idx}`} cases={module.cases}/>
             </div>
           )
