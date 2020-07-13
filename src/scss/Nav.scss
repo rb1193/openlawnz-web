@@ -73,14 +73,10 @@ nav {
 }
 
 .nav-secondary {
-  display: none;
   font-size: 18px;
   position: absolute;
-  top: 50px;
+  top: 70px;
   right: 0;
-  margin-top: 20px;
-  text-align: center;
-  display: block;
   height: 50px;
   a {
     color: #ffffff;
@@ -97,9 +93,7 @@ nav {
 
 @media(max-width: 1024px) {
   .nav-secondary {
-    .developers-text {
-      display: none;
-    }
+    display: none;
   }
 }
 
@@ -140,7 +134,12 @@ nav {
 }
 
 @media (max-width: 890px) { 
-
+  .nav-secondary {
+    display: block;
+    left: 10%;
+    top: 30px;
+    right: auto;
+  }
   #menuToggle {
     display: block;
     position: absolute;

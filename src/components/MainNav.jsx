@@ -60,6 +60,7 @@ const MainNav = () => {
 
         
           <div className="nav-collapsing">
+            
             <nav>
               <ul>
                 <li><Link to="/our-mission" partiallyActive={true} activeClassName="link-active"  >Our Mission</Link></li>
@@ -108,14 +109,16 @@ const MainNav = () => {
               </ul>
             </nav>
            
+            <div className="nav-secondary">
+              <a className="developers-text" href="https://github.com/openlawnz">
+                Developers
+              </a>
+            </div>
+
           </div>
          
         </div>
-        <div className="nav-secondary">
-          <a className="developers-text" href="https://github.com/openlawnz">
-            Developers
-          </a>
-        </div>
+        
       </div>
     </header>
   )
