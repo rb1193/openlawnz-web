@@ -10,13 +10,12 @@ const { GATSBY_BRANCH } = process.env
 const config = {
   backend: {
     name: "git-gateway",
-    repo: "openlaw-web",
+    repo: "openlawnz/openlawnz-web",
     branch: GATSBY_BRANCH || "master",
   },
   media_folder: "static/assets",
   public_folder: "/assets",
   local_backend: true,
-  module,
 }
 
 init({ config })
