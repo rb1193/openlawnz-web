@@ -126,14 +126,14 @@ nav {
 }
 
 
-@media (max-width: 890px) { 
+@media (max-width: 768px) { 
   .nav-search {
     margin-top: 100px;
     padding-bottom: 10px;
   }
 }
 
-@media (max-width: 890px) { 
+@media (max-width: 768px) { 
   .nav-secondary {
     display: block;
     left: 10%;
@@ -387,7 +387,7 @@ nav {
     }
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     display: block;
     margin: 0 auto;
     width: 85%;

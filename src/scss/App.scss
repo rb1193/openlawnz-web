@@ -195,7 +195,7 @@ main {
 .border {
   border-right: 1px solid #d0d0d0;
   
-  @media (max-width: 766px) {
+  @media (max-width: 768px) {
     align-self: center;
     margin: 20px 0 15px 0;
     width: 30%;
@@ -298,12 +298,18 @@ main {
   }
 }
 
-@media (min-width: 767px) {
+@media (min-width: 769px) {
+
   .side-wrapper {
     width: 70%;
     max-width: calc(100% - 375px);    
   }
   
+  .home-wrapper {
+    width: 89.5%;
+    margin: 0 auto;
+  }
+
   .horizontal-container {
     flex-direction: row;
 
