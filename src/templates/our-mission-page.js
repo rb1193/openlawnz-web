@@ -3,11 +3,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ModuleSelector from "../components/ModuleSelector"
 
-export const OurMissionPageContent = ({ pageContext }) => {
-
-
-  return (
-    <div className="container main">
+export const OurMissionPageContent = ({ pageContext }) => (
+  <div className="side-wrapper">
+    <div className="container-wide main">
       <div className="content">
         <h1>{pageContext.title}</h1>
         {
@@ -22,8 +20,8 @@ export const OurMissionPageContent = ({ pageContext }) => {
       </div>
 
     </div>
-  )
-}
+  </div>
+)
 
 const OurMissionPage = ({pageContext}) => (
   <Layout>

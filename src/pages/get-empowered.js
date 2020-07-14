@@ -13,9 +13,8 @@ const EmpowerPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Get Empowered" /> 
-      <div className="tertiary-background">
         <div className="side-wrapper">
-          <div className="main">
+          <div className="container-wide main">
             <div className="content">
             <h1>Get Empowered</h1>
               {
@@ -27,12 +26,11 @@ const EmpowerPage = ({ data }) => {
           </div>
         </div>
         <TertiaryNav 
-        base= "/get-empowered/"
+        base= "/get-empowered"
         data={micrositeData.map(({title, content}) =>  {
             return [title,`${title}/${content[0].title}`]
         })}
         />
-      </div>
     </Layout>
   )
 }

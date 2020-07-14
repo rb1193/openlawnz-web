@@ -132,6 +132,13 @@ li {
   }
 }
 
+.container-wide {
+  width: 85%;
+  margin-bottom: 115px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media (max-width: 768px) {
  .container {
   max-width: 80%;
@@ -139,11 +146,13 @@ li {
   margin-right: auto;
   margin-bottom: 0px;
  }
+ .container-wide {
+    margin-bottom: 0;
+ }
 }
 
 @media (min-width: 920px) {
   .container {
-    
     max-width: 920px;
   }
 }
@@ -176,6 +185,11 @@ li {
   display: inline-block;
   z-index: 10;
   background-color: white;
+}
+
+main {
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 .border {
@@ -285,9 +299,8 @@ li {
 }
 
 @media (min-width: 767px) {
-
   .side-wrapper {
-    width: calc(100% - 32vw);
+    width: 70%;
     max-width: calc(100% - 375px);
   }
   

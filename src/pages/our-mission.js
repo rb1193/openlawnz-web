@@ -9,9 +9,8 @@ const ourMissionPage = ({data}) => {
   return (
     <Layout>
       <SEO title="Our Mission" />
-      <div className="tertiary-background">
         <div className="side-wrapper">
-          <div className="container main">
+          <div className="container-wide main">
             <div className="content">
               <h1>Our Mission</h1>
               <p>Get Involved with OpenLawNZ</p>
@@ -38,7 +37,6 @@ const ourMissionPage = ({data}) => {
           return [title, title]
       })  
       }/>
-      </div>
     </Layout>
   )
 }
