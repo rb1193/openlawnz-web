@@ -15,6 +15,7 @@ const config = {
   },
   media_folder: "static/assets",
   public_folder: "/assets",
+  publish_mode: "editorial_workflow",
   local_backend: true,
 }
 
