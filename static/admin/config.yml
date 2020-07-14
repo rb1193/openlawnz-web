@@ -153,7 +153,8 @@ collections:
                 fields:
                   - { name: title, Label: Title}
                   - name: wizard
-                    label: "Select Wizard"
+                    Label: "Select Wizard"
+                    hint: "Wizards will only be visible on the published page and not the on the preview"
                     widget: relation
                     collection: wizards
                     searchFields: ["title"]
