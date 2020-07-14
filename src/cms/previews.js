@@ -11,7 +11,7 @@ import { OurMissionPageContent } from "../templates/our-mission-page"
  */
 
 const basicPreview = (title) => (
-  <div className="container main">
+  <div className="container-wide main">
     <div className="content">
       <h1>{title}</h1>
     </div>
