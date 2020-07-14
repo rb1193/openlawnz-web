@@ -302,9 +302,7 @@ main {
 @media (min-width: 890px) {
   .side-wrapper {
     width: 70%;
-    max-width: calc(100% - 375px);
-    min-width: 766px;
-    
+    max-width: calc(100% - 375px);    
   }
   
   .horizontal-container {
