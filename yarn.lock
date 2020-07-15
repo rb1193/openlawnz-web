@@ -6760,13 +6760,6 @@ gatsby-page-utils@^0.2.17:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
-gatsby-plugin-anchor-links@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-anchor-links/-/gatsby-plugin-anchor-links-1.1.1.tgz#6a04441f5acc42768447dc6c12474630520a9f90"
-  integrity sha512-mgSHUAEa7RRWD/lcmJVUWD9mIT14EIJvMPcxJ1W2Ev+rNuqBBpk1j4vDWy1uxas+qusi0vrtZ4HdU7mse12qDw==
-  dependencies:
-    scroll-to-element "^2.0.3"
-
 gatsby-plugin-google-analytics@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.2.4.tgz#d03ae7b8088240f283a82d5ac5f843ee636a0f32"
@@ -13867,13 +13860,6 @@ schema-utils@^2.6.5:
   dependencies:
     ajv "^6.12.0"
     ajv-keywords "^3.4.1"
-
-scroll-to-element@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/scroll-to-element/-/scroll-to-element-2.0.3.tgz#99b404fc6a09fe73f3c062cd5b8a14efb6404e4d"
-  integrity sha512-5herPcm9jMfQgRwu94lH5mei+2YhipR4RQ2nAvnBxJb2tG+P7O0ctOKAaAZBXbBejnn+MImh3wrAUA5EcLnjEQ==
-  dependencies:
-    raf "^3.4.0"
 
 scss-tokenizer@^0.2.3:
   version "0.2.3"
