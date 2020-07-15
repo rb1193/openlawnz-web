@@ -177,6 +177,86 @@ collections:
           - { name: title, Label: Term }
           - { name: description, Label: Description }
   
+  
+  - name: getEmpowered
+    label: Get Empowered
+    label_singular: Page
+    folder: content/get-empowered
+    create: true
+    extension: json
+    fields:
+      - { name: title, Label: Title}
+      - { name: description, Label: Description }
+      - label: "Image"
+        name: "image_url"
+        widget: "image"
+        media_library:
+          config:
+            multiple: false
+      - label: Sections
+        label_singular: Section
+        name: content
+        widget: list 
+        types:
+          - label: Text
+            name: text
+            summary: "{{title}} (Text)"
+            fields:
+              - { name: title, Label: Title}
+              - label: Text
+                label_singular: Text
+                name: content
+                widget: list
+                fields:
+                  - { name: title, label: "Summary", hint: "This will not appear on the page" }
+                  - { name: content_html, label: "Content", widget: markdown }
+          - label: Card
+            name: card
+            summary: "{{title}} (Card)"
+            fields:
+              - { name: title, Label: Title}
+              - label: Text
+                label_singular: Text
+                name: content
+                widget: list
+                fields:
+                  - { name: title, label: "Summary", hint: "This will not appear on the page" }
+                  - { name: content_html, label: "Content", widget: markdown }
+          - label: Checklist
+            label_singular: Checklist
+            summary: "{{title}} (Checklist)"
+            name: checklist
+            fields:
+              - { name: title, Label: Title }
+              - label: Checklist Items
+                label_singular: Checklist Item
+                name: content
+                widget: list
+                fields:
+                - { name: title, label: Title }
+                - label: Sub Items
+                  label_singular: Sub Item
+                  name: subitems
+                  widget: list
+                  fields:
+                    - { name: title, label: Title }
+                    - { name: content, label: Content }
+          - label: "Contributors List"
+            name: contributors
+            fields:
+              - { name: title, label: "Heading" }
+              - label: Contributors
+                name: contributors
+                widget: list
+                fields:
+                  - { name: title, label: Name }
+                  - label: "Image"
+                    name: "image_url"
+                    widget: "image"
+                    media_library:
+                      config:
+                        multiple: false
+                        
 
   - name: getInvolved
     label: Get Involved
