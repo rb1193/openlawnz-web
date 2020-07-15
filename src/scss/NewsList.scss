@@ -9,7 +9,7 @@
     header {
       padding: 18px 0px;
 
-      @media (min-width: 767px) {
+      @media (min-width: 768px) {
         align-items: center;
         display: flex;
         justify-content: space-between;
@@ -24,11 +24,11 @@
       font-family: 'Nunito', sans-serif;
       
 
-      @media (min-width: 767px) {
+      @media (min-width: 768px) {
         font-size: 30px;
       }
 
-      @media (min-width: 767px) {
+      @media (min-width: 768px) {
         margin-bottom: 0;
       }
 
@@ -42,7 +42,7 @@
       @include header-five;
       color: $openLawDarkGreen;
 
-      @media (min-width: 767px) {
+      @media (min-width: 768px) {
         @include header-four;
       }
     }
@@ -55,7 +55,7 @@
       font-size: 20px;
       padding: 0px 28px 48px 0;
 
-      @media (min-width: 767px) {
+      @media (min-width: 1024px) {
         flex-direction: row;
       }
 
@@ -79,7 +79,7 @@
 
     .image-container {
       margin-bottom: 20px;
-      @media (max-width: 767px) {
+      @media (max-width: 768px) {
           padding: 10% 20%;
           max-width: 100%;
       }

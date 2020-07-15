@@ -10,9 +10,8 @@ const getInvolvedPage = ({data}) => {
   return (
     <Layout>
       <SEO title="Get Involved" />
-      <div className="tertiary-background">
         <div className="side-wrapper">
-            <div className="main">
+            <div className="container-wide main">
                 <div className="content">
                   <h1>Get Involved</h1>
                   <p>Get Involved with OpenLawNZ</p>
@@ -24,14 +23,13 @@ const getInvolvedPage = ({data}) => {
                 </div>
             </div>
         </div>
-        <TertiaryNav 
-        base="/get-involved/" 
-        data={
-          pageContext.map(({title}) =>  {
-            return [title, title]
-          })  
-        }/>
-        </div>
+      <TertiaryNav 
+      base="/get-involved/" 
+      data={
+        pageContext.map(({title}) =>  {
+          return [title, title]
+        })  
+      }/>
     </Layout>
   )
 }

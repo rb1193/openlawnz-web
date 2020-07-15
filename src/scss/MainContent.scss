@@ -1,5 +1,5 @@
 .main {
-  padding: 40px 1vw 0 1vw;
+  padding-top: 40px;
 
   .content {
     padding: 0px 0px 50px 0;
@@ -192,9 +192,8 @@
   }
 }
 
-@media (min-width: 767px) {
+@media (min-width: 768px) {
   .main {
-    margin: 0px 4vw 115px 4vw;
     .paragraph-with-figure {
       flex-direction: row;
 

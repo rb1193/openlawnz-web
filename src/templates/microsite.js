@@ -5,12 +5,10 @@ import TertiaryNav from "../components/TertiaryNav.jsx"
 import { toSlug } from "../js/ToSlug"
 
 import ModuleSelector from "../components/ModuleSelector"
-export const MicrositeContent = ({ pageContext }) => {
-  return (
-  
-  <div className="tertiary-background">
+export const MicrositeContent = ({ pageContext }) => ( 
+  <div>
     <div className="side-wrapper">
-      <div className="container main">
+      <div className="container-wide main">
         <div className="content">
           <h1>{pageContext.title} - {pageContext.section.title}</h1>
           <div className="microsite-section" name={pageContext.section.title}>
@@ -33,9 +31,9 @@ export const MicrositeContent = ({ pageContext }) => {
       secondary_data={pageContext.section.modules.map(x => x.title)}
       page={pageContext.section.title}
       />
-    </div>
-  )
-}
+  </div>
+)
+
 
 const Microsite = ({ pageContext }) => (
   <Layout>

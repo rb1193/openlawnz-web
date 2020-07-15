@@ -146,19 +146,28 @@ collections:
                       widget: list
                       fields:
                         - { name: title, label: Title }
-                        - { name: content, label: Content }
+                        - { name: content, label: Content, widget: text }
               - label: Wizard
                 name: wizard
                 summary: "{{title}} (Wizard)"
                 fields:
                   - { name: title, Label: Title}
                   - name: wizard
-                    label: "Select Wizard"
+                    Label: "Select Wizard"
+                    hint: "Wizards will only be visible on the published page and not the on the preview"
                     widget: relation
                     collection: wizards
                     searchFields: ["title"]
                     valueField: "key"
                     displayFields: ["title"]
+              - label: Case List
+                name: case_list
+                fields:
+                  - { name: title, Label: Title}
+                  - name: cases
+                    label: Cases
+                    label_singular: Case
+                    widget: case_list
   
       - label: Key Terms
         label_singular: Term

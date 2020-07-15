@@ -18,7 +18,7 @@ const News = ({ pageContext }) => (
           </div>
       </div>
       <TertiaryNav 
-        base="/news/" 
+        base="/news" 
         data={
           pageContext.news.map(({title}) =>  {
             return [title, title]
@@ -34,7 +34,7 @@ const NewsItem = ({
   <div name={title} className="item">
     <header>
       <h2 >
-        <Link to={"/news/" + slug}>{title}</Link>
+        <Link to={"/news" + slug}>{title}</Link>
       </h2>
     </header>
 
@@ -42,7 +42,7 @@ const NewsItem = ({
     <div className="content">
       <div className="image-container">
         {image_url && (
-          <Link to={"/news/" + slug}>
+          <Link to={"/news" + slug}>
             <img src={image_url} alt={image_alt} />
           </Link>
         )}
@@ -54,7 +54,7 @@ const NewsItem = ({
         }}>
         </p>
 
-        <Link className="newsLink" to={"/news/" + slug}>Read more</Link>
+        <Link className="newsLink" to={"/news" + slug}>Read more</Link>
       </div>
     </div>
   </div>

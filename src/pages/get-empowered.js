@@ -13,26 +13,24 @@ const EmpowerPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Get Empowered" /> 
-      <div className="tertiary-background">
         <div className="side-wrapper">
-          <div className="main">
+          <div className="container-wide main">
             <div className="content">
             <h1>Get Empowered</h1>
               {
                 micrositeData.map((content, idx) => (
-                  <LandingCard slug={`/get-empowered/${content.fields.slug}${toSlug(content.content[0].title)}`} key={idx} content={content}/>
+                  <LandingCard slug={`/get-empowered${content.fields.slug}${toSlug(content.content[0].title)}`} key={idx} content={content}/>
                 )) 
               }
             </div>
           </div>
         </div>
         <TertiaryNav 
-        base= "/get-empowered/"
+        base= "/get-empowered"
         data={micrositeData.map(({title, content}) =>  {
             return [title,`${title}/${content[0].title}`]
         })}
         />
-      </div>
     </Layout>
   )
 }

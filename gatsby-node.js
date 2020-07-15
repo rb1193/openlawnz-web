@@ -83,6 +83,12 @@ exports.createPages = async ({graphql, actions: { createPage } }) => {
                   }
                 }
                 wizard
+                cases {
+                  caseId
+                  caseName
+                  citation
+                  date
+                }
               }
             }
             Terms {
