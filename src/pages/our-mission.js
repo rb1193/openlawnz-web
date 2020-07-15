@@ -31,10 +31,10 @@ const ourMissionPage = ({data}) => {
         </div>
       </div>
       <TertiaryNav 
-      base="/our-mission/" 
+      base="/our-mission" 
       data={
         pageContext.map(({title}) =>  {
-          return [title, title]
+          return {title: title}
       })  
       }/>
     </Layout>

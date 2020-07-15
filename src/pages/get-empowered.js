@@ -36,10 +36,10 @@ const EmpowerPage = ({ data }) => {
         <TertiaryNav 
         base= "/get-empowered"
         data={micrositeData.map(({title, content}) =>  {
-          return [title,`${title}/${content[0].title}`]
+          return {title: title, link: `${title}/${content[0].title}`}
         })}
         tertiary_data={getEmpoweredData.map(({title}) =>  {
-          return [title,`${title}`]
+          return {title: title}
         })}
         />
     </Layout>
