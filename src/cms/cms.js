@@ -1,6 +1,7 @@
 import { init, registerWidget, registerPreviewTemplate } from "netlify-cms-app"
 import { NextStepControl } from "./widgets/NextStep"
 import * as previews from "./previews"
+import MicrositesPreview from "./previews/microsite"
 import CasesControl from "./widgets/CasesControl"
 
 window.CMS_MANUAL_INIT = true
@@ -27,5 +28,5 @@ registerWidget("case_list", CasesControl)
 registerPreviewTemplate("news", previews.newsPreview)
 registerPreviewTemplate("getInvolved", previews.getInvolvedPreview)
 registerPreviewTemplate("ourMission", previews.ourMissionPreview)
-registerPreviewTemplate("microsites", previews.micrositesPreview)
+registerPreviewTemplate("microsites", MicrositesPreview)
 registerPreviewTemplate("wizards", previews.wizardPreview)
