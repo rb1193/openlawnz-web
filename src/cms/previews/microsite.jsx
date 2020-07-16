@@ -8,8 +8,6 @@ export default function MicrositesPreview(props) {
   const { title, content } = props.entry.get("data").toJS()
   const wizardData = Object.values(props.fieldsMetaData.toJS().content?.modules.wizard.wizards || {})
 
-  // Don't attempt to preview newly created section without title or modules
-  //const validSections = content.filter((section) => section.title && section.modules)
   const handleSelect = (event) => {
     setCurrentSectionIndex(event.target.value)
   }
@@ -25,7 +23,7 @@ export default function MicrositesPreview(props) {
         <MicrositeContent
           pageContext={{
             title: title,
-            section: content[currentSectionIndex], //{ ...section, ...{ modules: validModules } },
+            section: content[currentSectionIndex],
             section_headings: content.map(({ title }) => title || ''),
             wizardData: wizardData,
           }}
