@@ -1,7 +1,7 @@
 {
   "title": "Plugins",
   "description": "These plugins are built using the OpenLaw NZ API",
-  "image_url": "/assets/plugins.png",
+  "image_url": "/assets/plugins.svg",
   "content": [
     {
       "type": "text",
