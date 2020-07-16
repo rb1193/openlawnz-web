@@ -3,30 +3,31 @@ import React from "react"
 import { Link } from "gatsby"
 import { toSlug } from "../js/ToSlug"
 
+
 const TertiaryNav = props => {
   return (
     <div className="tertiary-nav">
       <ul className="primary-menu">
         {
-          props.data.map((content, idx) => {  
+          props.data.map(({title, link=title}, idx) => {
             return (
               <div key={idx} >
                 <li className="tertiary-item">
-                  <Link to={(props.base + "/" + toSlug(content[1]))}
+                  <Link to={(props.base + "/" + toSlug(link))}
                   activeClassName="tertiary-active">
 
-                  {content[0]}
+                  {title}
                   </Link>
                   </li>
                   {
-                    content[0] === props.page &&
+                    title === props.page &&
                       <ul className="tertiary-sub-routes">
                         {
-                          props.secondary_data.map((x, idx) => {
+                          props.secondary_data.map((title, idx) => {
                             return (
                               <li key={idx}>
-                                <Link  to={(props.base + "/" + toSlug(content[1])) + "#" + toSlug(x)} key={idx}>
-                                 {x}
+                                <Link  to={(props.base + "/" + toSlug(link)) + "#" + toSlug(title)} key={idx}>
+                                 {title}
                                 </Link>
                               </li>
                             )  
@@ -37,6 +38,24 @@ const TertiaryNav = props => {
               </div>
             )
           })
+        }
+
+        { //Used in the 'Get Empowered' Page.
+          props.tertiary_data !== undefined &&
+          <div className="secondary-menu">
+            {
+              props.tertiary_data.map(({title, link=title}, idx) => (
+                <li className="tertiary-item" key={idx}>
+                  <Link to={(props.base + "/" + toSlug(link))}
+                  activeClassName="tertiary-active">
+    
+                  {title}
+                  </Link>
+                </li>
+              ))
+            }
+          </div>
+          
         }
       </ul>
     </div>

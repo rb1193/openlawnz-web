@@ -25,8 +25,8 @@ export const MicrositeContent = ({ pageContext }) => (
     </div>
     <TertiaryNav 
       base={"/get-empowered/" + toSlug(pageContext.title)} 
-      data={pageContext.section_headings.map((x) =>  {
-          return [x, x]
+      data={pageContext.section_headings.map((title) =>  {
+          return {title: title}
       })}
       secondary_data={pageContext.section.modules.map(x => x.title)}
       page={pageContext.section.title}

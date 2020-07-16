@@ -11,13 +11,13 @@ const ModuleSelector = ({module, idx, wizardModuleData}) => {
     
     const errorModule = (message) => {
       return <div className="microsite-paragraph" name={title}>
-        <h2>{module.title}</h2>
+        <h2 id={title}>{module.title}</h2>
         <p>Error: {message}</p>
       </div>
     }
 
     const blankModule = () => (
-      <div className="microsite-paragraph">
+      <div id={title} className="microsite-paragraph">
         <h2>{module.title}</h2>
       </div>
     )
@@ -27,13 +27,12 @@ const ModuleSelector = ({module, idx, wizardModuleData}) => {
         <h2>Module Title</h2>
       </div>
     )
-    
     switch(module.type) { 
       case "text": // Single heading, multiple paragraphs.
 
         if (module.content === undefined) return blankModule()
         return (
-          <div name={title} className="module-block">
+          <div id={title} className="module-block">
             <h2>{module.title}</h2>
             {
               module.content.map(({content_html}, idx) => {
@@ -47,10 +46,31 @@ const ModuleSelector = ({module, idx, wizardModuleData}) => {
             }
           </div>
         )
+        case "card": // Single heading, multiple paragraphs.
+
+        if (module.content === undefined) return blankModule()
+        return (
+          <div id={title} className="plugin-card">
+            <header>{module.title}</header>
+            <div className="plugin-body">
+              {
+                module.content.map(({content_html}, idx) => {
+                  return (
+                    <p key={idx}
+                      dangerouslySetInnerHTML={{ __html: content_html }}
+                    />
+                  ) 
+                })
+              }
+            </div>
+           
+          </div>
+        )
+
         case "faqs":
           if (module.content === undefined) return blankModule()
             return (
-            <div name={title}  className="module-block">
+            <div id={title}  className="module-block">
                 <h2>{module.title}</h2>
                 <Accordion id={`faqs-${idx}`} items={module.content.map(faq => {
                 return { title: faq.question, content: faq.answer }
@@ -60,7 +80,7 @@ const ModuleSelector = ({module, idx, wizardModuleData}) => {
         case "contributors":
             if (module.contributors === undefined) return blankModule()
             return (
-              <div>
+              <div id={title}>
                 <h2>{module.title}</h2>
                 <div className="cards-list">
                   {
@@ -81,7 +101,7 @@ const ModuleSelector = ({module, idx, wizardModuleData}) => {
         case "directors":
             if (module.directors === undefined) return blankModule()
             return (
-                <div>
+                <div id={title}>
                 <h2>{module.title}</h2>
                 <div className="cards-list directors">
                     {module.directors.map(({name, bio, image_url}, idx) => {
@@ -103,14 +123,14 @@ const ModuleSelector = ({module, idx, wizardModuleData}) => {
             const wizardData = wizardModuleData.find(wizard => wizard.key === module.wizard)
             if (!wizardData) return errorModule("Wizard data not found")
             return (
-            <div className="module-block" name={wizardData.title.replace(/\s/g, '-').toLowerCase()}>
+            <div className="module-block" id={wizardData.title.replace(/\s/g, '-').toLowerCase()}>
                 <Wizard title={wizardData.title} background={wizardData.background} steps={wizardData.steps} />
             </div>
             )
         case "checklist":
           if (module.content === undefined) return blankModule()
           return (
-            <div key={idx} name={title} className="module-block">
+            <div key={idx} id={title} className="module-block">
               <h2>{module.title}</h2>
               <Checklist id={`checklist-${idx}`} items={module.content}/>
             </div>
@@ -118,7 +138,7 @@ const ModuleSelector = ({module, idx, wizardModuleData}) => {
         case "case_list":
           if (module.cases === undefined) return blankModule()
           return (
-            <div key={idx} name={title} className="module-block">
+            <div key={idx} id={title} className="module-block">
               <h2>{module.title}</h2>
               <CaseList id={`case-list-${idx}`} cases={module.cases}/>
             </div>

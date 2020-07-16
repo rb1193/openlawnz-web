@@ -31,3 +31,33 @@
     }
   }
 }
+
+.plugin-card {
+  @include card-style;
+  border-radius: 7px;
+  max-width: 920px;
+  font-size: 16px;
+  header {
+    @include header-three;
+    width: 100%;
+    text-align: center;
+    background-color: $openLawA11yBrown;
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 20px 0 15px;
+  }
+  img {
+    display: block;
+    margin: 25px auto 15px auto;
+    width: 90%;
+  }
+}
+
+.plugin-body {
+  width: 90%;
+  margin: 30px auto 50px auto;
+  p {
+    margin-bottom: 20px;
+  }
+}

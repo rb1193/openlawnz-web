@@ -4,15 +4,21 @@
   background-repeat: no-repeat;
   background-size: contain;
   position: relative;
+  padding: 20px 30px;
 }
 
-.wizard-bg-overlay {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 20px 30px;
+.wizard-bg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 40%;
+  min-width: 230px;
+  opacity: 0.5;
 }
 
 .wizard-start {
   padding: 25px 0;
+  position: relative;
 }
 
 .wizard-title {
@@ -63,6 +69,7 @@
   flex-direction: column;
   min-height: 400px;
   padding: 55px 70px;
+  position: relative;
 }
 
 .wizard-question {

@@ -25,8 +25,8 @@ export default function Wizard({ background, title, steps }) {
   const [wizardStack, dispatch] = useReducer(wizardReducer, [])
 
   return (
-    <section className="wizard" style={{ backgroundImage: `url(${background})` }}>
-      <div className="wizard-bg-overlay">
+    <section className="wizard">
+      <img className="wizard-bg" src={background} alt="wizard-background"/>
         {wizardStack.length === 0 ? (
           <WizardStart title={title} start={() => dispatch({ type: WizardOperations.NEXT, payload: steps[0].key })} />
         ) : (
@@ -35,7 +35,6 @@ export default function Wizard({ background, title, steps }) {
             navigate={dispatch}
           />
         )}
-      </div>
     </section>
   )
 }

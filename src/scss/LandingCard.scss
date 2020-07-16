@@ -10,14 +10,13 @@
         position: relative;
         padding-top: 20px;
         color: black;
-        z-index: 10;
+        z-index: 1;
     }
     p {
         position: relative;
         font-size: 18px;
         font-weight: bold;
         width: 50%;
-        display: inline-block;
     }
     a {
         position: absolute;
@@ -25,6 +24,7 @@
         bottom: 0;
         left: 0;
         right: 0;
+        z-index: 10;
     }
     img {
         position: absolute;

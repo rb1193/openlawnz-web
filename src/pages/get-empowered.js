@@ -9,7 +9,8 @@ import LandingCard from "../components/LandingCard"
 
 
 const EmpowerPage = ({ data }) => {
-  const micrositeData = data.allMicrositesJson.edges.map(n => n.node)
+  const micrositeData = data.allMicrositesJson.nodes
+  const getEmpoweredData = data.allGetEmpoweredJson.nodes
   return (
     <Layout>
       <SEO title="Get Empowered" /> 
@@ -17,9 +18,16 @@ const EmpowerPage = ({ data }) => {
           <div className="container-wide main">
             <div className="content">
             <h1>Get Empowered</h1>
+            <h2>Topics</h2>
               {
                 micrositeData.map((content, idx) => (
                   <LandingCard slug={`/get-empowered${content.fields.slug}${toSlug(content.content[0].title)}`} key={idx} content={content}/>
+                )) 
+              }
+              <h2>Using OpenLawNZ</h2>
+              {
+                getEmpoweredData.map((content, idx) => (
+                  <LandingCard slug={`/get-empowered${content.fields.slug}`} key={idx} content={content}/>
                 )) 
               }
             </div>
@@ -28,7 +36,10 @@ const EmpowerPage = ({ data }) => {
         <TertiaryNav 
         base= "/get-empowered"
         data={micrositeData.map(({title, content}) =>  {
-            return [title,`${title}/${content[0].title}`]
+          return {title: title, link: `${title}/${content[0].title}`}
+        })}
+        tertiary_data={getEmpoweredData.map(({title}) =>  {
+          return {title: title}
         })}
         />
     </Layout>
@@ -38,17 +49,26 @@ const EmpowerPage = ({ data }) => {
 export const empowerQuery = graphql`
   query empowerQuery {
     allMicrositesJson {
-      edges {
-        node {
-            fields {
-                slug
-            }
+      nodes {
+          fields {
+              slug
+          }
+          title
+          content {
             title
-            content {
-              title
-            }
-            description
-            image_url
+          }
+          description
+          image_url
+      }
+    }
+    allGetEmpoweredJson {
+      nodes {
+        title
+        description
+        image_url
+  
+        fields {
+          slug
         }
       }
     }

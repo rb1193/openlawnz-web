@@ -37,7 +37,21 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       value: slug,
     })
     
+
+    
   }
+
+  if (node.internal.type === `GetEmpoweredJson`) {
+    const slug = createFilePath({ node, getNode, basePath: `get-empowered` })
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
+    })
+    
+  }
+
+
 }
 
 exports.createPages = async ({graphql, actions: { createPage } }) => {
@@ -163,6 +177,23 @@ exports.createPages = async ({graphql, actions: { createPage } }) => {
           }
         }
       }
+      allGetEmpoweredJson {
+        nodes {
+          description
+          title
+          content {
+            title
+            type
+            content {
+              content_html
+              title
+            }
+          }
+          fields {
+            slug
+          }
+        }
+      }
     }
   `)
 
@@ -181,6 +212,9 @@ exports.createPages = async ({graphql, actions: { createPage } }) => {
     .map(n => ({ ...n, slug: n.fields.slug }))
 
   const getInvolvedData = result.data.allGetInvolvedJson.nodes
+    .map(n => ({ ...n, slug: n.fields.slug }))
+
+  const getEmpoweredData = result.data.allGetEmpoweredJson.nodes
     .map(n => ({ ...n, slug: n.fields.slug }))
 
   const wizardData = result.data.allWizardJson.nodes
@@ -233,6 +267,15 @@ exports.createPages = async ({graphql, actions: { createPage } }) => {
       context: n,
     })
   })
+
+  getEmpoweredData.forEach(n => { //Get Empowered Secondary Pages use the same template as get involved
+    createPage( {
+      path: "/get-empowered" + n.slug,
+      component: require.resolve("./src/templates/get-involved-page.js"),
+      context: n,
+    })
+  })
+
 }
 
 exports.onCreatePage = ({ page, actions }) => {
