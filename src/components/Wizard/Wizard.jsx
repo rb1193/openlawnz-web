@@ -26,7 +26,7 @@ export default function Wizard({ background, title, steps }) {
 
   return (
     <section className="wizard">
-      <img className="wizard-bg" src={background}/>
+      <img className="wizard-bg" src={background} alt="wizard-background"/>
         {wizardStack.length === 0 ? (
           <WizardStart title={title} start={() => dispatch({ type: WizardOperations.NEXT, payload: steps[0].key })} />
         ) : (

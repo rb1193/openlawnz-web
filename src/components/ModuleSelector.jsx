@@ -11,13 +11,13 @@ const ModuleSelector = ({module, idx, wizardModuleData}) => {
     
     const errorModule = (message) => {
       return <div className="microsite-paragraph" name={title}>
-        <h2 id={module.title}>{module.title}</h2>
+        <h2 id={title}>{module.title}</h2>
         <p>Error: {message}</p>
       </div>
     }
 
     const blankModule = () => (
-      <div id={module.title} className="microsite-paragraph">
+      <div id={title} className="microsite-paragraph">
         <h2>{module.title}</h2>
       </div>
     )
@@ -50,7 +50,7 @@ const ModuleSelector = ({module, idx, wizardModuleData}) => {
 
         if (module.content === undefined) return blankModule()
         return (
-          <div name={title} className="plugin-card">
+          <div id={title} className="plugin-card">
             <header>{module.title}</header>
             <div className="plugin-body">
               {
@@ -80,7 +80,7 @@ const ModuleSelector = ({module, idx, wizardModuleData}) => {
         case "contributors":
             if (module.contributors === undefined) return blankModule()
             return (
-              <div id={module.title}>
+              <div id={title}>
                 <h2>{module.title}</h2>
                 <div className="cards-list">
                   {
@@ -101,7 +101,7 @@ const ModuleSelector = ({module, idx, wizardModuleData}) => {
         case "directors":
             if (module.directors === undefined) return blankModule()
             return (
-                <div id={module.title}>
+                <div id={title}>
                 <h2>{module.title}</h2>
                 <div className="cards-list directors">
                     {module.directors.map(({name, bio, image_url}, idx) => {
