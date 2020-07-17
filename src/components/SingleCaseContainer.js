@@ -33,7 +33,7 @@ const SingleCase = ({ id }) => {
       })
     )
   }
-
+  
   useEffect(() => {
     if (window.AdobeDC && !adobeDCView) {
       adobeDCViewerCallback()
@@ -44,15 +44,15 @@ const SingleCase = ({ id }) => {
       document.addEventListener("adobe_dc_view_sdk.ready", adobeDCViewerCallback)
     }
   }, [adobeDCView])
-
+  
   useEffect(() => {
     if (!adobeDCView || !data) return
-
+    console.log(data)
     adobeDCView.previewFile(
       {
         content: {
           location: {
-            url: `https://s3-ap-southeast-2.amazonaws.com/openlawnz-pdfs/${data.pdf.pdfDbKey}`,
+            url: `https://openlawnz-pdfs-dev.s3-ap-southeast-2.amazonaws.com/${data.pdf.pdfDbKey}`,
           },
         },
         metaData: { fileName: `${data.caseName}.pdf` },
@@ -60,6 +60,7 @@ const SingleCase = ({ id }) => {
       adobeUIConfig
     )
   }, [data, adobeDCView, adobeUIConfig])
+  
 
   const handleInfoCardHeaderSize = caseName => {
     if (caseName.length <= 30) return "header-case"
@@ -69,9 +70,10 @@ const SingleCase = ({ id }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await ApiService.getCase({ id: parseInt(id) })
+      const result = await ApiService.getCase({ id })
+      console.log(result)
       if (result) {
-        setData(result)
+        setData(result.case)
       } else {
         setError(true)
       }
