@@ -61,3 +61,14 @@
     margin-bottom: 20px;
   }
 }
+
+.section-selector {
+  width: 90.5%;
+  margin: 20px auto;
+  font-size: 15px;
+  select {
+    position: relative;
+    padding: 5px;
+    border-radius: 4px;
+  }
+}
