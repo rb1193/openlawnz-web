@@ -5,11 +5,20 @@ import { MicrositeContent } from '../../templates/microsite'
 export default function MicrositesPreview(props) {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0)
   
-  const { title, content } = props.entry.get("data").toJS()
-  const wizardData = Object.values(props.fieldsMetaData.toJS().content?.modules.wizard.wizards || {})
+  const { title="Title", content=[] } = props.entry.get("data").toJS()
+
+  const wizardData = (Object.values(((props.fieldsMetaData.toJS().content?.modules || [])
+                                      .wizard || {wizards: {}})
+                                      .wizards))
 
   const handleSelect = (event) => {
     setCurrentSectionIndex(event.target.value)
+  }
+
+  const sectionSelector = ({title, modules} = {}) => {
+    if(title === undefined) return {title: "Title", modules: []}
+    if(modules === undefined) return {title: title, modules: []}
+    return {title, modules}
   }
 
   return (
@@ -22,8 +31,8 @@ export default function MicrositesPreview(props) {
       <PreviewErrorBoundary key={currentSectionIndex}>
         <MicrositeContent
           pageContext={{
-            title: title,
-            section: content[currentSectionIndex],
+            title: title || "Title",
+            section: sectionSelector(content[currentSectionIndex]),
             section_headings: content.map(({ title }) => title || ''),
             wizardData: wizardData,
           }}
