@@ -6,34 +6,35 @@ class ApiService {
 	constructor() {
 		this.apiUrl = process.env.GATSBY_API_URL + "/graphql";
 		this.caseFields = `{
-			caseName,
-			id,
+		case {
+			caseName
+			id
 			caseCitations {
 				citation
 			}
 			casesCitedsByCaseCited {
 				caseByCaseOrigin {
-					caseName,
-					id
-				}
-			},
-			cites {
-				id,
 				caseName
-			},
+				id
+				}
+				caseByCaseCited {
+				caseName
+				id
+				}
+			}
 			legislationToCases {
-				section,
+				section
 				legislationId
 				legislation {
-					title,
-					link
+				title
+				link
 				}
-			},
+			}
 			pdf {
 				pdfDbKey
 			}
 		}
-	`;
+	}`;
 	}
 
 	/**
@@ -56,8 +57,9 @@ class ApiService {
 				"Content-Type": "application/json"
 			}
 		});
-
+		
 		const body = await res.json();
+		
 		return body.data;
 	}
 
@@ -67,13 +69,13 @@ class ApiService {
 	 * @returns {array} cases list or empty list
 	 */
 	async getCases(params = {}) {
-		const data = await this.getGraphQlData("cases", params, this.caseFields);
+		const data = await this.getGraphQlData("caseCitations", params, this.caseFields);
 		return data.cases;
 	}
 
 	async getCase(params = {}) {
-		const data = await this.getGraphQlData("case", params, this.caseFields);
-		return data ? data.case : null;
+		const data = await this.getGraphQlData("caseCitation", params, this.caseFields);
+		return data.caseCitation.case ? data.caseCitation : null;
 	}
 
 	/**
