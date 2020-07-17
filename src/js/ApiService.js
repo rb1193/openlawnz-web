@@ -32,7 +32,6 @@ class ApiService {
 			}
 			pdf {
 				pdfDbKey
-				pdfUrl
 			}
 		}
 	}`;
