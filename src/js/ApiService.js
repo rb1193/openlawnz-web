@@ -49,7 +49,6 @@ class ApiService {
 				${resource} ${this.paramsToString(params)}
 				${fields}
 			}`;
-		console.log(query)
 		const res = await fetch(`${this.apiUrl}`, {
 			method: "POST",
 			body: JSON.stringify({

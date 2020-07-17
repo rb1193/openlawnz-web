@@ -47,7 +47,6 @@ const SingleCase = ({ id }) => {
   
   useEffect(() => {
     if (!adobeDCView || !data) return
-    console.log(data)
     adobeDCView.previewFile(
       {
         content: {
@@ -71,7 +70,6 @@ const SingleCase = ({ id }) => {
   useEffect(() => {
     const fetchData = async () => {
       const result = await ApiService.getCase({ id })
-      console.log(result)
       if (result) {
         setData(result.case)
       } else {
