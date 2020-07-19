@@ -25,4 +25,5 @@ test('shows basic search when advanced search is cancelled', () => {
   fireEvent.click(screen.getByText('Cancel'))
 
   expect(screen.getByTestId('advanced-search-link')).toBeInTheDocument()
+  expect(screen.queryByTestId('advanced-search-title')).not.toBeInTheDocument()
 })
