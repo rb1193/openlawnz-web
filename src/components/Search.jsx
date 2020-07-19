@@ -73,7 +73,7 @@ export default class Search extends Component {
               <a href="/">
                 Search Help
               </a>
-              <a href="#advanced-search" onClick={this.props.toggleTypeOfSearch}>
+              <a data-testid="advanced-search-link" href="#advanced-search" onClick={this.props.toggleTypeOfSearch}>
               Advanced Search
               </a>
             </div>

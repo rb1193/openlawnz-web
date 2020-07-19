@@ -203,7 +203,7 @@ const AdvancedSearch = ({ onSubmit, toggleTypeOfSearch, populateComponent }) => 
   return (
     <div ref={containerRef} className="advanced-search">
       <form className="box" onSubmit={handleSubmit}>
-        <h2 className="title">Advanced Search</h2>
+        <h2 className="title" data-testid="advanced-search-title">Advanced Search</h2>
         <span className="subtitle">Please select:</span>
 
         {state.searchFields.map(({ type, id, value, isPopulated, Component }, index) => (
